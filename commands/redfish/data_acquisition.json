@@ -1,0 +1,74 @@
+[
+  {
+    "section": "3.11.1",
+    "title": "查询数据采集服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/DataAcquisitionService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/DataAcquisitionService'",
+    "description": "查询数据采集服务资源。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.11.2",
+    "title": "修改数据采集服务开关状态",
+    "method": "PATCH",
+    "url": "/redfish/v1/DataAcquisitionService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/DataAcquisitionService' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "打开/关闭数据采集服务。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.11.3",
+    "title": "导出数据表",
+    "method": "POST",
+    "url": "/redfish/v1/DataAcquisitionService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/DataAcquisitionService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "导出对应的数据库表，导出格式：csv文件。本资源受许可证控制，需要通过许可证授  权后才能使用。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.11.4",
+    "title": "查询导出进度",
+    "method": "",
+    "url": "",
+    "command": "# 查询导出进度",
+    "description": "查询导出进度",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  },
+  {
+    "section": "3.11.6",
+    "title": "清空“数据采集点信息表”",
+    "method": "POST",
+    "url": "/redfish/v1/DataAcquisitionService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/DataAcquisitionService/Actions/' -H 'Content-Type: application/json' -d '{  \"MemberId\": \"0\" }'",
+    "description": "清空“数据采集点信息表”。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.11.7",
+    "title": "查询清空进度",
+    "method": "",
+    "url": "",
+    "command": "# 查询清空进度",
+    "description": "查询清空进度",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.11.8",
+    "title": "查询数据表资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/DataAcquisitionService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/DataAcquisitionService/'",
+    "description": "查询数据表资源信息",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.11.9",
+    "title": "创建数据表格筛选任务",
+    "method": "POST",
+    "url": "/redfish/v1/DataAcquisitionService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/DataAcquisitionService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "创建对数据表的筛选任务。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  }
+]

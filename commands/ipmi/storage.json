@@ -1,0 +1,30 @@
+[
+  {
+    "title": "3.81 保存配置（Save Configuration）命令功能 存储。",
+    "netfn": "30",
+    "cmd": "95",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x95",
+    "description": "3.81 保存配置（Save Configuration）命令功能 存储。"
+  },
+  {
+    "title": "命令功能 设置RAID参数。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "命令功能 设置RAID参数。"
+  },
+  {
+    "title": "14.95 查询USB 存储连接状态（Get USB Mass Storage Status） 命令功能 查询USB存储连接状态。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "14.95 查询USB 存储连接状态（Get USB Mass Storage Status） 命令功能 查询USB存储连接状态。"
+  },
+  {
+    "title": "17.145 设置存储节点异常下电后是否自动上电标记命令功能 设置存储节点异常下电后是否再次上电标记 参数说明",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "17.145 设置存储节点异常下电后是否自动上电标记命令功能 设置存储节点异常下电后是否再次上电标记 参数说明"
+  }
+]

@@ -1,0 +1,17 @@
+# SNMP NPU命令
+
+> 共 1 个命令 (有效: 1)
+
+## npuProperty
+
+**OID**: `iso(1).org(3).dod(6).internet(1).private(4).enterprises(1).huawei(2011).products(2) .hwServer(235).hwBMC(1).hwiBMC(1).npuProperty(47).npuDescriptionTable(50)`
+
+**描述**: 该NPU信息为业务系统NPU信息。NPU信息为表节点，其子节点类型、架构、指令集、制造商等为叶子节点。  npuDescriptionTable表节点的OID： iso(1).org(3).dod(6
+
+**命令**:
+```bash
+snmpwalk -v2c -c public <bmc_ip> .1.3.6.1.4.1.2011.2.235.1.1.43
+```
+
+---
+

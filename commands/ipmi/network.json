@@ -1,0 +1,149 @@
+[
+  {
+    "title": "3.52 查询XCU 板的vlanif IP（Get VLAN IP）命令功能 查询XCU板的vlanif IP。",
+    "netfn": "30",
+    "cmd": "95",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x95",
+    "description": "3.52 查询XCU 板的vlanif IP（Get VLAN IP）命令功能 查询XCU板的vlanif IP。"
+  },
+  {
+    "title": "3.68 设置内存位宽信息（Set Chip Bitwidth）命令功能 设置内存位宽信息。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "3.68 设置内存位宽信息（Set Chip Bitwidth）命令功能 设置内存位宽信息。"
+  },
+  {
+    "title": "3.68 设置内存位宽信息（Set Chip Bitwidth）命令功能 设置内存位宽信息。",
+    "netfn": "C",
+    "cmd": "04",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x04",
+    "description": "3.68 设置内存位宽信息（Set Chip Bitwidth）命令功能 设置内存位宽信息。"
+  },
+  {
+    "title": "#获取电源框的电子标签信息的第一帧数据：本命令接口共5帧，一共会读取1024字节数据；每次执行返回第n帧数据，由参数说明中的Frame index决定；查询到的数据转化成ascii码后，与ipmcget -d fru获得的数据一致",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "#获取电源框的电子标签信息的第一帧数据：本命令接口共5帧，一共会读取1024字节数据；每次执行返回第n帧数据，由参数说明中的Frame index决定；查询到的数据转化成ascii码后，与ipmcget -d fru获得的数据一致"
+  },
+  {
+    "title": "查询黑名单或白名单IPMI。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "查询黑名单或白名单IPMI。"
+  },
+  {
+    "title": "13.3 设置BMC MAC 配置（Set BMC MAC Address）命令功能 设置BMC LAN配置。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "13.3 设置BMC MAC 配置（Set BMC MAC Address）命令功能 设置BMC LAN配置。"
+  },
+  {
+    "title": "命令功能 设置BMC管理网口网络配置。",
+    "netfn": "a",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x01",
+    "description": "命令功能 设置BMC管理网口网络配置。"
+  },
+  {
+    "title": "13.7 获取BMC 管理网口网络配置（Get LAN Configuration Parameters） 命令功能 获取BMC管理网口网络配置。",
+    "netfn": "a",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x02",
+    "description": "13.7 获取BMC 管理网口网络配置（Get LAN Configuration Parameters） 命令功能 获取BMC管理网口网络配置。"
+  },
+  {
+    "title": "设置VMA网络。",
+    "netfn": "30",
+    "cmd": "97",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x97",
+    "description": "设置VMA网络。"
+  },
+  {
+    "title": "14.42 设置局域网配置（Set LAN Configurations）命令功能 设置局域网配置。",
+    "netfn": "C",
+    "cmd": "2E",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x2E",
+    "description": "14.42 设置局域网配置（Set LAN Configurations）命令功能 设置局域网配置。"
+  },
+  {
+    "title": "14.65 获取地址信息（Get Address Info）（在IPM 控制器） 命令功能 获取地址信息（在IPM控制器）。",
+    "netfn": "C",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x01",
+    "description": "14.65 获取地址信息（Get Address Info）（在IPM 控制器） 命令功能 获取地址信息（在IPM控制器）。"
+  },
+  {
+    "title": "14.65 获取地址信息（Get Address Info）（在IPM 控制器） 命令功能 获取地址信息（在IPM控制器）。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "14.65 获取地址信息（Get Address Info）（在IPM 控制器） 命令功能 获取地址信息（在IPM控制器）。"
+  },
+  {
+    "title": "设置IPMB状态。",
+    "netfn": "C",
+    "cmd": "09",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x09",
+    "description": "设置IPMB状态。"
+  },
+  {
+    "title": "14.121 获取通道密码套件（Get Channel Cipher Suites）命令功能 获取通道密码套件。",
+    "netfn": "A",
+    "cmd": "54",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x54",
+    "description": "14.121 获取通道密码套件（Get Channel Cipher Suites）命令功能 获取通道密码套件。"
+  },
+  {
+    "title": "命令功能 设置交换芯片端口VlanId",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "命令功能 设置交换芯片端口VlanId"
+  },
+  {
+    "title": "命令功能 查询交换芯片端口VlanId 权限说明 Operater 适用机型 NST1240V6_NST1220V6、SMM1200V6 命令格式 ipmitool raw 0x32 0xbb {fruId} {deviceId} 0x84 {switchId} {portId}参数说明",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "命令功能 查询交换芯片端口VlanId 权限说明 Operater 适用机型 NST1240V6_NST1220V6、SMM1200V6 命令格式 ipmitool raw 0x32 0xbb {fruId} {deviceId} 0x84 {switchId} {portId}参数说明"
+  },
+  {
+    "title": "命令功能 设置管理网口IP配置信息",
+    "netfn": "32",
+    "cmd": "85",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x85",
+    "description": "命令功能 设置管理网口IP配置信息"
+  },
+  {
+    "title": "查询管理网口IP配置信息",
+    "netfn": "32",
+    "cmd": "86",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x86",
+    "description": "查询管理网口IP配置信息"
+  },
+  {
+    "title": "命令功能 查询管理网口IP配置信息归属是否有效",
+    "netfn": "32",
+    "cmd": "72",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x72",
+    "description": "命令功能 查询管理网口IP配置信息归属是否有效"
+  },
+  {
+    "title": "命令功能 同步管理网口IP配置信息接口",
+    "netfn": "32",
+    "cmd": "89",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x89",
+    "description": "命令功能 同步管理网口IP配置信息接口"
+  },
+  {
+    "title": "命令功能 获取Pangea接口卡Fru Name 权限说明 ReadOnly 适用机型 2ULB1220V6、NST1240V6_NST1220V6 命令格式 ipmitool raw 0x32 0x60 {slot_num} 0x01 0x00 0x00 0x54参数说明",
+    "netfn": "32",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x60",
+    "description": "命令功能 获取Pangea接口卡Fru Name 权限说明 ReadOnly 适用机型 2ULB1220V6、NST1240V6_NST1220V6 命令格式 ipmitool raw 0x32 0x60 {slot_num} 0x01 0x00 0x00 0x54参数说明"
+  }
+]

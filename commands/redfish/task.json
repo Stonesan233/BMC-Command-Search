@@ -1,0 +1,74 @@
+[
+  {
+    "section": "3.8.1",
+    "title": "查询任务服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService'",
+    "description": "查询服务器当前任务服务资源的信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.8.2",
+    "title": "查询任务集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService/Tasks",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks'",
+    "description": "查询服务器当前任务集合资源的信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.8.3",
+    "title": "查询指定任务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService/Tasks/taskid",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks/taskid'",
+    "description": "查询服务器指定任务资源的信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.8.4",
+    "title": "查询指定Monitor 信息",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService/Tasks/task_id/Monitor",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks/task_id/Monitor'",
+    "description": "查询服务器指定Monitor的信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.10.12",
+    "title": "查询任务集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/TaskService/Tasks",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/TaskService/Tasks'",
+    "description": "查询服务器当前任务集合资源的信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.10.13",
+    "title": "查询指定任务资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/TaskService/Tasks/taskid",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/TaskService/Tasks/taskid'",
+    "description": "查询指定任务资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.11.5",
+    "title": "查询导出表",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService/Tasks/task_id/Monitor",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks/task_id/Monitor'",
+    "description": "查询服务器指定Monitor的信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  },
+  {
+    "section": "3.11.10",
+    "title": "查询数据表筛选结果",
+    "method": "GET",
+    "url": "/redfish/v1/TaskService/Tasks/task_id/Monitor",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks/task_id/Monitor'",
+    "description": "查询指定Monitor的信息，包含数据表筛选结果。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  }
+]

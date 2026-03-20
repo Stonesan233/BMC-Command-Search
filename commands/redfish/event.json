@@ -1,0 +1,128 @@
+[
+  {
+    "section": "3.9.1",
+    "title": "查询事件服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/EventService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/EventService'",
+    "description": "查询服务器事件服务资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.9.2",
+    "title": "修改事件服务资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/EventService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/EventService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改事件服务资源，包括修改事件上报开关状态和修改事件主机标识源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.9.3",
+    "title": "模拟测试事件",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "模拟测试事件。",
+    "request_body": ""
+  },
+  {
+    "section": "3.9.4",
+    "title": "对未恢复的事件重新上报",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "对未恢复的事件重新上报。",
+    "request_body": ""
+  },
+  {
+    "section": "3.9.5",
+    "title": "模拟精准告警",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "模拟精准告警。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.6",
+    "title": "查询事件订阅集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/EventService/Subscriptions",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions'",
+    "description": "查询事件订阅集合资源。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.7",
+    "title": "创建事件订阅资源",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Subscriptions",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "创建事件订阅资源。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.8",
+    "title": "查询事件订阅资源",
+    "method": "GET",
+    "url": "/redfish/v1/EventService/Subscriptions/id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions/id'",
+    "description": "查询事件订阅资源。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.9",
+    "title": "修改事件订阅资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/EventService/Subscriptions/id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions/id' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "修改事件订阅资源。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.10",
+    "title": "删除事件订阅资源",
+    "method": "DELETE",
+    "url": "/redfish/v1/EventService/Subscriptions/id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions/id'",
+    "description": "删除事件订阅资源。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.9.11",
+    "title": "屏蔽系统事件上报",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "屏蔽系统事件上报。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.9.12",
+    "title": "配置事件告警级别",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "设置事件告警级别",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.9.13",
+    "title": "恢复订阅事件信息",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Subscriptions/{id}/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions/{id}/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "恢复发送指定时间范围内的订阅事件信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.9.14",
+    "title": "暂停订阅事件信息",
+    "method": "POST",
+    "url": "/redfish/v1/EventService/Subscriptions/{id}/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/EventService/Subscriptions/{id}/Actions/' -H 'Content-Type: application/json' -d '{  \"MemberId\": \"0\" }'",
+    "description": "暂停订阅事件发送",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  }
+]

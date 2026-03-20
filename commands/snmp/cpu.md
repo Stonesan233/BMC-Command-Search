@@ -1,0 +1,17 @@
+# SNMP CPU命令
+
+> 共 1 个命令 (有效: 1)
+
+## cpuProperty
+
+**OID**: `iso(1).org(3).dod(6).internet(1).private(4).enterprises(1).huawei(2011).products(2) .hwServer(235).hwBMC(1).hwiBMC(1).cpuProperty(15).cpuDescriptionTable(50)`
+
+**描述**: 该CPU信息为业务系统CPU信息。CPU信息为表节点，其子节点厂商、CPU族、类型、主频、单体CPU健康状态、丝印信息等为叶子节点。  cpuDescriptionTable表节点的OID：  iso
+
+**命令**:
+```bash
+snmpwalk -v2c -c public <bmc_ip> .1.3.6.1.4.1.2011.2.235.1.1.15
+```
+
+---
+

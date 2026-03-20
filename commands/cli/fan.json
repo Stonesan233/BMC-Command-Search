@@ -1,0 +1,56 @@
+[
+  {
+    "chapter": "7.12",
+    "section": "7.12.1",
+    "name": "fanlevel",
+    "title": "设置风扇运行速度",
+    "command": "ipmcset -d fanlevel -v <fanlevel> [fanid]",
+    "description": "fanlevel命令用于设置风扇运行速度。",
+    "example": "ipmcset -d fanlevel -v 50 2"
+  },
+  {
+    "chapter": "7.12",
+    "section": "7.12.2",
+    "name": "faninfo",
+    "title": "查询风扇工作状态",
+    "command": "ipmcget -d faninfo",
+    "description": "faninfo命令用来查询风扇的工作模式和当前转速。",
+    "example": "ipmcget -d faninfo"
+  },
+  {
+    "chapter": "7.12",
+    "section": "7.12.3",
+    "name": "fanmode",
+    "title": "设置风扇运行模式",
+    "command": "ipmcset -d fanmode -v <mode> [timeout]",
+    "description": "fanmode命令用来设置风扇的运行模式。",
+    "example": "ipmcset -d fanmode -v 1 60"
+  },
+  {
+    "chapter": "7.12",
+    "section": "7.12.4",
+    "name": "coolingmode",
+    "title": "设置散热设备运行模式",
+    "command": "ipmcset -d coolingmode -v <devicetype> <mode> [timeout]",
+    "description": "coolingmode命令用来设置散热设备的运行模式。",
+    "example": "ipmcset -d fan -v 1 60"
+  },
+  {
+    "chapter": "7.12",
+    "section": "7.12.5",
+    "name": "coolingdeviceinfo",
+    "title": "查询散热设备工作状态",
+    "command": "ipmcget -d coolingdeviceinfo -v <devicetype>",
+    "description": "coolingdeviceinfo命令用来查询散热设备的工作模式和当前转速。",
+    "example": "ipmcget -d coolingdeviceinfo -v fan"
+  },
+  {
+    "chapter": "7.12",
+    "section": "7.12.6",
+    "name": "coolinglevel",
+    "title": "设置散热设备运行速度",
+    "command": "ipmcset -d coolinglevel -v <devicetype> <level> [id]",
+    "description": "coolinglevel命令用于设置散热设备运行速度。",
+    "example": "ipmcset -d coolinglevel -v fan 50 2"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "chapter": "7.16",
+    "section": "7.16.1",
+    "name": "lsw -d reset",
+    "title": "复位LSW 芯片",
+    "command": "ipmcset -t lsw -d reset -v <device><type>",
+    "description": "lsw -d reset命令用于复位并修复LSW芯片。",
+    "example": "ipmcset -t lsw -d reset -v 1 1"
+  }
+]

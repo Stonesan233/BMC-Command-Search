@@ -1,0 +1,53 @@
+[
+  {
+    "section": "7.3.13",
+    "name": "serialdir",
+    "title": "查询和设置串口方向",
+    "command": "ipmcget -d serialdir",
+    "description": "serialdir命令用来查询和设置串口方向。",
+    "params": [
+      "参数说明",
+      "串口方向",
+      "为系统串口",
+      "为iBMC串口",
+      "板串口切换为SCCL串",
+      "口",
+      "板串口切换为IMU串口",
+      "板串口切换为SCCL串",
+      "口",
+      "板串口切换为IMU串口",
+      "不同服务器的参数取值及",
+      "串口的连接方向可能不",
+      "serialdir命令查看参数取",
+      "值及ipmcget",
+      "命令查看串口的连接方向",
+      "服务器未安装SDI",
+      "服务器只安装了一张SDI",
+      "组1或IO模组2中安装的",
+      "SDI",
+      "服务器安装了两张SDI",
+      "和5表示设置IO模组1中",
+      "安装的SDI",
+      "表示设置IO模组2中安装",
+      "的SDI"
+    ],
+    "example": "ipmcset -d serialdir -v 1"
+  },
+  {
+    "section": "7.8.13",
+    "name": "systemcom",
+    "title": "下载系统串口数据",
+    "command": "ipmcget -d systemcom",
+    "description": "systemcom命令用来下载系统串口数据。",
+    "params": [
+      "无",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "313"
+    ],
+    "example": "ipmcget -d systemcom"
+  }
+]

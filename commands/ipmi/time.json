@@ -1,0 +1,65 @@
+[
+  {
+    "title": "9.4 复位BMC 看门狗计时器（Reset Watchdog Timer）命令功能 复位BMC看门狗计时器。",
+    "netfn": "A",
+    "cmd": "22",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x22",
+    "description": "9.4 复位BMC 看门狗计时器（Reset Watchdog Timer）命令功能 复位BMC看门狗计时器。"
+  },
+  {
+    "title": "9.5 获取看门狗定时器（Get Watchdog Timer）命令功能 获取看门狗定时器。",
+    "netfn": "A",
+    "cmd": "25",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x25",
+    "description": "9.5 获取看门狗定时器（Get Watchdog Timer）命令功能 获取看门狗定时器。"
+  },
+  {
+    "title": "9.38 设置硬隔离地址结果（Set Hard Isolation Address Results）（Runtime 阶段使用） 命令功能 设置硬隔离地址结果。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "9.38 设置硬隔离地址结果（Set Hard Isolation Address Results）（Runtime 阶段使用） 命令功能 设置硬隔离地址结果。"
+  },
+  {
+    "title": "14.5 设置FRU 电子标签中生产日期时间字节长度标记（Set Fru E-lable MfgDateTime Length） 命令功能 设置从eeprom读取Fru的MfgDateTime时间信息的格式；从eeprom读取时间信息时，根据该格式来选择读取3字节或者4字节内容。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "14.5 设置FRU 电子标签中生产日期时间字节长度标记（Set Fru E-lable MfgDateTime Length） 命令功能 设置从eeprom读取Fru的MfgDateTime时间信息的格式；从eeprom读取时间信息时，根据该格式来选择读取3字节或者4字节内容。"
+  },
+  {
+    "title": "获取Pangea接口卡电子保单起始时间。",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "获取Pangea接口卡电子保单起始时间。"
+  },
+  {
+    "title": "17.13 设置Pangea 接口卡电子保单开始时间命令功能 设置Pangea接口卡电子保单开始时间。",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "17.13 设置Pangea 接口卡电子保单开始时间命令功能 设置Pangea接口卡电子保单开始时间。"
+  },
+  {
+    "title": "17.84 获取BBU 寿命预到期时间告警门限命令功能 获取BBU寿命预到期时间告警门限 参数说明",
+    "netfn": "32",
+    "cmd": "45",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x45",
+    "description": "17.84 获取BBU 寿命预到期时间告警门限命令功能 获取BBU寿命预到期时间告警门限 参数说明"
+  },
+  {
+    "title": "17.102 获取BBU 最后一次放电时间命令功能 获取BBU最后一次放电时间 参数说明",
+    "netfn": "32",
+    "cmd": "40",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x40",
+    "description": "17.102 获取BBU 最后一次放电时间命令功能 获取BBU最后一次放电时间 参数说明"
+  },
+  {
+    "title": "命令功能 查询retimer是否支持升级。",
+    "netfn": "32",
+    "cmd": "73",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x73",
+    "description": "命令功能 查询retimer是否支持升级。"
+  }
+]

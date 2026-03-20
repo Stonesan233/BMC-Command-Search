@@ -1,0 +1,317 @@
+[
+  {
+    "section": "7.4.8",
+    "name": "trap -d user",
+    "title": "查询和设置SNMP trap V3 用户",
+    "command": "ipmcget -t trap -d user",
+    "description": "trap -d user命令用于查询和设置SNMP trap V3用户。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示SNMP"
+    ],
+    "example": "ipmcset -t trap -d user -v root"
+  },
+  {
+    "section": "7.6.2",
+    "name": "vnc -d password",
+    "title": "设置VNC 服务的密码",
+    "command": "ipmcset -t vnc -d password",
+    "description": "vnc -d password命令用于设置VNC服务的密码。",
+    "params": [],
+    "example": "ipmcset -t vnc -d password"
+  },
+  {
+    "section": "7.9.1",
+    "name": "userlist/list",
+    "title": "查询所有用户信息",
+    "command": "ipmcget -d userlist",
+    "description": "userlist/list命令用来查询所有用户信息。",
+    "params": [
+      "无",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "324"
+    ],
+    "example": "ipmcget -t user -d list"
+  },
+  {
+    "section": "7.9.2",
+    "name": "adduser",
+    "title": "添加新用户",
+    "command": "ipmcset [-t user] -d adduser -v <username>",
+    "description": "adduser用于添加新用户。",
+    "params": [
+      "参数说明",
+      "username"
+    ],
+    "example": "ipmcset -d adduser -v test"
+  },
+  {
+    "section": "7.9.3",
+    "name": "password",
+    "title": "修改用户密码",
+    "command": "ipmcset [-t user] -d password -v username",
+    "description": "password命令用来修改用户密码。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示已存在的待修改密码"
+    ],
+    "example": "ipmcset -d password -v user"
+  },
+  {
+    "section": "7.9.4",
+    "name": "deluser",
+    "title": "删除用户",
+    "command": "ipmcset [-t user] -d deluser -v username",
+    "description": "deluser用来删除用户。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示当前存在的待删除的"
+    ],
+    "example": "ipmcset -d deluser -v test"
+  },
+  {
+    "section": "7.9.5",
+    "name": "privilege",
+    "title": "设置用户权限",
+    "command": "ipmcset [-t user] -d privilege -v <username> <privalue>",
+    "description": "privilege命令用来设置用户权限。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示当前存在的待设置权",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "329",
+      "参数说明",
+      "privalue",
+      "用户权限"
+    ],
+    "example": "ipmcset -d privilege -v test 4"
+  },
+  {
+    "section": "7.9.6",
+    "name": "passwordcomplexity",
+    "title": "查询和设置密码检查功能",
+    "command": "ipmcget [-t user] -d passwordcomplexity",
+    "description": "passwordcomplexity命令用来查询和设置密码复杂度检查功能的启用状态。",
+    "params": [
+      "参数说明",
+      "enabled",
+      "启用密码复杂度检查功能",
+      "disabled",
+      "禁用密码复杂度检查功能",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "330"
+    ],
+    "example": "ipmcget -d passwordcomplexity"
+  },
+  {
+    "section": "7.9.7",
+    "name": "user -d lock",
+    "title": "锁定用户",
+    "command": "ipmcset -t user -d lock -v username",
+    "description": "lock命令用于锁定指定的用户，而用户在被锁定之后将不能登录。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 331   ---  ## Page 343",
+    "params": [
+      "参数说明",
+      "username",
+      "待锁定用户的用户名"
+    ],
+    "example": "ipmcset -t user -d lock -v admin"
+  },
+  {
+    "section": "7.9.8",
+    "name": "user -d unlock",
+    "title": "解除用户锁定状态",
+    "command": "ipmcset -t user -d unlock -v username",
+    "description": "unlock命令用于解锁被手动锁定或因密码重试次数用完而锁定的用户。",
+    "params": [
+      "参数说明",
+      "username",
+      "待解锁用户的用户名"
+    ],
+    "example": "ipmcset -t user -d unlock -v root"
+  },
+  {
+    "section": "7.9.9",
+    "name": "minimumpasswordage",
+    "title": "查询和设置密码最短使用期",
+    "command": "ipmcget -d minimumpasswordage",
+    "description": "minimumpasswordage命令用于查询和设置密码的最短使用期。 密码最短使用期，是指设置一个密码后，要使用的最短时间，在此期间不能修改此密 码。",
+    "params": [
+      "参数说明",
+      "time",
+      "密码最短使用期",
+      "0表示密码最短使用期为无"
+    ],
+    "example": "ipmcset -d minimumpasswordage -v 1"
+  },
+  {
+    "section": "7.9.10",
+    "name": "emergencyuser",
+    "title": "设置紧急用户",
+    "command": "ipmcset [-t user] -d emergencyuser -v username",
+    "description": "emergencyuser命令用于设置不受登录规则限制的紧急用户。",
+    "params": [
+      "参数说明",
+      "username",
+      "紧急用户的用户名"
+    ],
+    "example": "ipmcset -d emergencyuser -v root"
+  },
+  {
+    "section": "7.9.11",
+    "name": "addpublickey",
+    "title": "为用户添加SSH 公钥",
+    "command": "ipmcset -t user -d addpublickey -v username <filepath|file_URL>",
+    "description": "addpublickey命令为用户添加SSH公钥。",
+    "params": [
+      "参数说明",
+      "username",
+      "待导入SSH公钥的用户名",
+      "已存在的SSH用户的用户",
+      "名",
+      "filepath",
+      "待导入的保存于本地的",
+      "SSH公钥文件路径",
+      "file_URL",
+      "待导入的远程SSH公钥文",
+      "件的URL",
+      "标服务器的用户名和密",
+      "必须为远程公钥文件在",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "334"
+    ],
+    "example": "ipmcset -t user -d addpublickey -v ssh_user /tmp/id_dsa_2048.key"
+  },
+  {
+    "section": "7.9.12",
+    "name": "delpublickey",
+    "title": "删除用户的SSH 公钥",
+    "command": "ipmcset -t user -d delpublickey -v username",
+    "description": "delpublickey命令为用户删除SSH公钥。",
+    "params": [
+      "参数说明",
+      "username",
+      "待删除SSH公钥的用户的",
+      "用户名"
+    ],
+    "example": "ipmcset -t user -d delpublickey -v ssh_user_01"
+  },
+  {
+    "section": "7.9.14",
+    "name": "interface",
+    "title": "设置用户登录iBMC 的接口类型",
+    "command": "ipmcset -t user -d interface -v username <enabled | disabled> <option1",
+    "description": "interface命令用于设置指定用户登录iBMC的接口类型。",
+    "params": [
+      "参数说明",
+      "username",
+      "待配置的用户",
+      "enabled",
+      "使能指定的接口类型",
+      "disabled",
+      "禁用指定的接口类型",
+      "option1",
+      "optionN",
+      "可设置的接口类型",
+      "可同时设置多个接口类"
+    ],
+    "example": "ipmcget -t user -d list"
+  },
+  {
+    "section": "7.9.18",
+    "name": "snmpprivacypassword",
+    "title": "设置SNMPv3 用户的加密密码",
+    "command": "ipmcset -t user -d snmpprivacypassword -v username",
+    "description": "snmpprivacypassword命令用于设置指定用户使用SNMPv3连接iBMC的数据加密密 码。",
+    "params": [
+      "参数说明",
+      "username",
+      "待配置的用户"
+    ],
+    "example": "ipmcset -t user -d snmpprivacypassword -v Administrator"
+  },
+  {
+    "section": "7.9.19",
+    "name": "securityenhanc -d\ninactivetimelimit",
+    "title": "查询和设置用户不活动期限",
+    "command": "ipmcset -t securityenhance -d inactivetimelimit -v <value>",
+    "description": "securityenhance -d inactivetimelimit命令用于设置用户不活动期限。超过设定期限 内未活动的用户会被禁用。",
+    "params": [
+      "参数说明",
+      "value",
+      "表示不活动期限"
+    ],
+    "example": "ipmcset -t securityenhance -d inactivetimelimit -v <value>"
+  },
+  {
+    "section": "7.9.20",
+    "name": "user -d state",
+    "title": "设置用户启用状态",
+    "command": "ipmcset -t user -d state -v <username> [enabled | disabled]",
+    "description": "user -d state命令用于设置用户的启用状态。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示待设置的用户",
+      "已存在的用户名",
+      "enabled",
+      "表示启用该用户",
+      "disabled",
+      "表示禁用该用户"
+    ],
+    "example": "ipmcset -t user -d state -v <username> [enabled | disabled]"
+  },
+  {
+    "section": "7.9.21",
+    "name": "user -d\nusermgmtbyhost",
+    "title": "查询和设置带内用户管理使能状态",
+    "command": "ipmcset -t user -d usermgmtbyhost -v <option>",
+    "description": "user -d usermgmtbyhost命令用于查询和设置带内用户管理功能的使能状态。",
+    "params": [
+      "参数说明",
+      "option",
+      "表示待设置的带内用户管",
+      "理使能状态",
+      "功能",
+      "功能"
+    ],
+    "example": "ipmcset -t user -d usermgmtbyhost -v 0"
+  },
+  {
+    "section": "7.9.22",
+    "name": "user -d\nfirstloginpolicy",
+    "title": "设置用户首次登录时的密码修改策略",
+    "command": "ipmcset -t user -d firstloginpolicy -v <username> <option>",
+    "description": "对于新建的用户或被重置了密码的用户，其登录密码为初始状态，可能存在密码泄露 的风险。 user -d firstloginpolicy命令用于设置用户密码为初始状态的情况下，首次登录时的 密码修改策略。",
+    "params": [
+      "参数说明",
+      "username",
+      "表示待设置的用户",
+      "已存在的用户名",
+      "option",
+      "表示用户密码为初始状",
+      "改策略",
+      "码"
+    ],
+    "example": "ipmcset -t user -d firstloginpolicy -v testuser 1"
+  }
+]

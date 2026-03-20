@@ -1,0 +1,83 @@
+[
+  {
+    "chapter": "7.17",
+    "section": "7.17.1",
+    "name": "help",
+    "title": "查看帮助信息",
+    "command": "ipmcget   :       Used to get BMC runtime status.",
+    "description": "help命令用于查看帮助信息，也可以查看某条命令的具体使用方法。",
+    "example": "ipmcget   :       Used to get BMC runtime status."
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.2",
+    "name": "exit",
+    "title": "断开连接",
+    "command": "ipmcget -d exit",
+    "description": "exit命令用于断开客户端与iBMC的连接。",
+    "example": "ipmcget -d exit"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.3",
+    "name": "ping, ping6",
+    "title": "检查网络连通性",
+    "command": "ipmcget -d ping, ping6",
+    "description": "ping或ping6命令用于检查网络是否连通。",
+    "example": "ipmcget -d ping, ping6"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.4",
+    "name": "free",
+    "title": "free 命令",
+    "command": "ipmcget -d free",
+    "description": "该命令用于执行Linux中的free命令。",
+    "example": "ipmcget -d free"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.5",
+    "name": "netstat",
+    "title": "netstat 命令",
+    "command": "ipmcget -d netstat",
+    "description": "该命令用于执行Linux中的netstat命令。",
+    "example": "ipmcget -d netstat"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.6",
+    "name": "df",
+    "title": "df 命令",
+    "command": "ipmcget -d df",
+    "description": "该命令用于执行Linux中的df命令。",
+    "example": "ipmcget -d df"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.7",
+    "name": "top",
+    "title": "top 命令",
+    "command": "ipmcget -d top",
+    "description": "该命令用于执行Linux中的top命令。",
+    "example": "ipmcget -d top"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.8",
+    "name": "notimeout",
+    "title": "禁止CLP 超时",
+    "command": "ipmcget -d notimeout",
+    "description": "notimeout命令用于禁止CLP超时，确保可以在CLP命令行进行长时间操作。",
+    "example": "ipmcget -d notimeout"
+  },
+  {
+    "chapter": "7.17",
+    "section": "7.17.9",
+    "name": "reboot",
+    "title": "reboot 命令",
+    "command": "ipmcget -d ipinfo命令可获取管理网口IP地址信息。",
+    "description": "reboot命令用于重启iBMC系统。",
+    "example": "ipmcget -d ipinfo命令可获取管理网口IP地址信息。"
+  }
+]

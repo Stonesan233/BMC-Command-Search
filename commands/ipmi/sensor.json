@@ -1,0 +1,184 @@
+[
+  {
+    "title": "设置传感器过温下电门限。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "设置传感器过温下电门限。"
+  },
+  {
+    "title": "10.2 获取传感器迟滞（Get Sensor Hysteresis）命令功能 获取传感器迟滞。",
+    "netfn": "E",
+    "cmd": "25",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x25",
+    "description": "10.2 获取传感器迟滞（Get Sensor Hysteresis）命令功能 获取传感器迟滞。"
+  },
+  {
+    "title": "10.4 获取传感器阈值（Get Sensor Threshold）命令功能 获取传感器阈值。",
+    "netfn": "E",
+    "cmd": "27",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x27",
+    "description": "10.4 获取传感器阈值（Get Sensor Threshold）命令功能 获取传感器阈值。"
+  },
+  {
+    "title": "10.6 获取传感器启用状态（Get Sensor Event Enable）命令功能 获取传感器事件启用。",
+    "netfn": "E",
+    "cmd": "29",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x29",
+    "description": "10.6 获取传感器启用状态（Get Sensor Event Enable）命令功能 获取传感器事件启用。"
+  },
+  {
+    "title": "10.6 获取传感器启用状态（Get Sensor Event Enable）命令功能 获取传感器事件启用。",
+    "netfn": "E",
+    "cmd": "2A",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x2A",
+    "description": "10.6 获取传感器启用状态（Get Sensor Event Enable）命令功能 获取传感器事件启用。"
+  },
+  {
+    "title": "10.8 获取传感器事件状态（Get Sensor Event Status）命令功能 获取传感器事件状态。",
+    "netfn": "E",
+    "cmd": "2B",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x2B",
+    "description": "10.8 获取传感器事件状态（Get Sensor Event Status）命令功能 获取传感器事件状态。"
+  },
+  {
+    "title": "10.9 获取传感器读数（Get Sensor Reading）命令功能 获取传感器读数。",
+    "netfn": "E",
+    "cmd": "2D",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x2D",
+    "description": "10.9 获取传感器读数（Get Sensor Reading）命令功能 获取传感器读数。"
+  },
+  {
+    "title": "10.10 获取传感器类型（Get Sensor Type）命令功能 获取传感器类型。",
+    "netfn": "E",
+    "cmd": "2F",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x2F",
+    "description": "10.10 获取传感器类型（Get Sensor Type）命令功能 获取传感器类型。"
+  },
+  {
+    "title": "10.34 设置传感器读数（Set Sensor Reading）命令功能 设置传感器读取的当前值。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "10.34 设置传感器读数（Set Sensor Reading）命令功能 设置传感器读取的当前值。"
+  },
+  {
+    "title": "10.39 获取传感器读数计算系数（Get Sensor Reading Factors） 命令功能 查询传感器读数计算系数。",
+    "netfn": "E",
+    "cmd": "23",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x23",
+    "description": "10.39 获取传感器读数计算系数（Get Sensor Reading Factors） 命令功能 查询传感器读数计算系数。"
+  },
+  {
+    "title": "获取设备SDR信息。",
+    "netfn": "E",
+    "cmd": "20",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x20",
+    "description": "获取设备SDR信息。"
+  },
+  {
+    "title": "命令功能 获取设备SDR。",
+    "netfn": "E",
+    "cmd": "21",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x21",
+    "description": "命令功能 获取设备SDR。"
+  },
+  {
+    "title": "获取SDR存储库信息。",
+    "netfn": "a",
+    "cmd": "20",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x20",
+    "description": "获取SDR存储库信息。"
+  },
+  {
+    "title": "获取SDR存储库信息。",
+    "netfn": "a",
+    "cmd": "22",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x22",
+    "description": "获取SDR存储库信息。"
+  },
+  {
+    "title": "获取SDR。",
+    "netfn": "a",
+    "cmd": "23",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x23",
+    "description": "获取SDR。"
+  },
+  {
+    "title": "10.46 清除SDR 储存库（Clear SDR Repository）命令功能 清除SDR储存库。",
+    "netfn": "a",
+    "cmd": "27",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x27",
+    "description": "10.46 清除SDR 储存库（Clear SDR Repository）命令功能 清除SDR储存库。"
+  },
+  {
+    "title": "10.47 获取SDR 存储库时间（Get SDR Repository Time）命令功能 获取SDR存储库时间。",
+    "netfn": "a",
+    "cmd": "28",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x28",
+    "description": "10.47 获取SDR 存储库时间（Get SDR Repository Time）命令功能 获取SDR存储库时间。"
+  },
+  {
+    "title": "设置SDR存储库时间。",
+    "netfn": "a",
+    "cmd": "29",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x29",
+    "description": "设置SDR存储库时间。"
+  },
+  {
+    "title": "查询传感器数值。",
+    "netfn": "3E",
+    "cmd": "31",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x31",
+    "description": "查询传感器数值。"
+  },
+  {
+    "title": "查询传感器数值。",
+    "netfn": "a",
+    "cmd": "42",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x42",
+    "description": "查询传感器数值。"
+  },
+  {
+    "title": "获取sensor告警数量",
+    "netfn": "32",
+    "cmd": "ba",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xba",
+    "description": "获取sensor告警数量"
+  },
+  {
+    "title": "获取sensor名字",
+    "netfn": "32",
+    "cmd": "64",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x64",
+    "description": "获取sensor名字"
+  },
+  {
+    "title": "获取sensor reading值",
+    "netfn": "32",
+    "cmd": "B2",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB2",
+    "description": "获取sensor reading值"
+  },
+  {
+    "title": "获取sensor门限值。",
+    "netfn": "32",
+    "cmd": "10",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x10",
+    "description": "获取sensor门限值。"
+  },
+  {
+    "title": "获取sensor告警状态。",
+    "netfn": "32",
+    "cmd": "B1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB1",
+    "description": "获取sensor告警状态。"
+  },
+  {
+    "title": "17.55 获取sensor 聚合类型 命令功能 获取sensor聚合类型。",
+    "netfn": "32",
+    "cmd": "B0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB0",
+    "description": "17.55 获取sensor 聚合类型 命令功能 获取sensor聚合类型。"
+  }
+]

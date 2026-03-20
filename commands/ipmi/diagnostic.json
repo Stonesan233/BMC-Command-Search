@@ -1,0 +1,23 @@
+[
+  {
+    "title": "3.56 获取Lpar DFT 配置（Get Lpar DFT config）命令功能 获取Lpar DFT配置。",
+    "netfn": "30",
+    "cmd": "97",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x97",
+    "description": "3.56 获取Lpar DFT 配置（Get Lpar DFT config）命令功能 获取Lpar DFT配置。"
+  },
+  {
+    "title": "查询故障诊断辅助信息。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "查询故障诊断辅助信息。"
+  },
+  {
+    "title": "14.17 获取装备模式（Get DFT Mode）命令功能 获取装备模式。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "14.17 获取装备模式（Get DFT Mode）命令功能 获取装备模式。"
+  }
+]

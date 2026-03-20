@@ -1,0 +1,182 @@
+[
+  {
+    "section": "3.15.1",
+    "title": "查询遥测服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService'",
+    "description": "查询服务器当前遥测服务资源。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.2",
+    "title": "修改遥测服务资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/TelemetryService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/TelemetryService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改遥测服务资源，设置是否使能遥测服务。  说明  iBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.3",
+    "title": "查询指标项资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricDefinitions",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricDefinitions'",
+    "description": "查询服务器当前指标项集合资源信息。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.4",
+    "title": "查询指定指标定义资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricDefinitions/id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricDefinitions/id'",
+    "description": "查询服务器当前指定指标定义资源信息。  说明  iBMC300 5.9.0.1及以上版本支持   ## 命令格式  操作类型：GET  URL：https://device_ip/redfish/v1/TelemetryService/MetricDefinitions/id  请求头：  请求消息体：无   ## 参数说明  表3-864查询遥测服务资源信息参数说明",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.5",
+    "title": "查询指标报告定义资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricReportDefinitions",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReportDefinitions'",
+    "description": "查询服务器当前指标报告定义资源信息。  说明  iBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.6",
+    "title": "创建指标报告定义资源信息命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/MetricReportDefinitions",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReportDefinitions' -H 'Content-Type: application/json' -d '{}'",
+    "description": "创建指标报告定义资源信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.7",
+    "title": "修改指定指标报告定义资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/TelemetryService/MetricReportDefinitions/id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReportDefinitions/id' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改服务器当前指定指标报告定义资源信息。  说明 \tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.8",
+    "title": "删除指定指标报告定义",
+    "method": "DELETE",
+    "url": "/redfish/v1/TelemetryService/MetricReportDefinitions/id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReportDefinitions/id'",
+    "description": "删除服务器当前指定指标报告定义。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.15.9",
+    "title": "查询指定指标报告定义资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricReportDefinitions/id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReportDefinitions/id'",
+    "description": "查询服务器当前指定指标报告定义资源信息。  说明 \tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.10",
+    "title": "查询指标报告集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricReports",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReports'",
+    "description": "查询指标报告集合资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.11",
+    "title": "查询指定指标报告资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/MetricReports/id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/MetricReports/id'",
+    "description": "查询服务器当前指标报告集合资源信息。  说明  iBMC300 5.9.0.1及以上版本支持   ## 命令格式  操作类型：GET  URL：https://device_ip/redfish/v1/TelemetryService/MetricReports/id  请求头：  请求消息体：无   ## 参数说明  表3-878查询遥测服务资源信息参数说明",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.12",
+    "title": "查询触发器集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/Triggers",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/Triggers'",
+    "description": "查询服务器当前触发器集合资源信息。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.13",
+    "title": "创建触发器",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/Triggers",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/Triggers' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "创建触发器。  iBMC300 5.9.0.1及以上版本支持   ## 命令格式  操作类型：POST  URL：https://device_ip/redfish/v1/TelemetryService/Triggers  请求头：  请求消息体：   ## 参数说明  表3-882创建触发器参数说明",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.14",
+    "title": "查询指定触发器资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/TelemetryService/Triggers/id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TelemetryService/Triggers/id'",
+    "description": "查询服务器当前指定触发器资源信息。  说明  iBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.15",
+    "title": "修改指定触发器资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/TelemetryService/Triggers/id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/TelemetryService/Triggers/id' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "修改服务器当前指定触发器资源信息。  说明  iBMC300 5.9.0.1及以上版本支持   ## 命令格式  操作类型：PATCH  URL：https://device_ip/redfish/v1/TelemetryService/Triggers/id  请求头：  请求消息体：",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.15.16",
+    "title": "删除指定触发器",
+    "method": "DELETE",
+    "url": "/redfish/v1/TelemetryService/Triggers/id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/TelemetryService/Triggers/id'",
+    "description": "删除服务器当前指定触发器。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.15.17",
+    "title": "提交测试指标报告上报",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/Actions/' -H 'Content-Type: application/json' -d '{  \"RootCertId\": 1 }'",
+    "description": "提交测试指标报告。  说明 \tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.15.18",
+    "title": "清除指标报告",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/Actions/' -H 'Content-Type: application/json' -d '{  \"RootCertId\": 1 }'",
+    "description": "清除指标报告",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.15.19",
+    "title": "恢复指标报告定义到默认值命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"123\",  \"RootCertId\": 1 }'",
+    "description": "恢复指标报告定义到默认值命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.15.20",
+    "title": "恢复触发器到默认值",
+    "method": "POST",
+    "url": "/redfish/v1/TelemetryService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/TelemetryService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"123\",  \"RootCertId\": 1 }'",
+    "description": "恢复触发器到默认值。  说明 \t\t\tiBMC300 5.9.0.1及以上版本支持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  }
+]

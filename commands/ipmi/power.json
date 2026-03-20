@@ -1,0 +1,233 @@
+[
+  {
+    "title": "6.9 设置电源循环间隔（Set Power Cycle Interval）命令功能 设置电源循环间隔。",
+    "netfn": "C",
+    "cmd": "0B",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0B",
+    "description": "6.9 设置电源循环间隔（Set Power Cycle Interval）命令功能 设置电源循环间隔。"
+  },
+  {
+    "title": "6.10 获取功率单元配置（Get Power Unit Configuration）命令功能 获取功率单元配置。",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "6.10 获取功率单元配置（Get Power Unit Configuration）命令功能 获取功率单元配置。"
+  },
+  {
+    "title": "6.12 配置供电信息参数（Set Power Supply Info Configuration） 命令功能 配置供电信息参数。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "6.12 配置供电信息参数（Set Power Supply Info Configuration） 命令功能 配置供电信息参数。"
+  },
+  {
+    "title": "6.33 设置H3C 电源的序列号（Set PSU Serial Number）命令功能 设置H3C电源的序列号 权限说明 无 适用机型 无",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "6.33 设置H3C 电源的序列号（Set PSU Serial Number）命令功能 设置H3C电源的序列号 权限说明 无 适用机型 无"
+  },
+  {
+    "title": "16.1 设置DPU 和服务器一起下电（Chassis Dpu Power Off） 命令功能 关闭DPU Standby供电，并对Host os进行强制下电 参数说明",
+    "netfn": "3A",
+    "cmd": "F5",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3A 0xF5",
+    "description": "16.1 设置DPU 和服务器一起下电（Chassis Dpu Power Off） 命令功能 关闭DPU Standby供电，并对Host os进行强制下电 参数说明"
+  },
+  {
+    "title": "16.2 设置服务器强制启动标识（Set Force Power On Status） 命令功能 设置服务器强制启动标识，取消BIOS等待DPU启动完全，继续启动Host os",
+    "netfn": "3a",
+    "cmd": "f6",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3a 0xf6",
+    "description": "16.2 设置服务器强制启动标识（Set Force Power On Status） 命令功能 设置服务器强制启动标识，取消BIOS等待DPU启动完全，继续启动Host os"
+  },
+  {
+    "title": "获取硬盘电源状态",
+    "netfn": "32",
+    "cmd": "d0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd0",
+    "description": "获取硬盘电源状态"
+  },
+  {
+    "title": "设置硬盘电源状态。",
+    "netfn": "32",
+    "cmd": "d1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd1",
+    "description": "设置硬盘电源状态。"
+  },
+  {
+    "title": "获取电源厂商名称",
+    "netfn": "32",
+    "cmd": "2b",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2b",
+    "description": "获取电源厂商名称"
+  },
+  {
+    "title": "获取电源产品名称",
+    "netfn": "32",
+    "cmd": "2c",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2c",
+    "description": "获取电源产品名称"
+  },
+  {
+    "title": "获取电源产品序列号",
+    "netfn": "32",
+    "cmd": "2d",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2d",
+    "description": "获取电源产品序列号"
+  },
+  {
+    "title": "获取电源生产日期",
+    "netfn": "32",
+    "cmd": "2e",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2e",
+    "description": "获取电源生产日期"
+  },
+  {
+    "title": "获取电源类型",
+    "netfn": "32",
+    "cmd": "2f",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2f",
+    "description": "获取电源类型"
+  },
+  {
+    "title": "获取电源华为编码",
+    "netfn": "32",
+    "cmd": "30",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x30",
+    "description": "获取电源华为编码"
+  },
+  {
+    "title": "命令功能 获取电源Frutype",
+    "netfn": "32",
+    "cmd": "09",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x09",
+    "description": "命令功能 获取电源Frutype"
+  },
+  {
+    "title": "获取电源的丝印",
+    "netfn": "32",
+    "cmd": "a1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xa1",
+    "description": "获取电源的丝印"
+  },
+  {
+    "title": "获取电源电子标签",
+    "netfn": "32",
+    "cmd": "12",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x12",
+    "description": "获取电源电子标签"
+  },
+  {
+    "title": "命令功能 获取电源Fru名称",
+    "netfn": "32",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x60",
+    "description": "命令功能 获取电源Fru名称"
+  },
+  {
+    "title": "命令功能 从Loadinfo获取电源类型",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "命令功能 从Loadinfo获取电源类型"
+  },
+  {
+    "title": "获取电源运行状态",
+    "netfn": "32",
+    "cmd": "4d",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x4d",
+    "description": "获取电源运行状态"
+  },
+  {
+    "title": "获取电源告警状态",
+    "netfn": "32",
+    "cmd": "4e",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x4e",
+    "description": "获取电源告警状态"
+  },
+  {
+    "title": "获取电源的额定功率",
+    "netfn": "32",
+    "cmd": "70",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x70",
+    "description": "获取电源的额定功率"
+  },
+  {
+    "title": "获取电源输出电压",
+    "netfn": "32",
+    "cmd": "35",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x35",
+    "description": "获取电源输出电压"
+  },
+  {
+    "title": "获取电源输出电流",
+    "netfn": "32",
+    "cmd": "36",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x36",
+    "description": "获取电源输出电流"
+  },
+  {
+    "title": "获取电源温度",
+    "netfn": "32",
+    "cmd": "39",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x39",
+    "description": "获取电源温度"
+  },
+  {
+    "title": "获取电源状态",
+    "netfn": "32",
+    "cmd": "31",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x31",
+    "description": "获取电源状态"
+  },
+  {
+    "title": "获取电源在位",
+    "netfn": "32",
+    "cmd": "06",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x06",
+    "description": "获取电源在位"
+  },
+  {
+    "title": "命令功能 设置打开/关闭电源",
+    "netfn": "32",
+    "cmd": "37",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x37",
+    "description": "命令功能 设置打开/关闭电源"
+  },
+  {
+    "title": "获取电源告警数量",
+    "netfn": "32",
+    "cmd": "b9",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xb9",
+    "description": "获取电源告警数量"
+  },
+  {
+    "title": "命令功能 获取电源32位告警码",
+    "netfn": "32",
+    "cmd": "33",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x33",
+    "description": "命令功能 获取电源32位告警码"
+  },
+  {
+    "title": "# 获取1号槽位电源32位告警码",
+    "netfn": "32",
+    "cmd": "97",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x97",
+    "description": "# 获取1号槽位电源32位告警码"
+  },
+  {
+    "title": "获取电源输入功率",
+    "netfn": "32",
+    "cmd": "a3",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xa3",
+    "description": "获取电源输入功率"
+  },
+  {
+    "title": "获取电源输出功率",
+    "netfn": "32",
+    "cmd": "34",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x34",
+    "description": "获取电源输出功率"
+  }
+]

@@ -1,0 +1,584 @@
+[
+  {
+    "section": "7.3.32",
+    "name": "lldpinfo",
+    "title": "查询LLDP 信息",
+    "command": "ipmcget -d lldpinfo",
+    "description": "lldpinfo命令用于查询iBMC的LLDP信息。",
+    "params": [],
+    "example": "ipmcget -d lldpinfo"
+  },
+  {
+    "section": "7.4.5",
+    "name": "trap -d trapiteminfo",
+    "title": "查询Trap 上报目的地址信息",
+    "command": "ipmcget -t trap -d trapiteminfo",
+    "description": "trap -d trapiteminfo命令用于查询SNMP trap上报信息的目的IP地址、上报端口、使 能状态。",
+    "params": [],
+    "example": "ipmcget -t trap -d trapiteminfo"
+  },
+  {
+    "section": "7.5.1",
+    "name": "syslog -d state",
+    "title": "查询和设置syslog 使能状态",
+    "command": "ipmcget -t syslog -d state [-v destination]",
+    "description": "syslog -d state命令用于查询和设置iBMC的syslog上报功能的使能状态。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示syslog上报通道的编",
+      "启用或禁用syslog功",
+      "disabled",
+      "表示禁用syslog上报功",
+      "enabled",
+      "表示启用syslog上报功"
+    ],
+    "example": "ipmcset -t syslog -d state -v enabled"
+  },
+  {
+    "section": "7.5.3",
+    "name": "syslog -d identity",
+    "title": "查询和设置syslog 主机标识",
+    "command": "ipmcget -t syslog -d identity",
+    "description": "syslog -d identity命令用于查询和设置syslog日志上报时使用的主机标识。",
+    "params": [
+      "参数说明",
+      "option",
+      "表示要设置的主机标",
+      "识"
+    ],
+    "example": "ipmcget -t syslog -d identity"
+  },
+  {
+    "section": "7.5.4",
+    "name": "syslog -d protocol",
+    "title": "查询和设置传输协议类型",
+    "command": "ipmcget -t syslog -d protocol",
+    "description": "syslog -d protocol命令用于查询和设置上报syslog日志时采用的传输协议类型。",
+    "params": [
+      "参数说明",
+      "option"
+    ],
+    "example": "ipmcget -t syslog -d protocol"
+  },
+  {
+    "section": "7.7.9",
+    "name": "clearcmos",
+    "title": "清除BIOS Flash",
+    "command": "ipmcset -d clearcmos",
+    "description": "clearcmos命令用于清除BIOS Flash上的用户自定义信息。",
+    "params": [],
+    "example": "ipmcset -d clearcmos"
+  },
+  {
+    "section": "7.7.10",
+    "name": "ctrlinfo",
+    "title": "查询RAID 控制器信息",
+    "command": "ipmcget -t storage -d ctrlinfo -v <option>",
+    "description": "ctrlinfo用来查询RAID控制器信息。",
+    "params": [
+      "参数说明",
+      "option",
+      "待查询的RAID控制器"
+    ],
+    "example": "ipmcget -t storage -d ctrlinfo -v 0"
+  },
+  {
+    "section": "7.7.11",
+    "name": "ldinfo",
+    "title": "查询逻辑盘信息",
+    "command": "ipmcget -t storage -d ldinfo -v <ctrlid> <option>",
+    "description": "ldinfo用来查询RAID控制器所管理的逻辑盘的信息。",
+    "params": [
+      "参数说明",
+      "ctrlid",
+      "待查询逻辑盘所属",
+      "option",
+      "待查询的逻辑盘的"
+    ],
+    "example": "ipmcget -t storage -d ldinfo -v 0 0"
+  },
+  {
+    "section": "7.7.12",
+    "name": "pdinfo",
+    "title": "查询物理盘信息",
+    "command": "ipmcget -t storage -d pdinfo -v <option>",
+    "description": "pdinfo用来查询物理盘的信息。",
+    "params": [
+      "参数说明",
+      "option",
+      "待查询的物理盘的"
+    ],
+    "example": "ipmcget -t storage -d pdinfo -v 2"
+  },
+  {
+    "section": "7.7.13",
+    "name": "arrayinfo",
+    "title": "查询磁盘组信息",
+    "command": "ipmcget -t storage -d arrayinfo -v <control_id> <option>",
+    "description": "arrayinfo用来查询磁盘组的信息。",
+    "params": [
+      "参数说明",
+      "control_id",
+      "磁盘组所在控制器的",
+      "ID",
+      "option",
+      "待查询的磁盘组的"
+    ],
+    "example": "ipmcget -t storage -d arrayinfo -v 0 1"
+  },
+  {
+    "section": "7.7.14",
+    "name": "createld",
+    "title": "创建逻辑盘",
+    "command": "ipmcset -t storage -d createld -v <control_id> -rl <raidlevel> -pd <pd_id> [-",
+    "description": "createld用于使用空闲物理盘创建虚拟盘。",
+    "params": [
+      "参数说明",
+      "control_id",
+      "RAID控制器的ID",
+      "raidlevel",
+      "逻辑盘的RAID级别",
+      "pd_id",
+      "逻辑盘的成员盘列表",
+      "span_num",
+      "逻辑盘的子组个数",
+      "ldname",
+      "逻辑盘名称",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "292",
+      "参数说明",
+      "capative",
+      "逻辑盘容量",
+      "stripesize",
+      "逻辑盘条带大小",
+      "rpvalue",
+      "逻辑盘的读策略",
+      "wpvalue",
+      "逻辑盘的写策略",
+      "Back",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "293",
+      "参数说明",
+      "iopvalue",
+      "逻辑盘的IO策略",
+      "apvalue",
+      "逻辑盘的访问策略",
+      "dcpvalue",
+      "逻辑盘的物理盘缓存",
+      "策略",
+      "initmode",
+      "逻辑盘的初始化方式"
+    ],
+    "example": "ipmcset -t storage -d createld -v <control_id> -rl <raidlevel> -pd <pd_id> [-"
+  },
+  {
+    "section": "7.7.15",
+    "name": "addld",
+    "title": "添加逻辑盘",
+    "command": "ipmcset -t storage -d addld -v <control_id> -array <arrayid> [-name <ldname>]",
+    "description": "addld用于在已有逻辑盘的磁盘组上添加新的逻辑盘。",
+    "params": [
+      "参数说明",
+      "control_id",
+      "RAID控制器的ID",
+      "arrayid",
+      "待添加逻辑盘的磁盘",
+      "组的ID",
+      "ldname",
+      "逻辑盘名称",
+      "capative",
+      "逻辑盘容量",
+      "stripesize",
+      "逻辑盘条带大小",
+      "rpvalue",
+      "逻辑盘的读策略",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "295",
+      "参数说明",
+      "wpvalue",
+      "逻辑盘的写策略",
+      "Back",
+      "iopvalue",
+      "逻辑盘的IO策略",
+      "apvalue",
+      "逻辑盘的访问策略",
+      "dcpvalue",
+      "逻辑盘的物理盘缓存",
+      "策略",
+      "initmode",
+      "逻辑盘的初始化方式",
+      "blockid",
+      "待添加逻辑盘的磁盘",
+      "组的空闲块ID"
+    ],
+    "example": "ipmcset -t storage -d addld -v <control_id> -array <arrayid> [-name <ldname>]"
+  },
+  {
+    "section": "7.7.16",
+    "name": "deleteld",
+    "title": "删除逻辑盘",
+    "command": "ipmcset -t storage -d deleteld -v <control_id> <ldid>",
+    "description": "deleteld用于删除RAID卡管理的逻辑盘。",
+    "params": [
+      "参数说明",
+      "control_id",
+      "RAID控制器的ID",
+      "ldid",
+      "待删除的逻辑盘的ID"
+    ],
+    "example": "ipmcset -t storage -d deleteld -v <control_id> <ldid>"
+  },
+  {
+    "section": "7.7.20",
+    "name": "npuworkmode",
+    "title": "查询和设置NPU 芯片工作模式",
+    "command": "ipmcget -d npuworkmode",
+    "description": "npuworkmode命令用于查询和设置NPU芯片的工作模式。",
+    "params": [
+      "参数说明",
+      "option",
+      "NPU芯片的工作模式",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "301"
+    ],
+    "example": "ipmcset -d npuworkmode -v 0"
+  },
+  {
+    "section": "7.8.2",
+    "name": "timezone",
+    "title": "设置iBMC 时区",
+    "command": "ipmcset -d timezone -v <timezone>",
+    "description": "timezone命令用来设置iBMC时区。",
+    "params": [
+      "参数说明",
+      "timezone",
+      "当输入的是时间偏移中不带"
+    ],
+    "example": "ipmcset -d timezone -v +8:00"
+  },
+  {
+    "section": "7.8.4",
+    "name": "version",
+    "title": "查询设备的版本信息",
+    "command": "ipmcget -d version",
+    "description": "version命令用来查询设备的版本信息。",
+    "params": [],
+    "example": "ipmcget -d version"
+  },
+  {
+    "section": "7.8.5",
+    "name": "fruinfo",
+    "title": "查询FRU 信息",
+    "command": "ipmcget [-t fru0] -d fruinfo",
+    "description": "fruinfo命令用于查询除电源模块之外的其它FRU的信息，包括主板、RAID卡、硬盘背 板、PCIe Riser卡等。",
+    "params": [],
+    "example": "ipmcget -d fruinfo"
+  },
+  {
+    "section": "7.8.14",
+    "name": "blackbox",
+    "title": "下载黑匣子数据",
+    "command": "ipmcget -d blackbox",
+    "description": "blackbox命令用来下载黑匣子数据。",
+    "params": [],
+    "example": "ipmcget -d blackbox"
+  },
+  {
+    "section": "7.8.16",
+    "name": "diaginfo",
+    "title": "一键收集信息",
+    "command": "ipmcget -d diaginfo [-v destination]",
+    "description": "diaginfo命令用来一键收集信息，包括iBMC相关的配置信息、版本信息和日志等。一 键收集信息的更多内容请参见本文档6.10 一键收集信息说明。",
+    "params": [
+      "参数说明",
+      "destination",
+      "将一键收集的信息导出到"
+    ],
+    "example": "ipmcget -d diaginfo -v cifs://test:123@10.10.10.1/CIFSshare/"
+  },
+  {
+    "section": "7.8.17",
+    "name": "restore",
+    "title": "恢复iBMC 出厂设置",
+    "command": "ipmcset -d restore",
+    "description": "restore命令用来恢复iBMC出厂设置。执行此命令后iBMC会重启。",
+    "params": [],
+    "example": "ipmcset -d restore"
+  },
+  {
+    "section": "7.8.19",
+    "name": "securityenhance -d\nmasterkeyupdateinterval",
+    "title": "查询和设置主密钥自动更新间隔",
+    "command": "ipmcget -t securityenhance -d masterkeyupdateinterval",
+    "description": "securityenhance -d masterkeyupdateinterval命令用来查询和设置主密钥自动更新 间隔。",
+    "params": [
+      "参数说明",
+      "interval",
+      "表示自动更新间隔"
+    ],
+    "example": "ipmcget -t securityenhance -d masterkeyupdateinterval"
+  },
+  {
+    "section": "7.8.21",
+    "name": "biosprint",
+    "title": "查询和设置BIOS 全打印开关状态",
+    "command": "ipmcget -t maintenance -d biosprint",
+    "description": "biosprint命令用于查询和设置BIOS全打印开关状态。",
+    "params": [
+      "参数说明",
+      "BIOS全打印开关状态",
+      "全打印的开启和关闭取",
+      "决于本地菜单设置标志"
+    ],
+    "example": "ipmcset -t maintenance -d biosprint -v 1"
+  },
+  {
+    "section": "7.8.23",
+    "name": "retiresystem",
+    "title": "设置产品报废",
+    "command": "ipmcset -t maintenance -d retiresystem -v <option>",
+    "description": "retiresystem命令用于设置产品报废。",
+    "params": [
+      "参数说明",
+      "销毁日志选项"
+    ],
+    "example": "ipmcset -t maintenance -d retiresystem -v 0"
+  },
+  {
+    "section": "7.8.24",
+    "name": "retiresystem",
+    "title": "查询产品报废进度",
+    "command": "ipmcget -t maintenance -d retiresystem",
+    "description": "retiresystem命令用于查询产品报废任务信息。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 321   ---  ## Page 333",
+    "params": [],
+    "example": "ipmcset -t maintenance -d retiresystem"
+  },
+  {
+    "section": "7.8.25",
+    "name": "listcsr",
+    "title": "查询CSR 列表",
+    "command": "ipmcget -t maintenance -d listcsr",
+    "description": "listcsr命令用于查询在位的天池组件信息。",
+    "params": [],
+    "example": "ipmcget -t maintenance -d listcsr"
+  },
+  {
+    "section": "7.8.26",
+    "name": "importcsr",
+    "title": "导入CSR",
+    "command": "ipmcset -t maintenance -d importcsr -v <option> <filepath>",
+    "description": "importcsr命令用于导入CSR到eeprom。",
+    "params": [
+      "参数说明",
+      "option",
+      "待导入固件的组件标识",
+      "命令查询",
+      "filepath",
+      "绝对路径"
+    ],
+    "example": "ipmcset -t maintenance -d importcsr -v Connector_CLU_1_0101 /tmp/image.hpm"
+  },
+  {
+    "section": "7.9.15",
+    "name": "weakpwddic",
+    "title": "设置弱口令字典认证使能状态",
+    "command": "ipmcset -t user -d weakpwddic -v <enabled | disabled>",
+    "description": "weakpwddic命令用于设置弱口令字典认证功能的使能状态。 出现在弱口令字典中的字符串不能被设置为： ● 本地用户的密码 ● SNMP v1/v2c的只读团体名、读写团体名 ● SNMP v3加密密码",
+    "params": [
+      "参数说明",
+      "enabled",
+      "使能弱口令字典认证功能",
+      "disabled",
+      "禁止弱口令字典认证功能"
+    ],
+    "example": "ipmcset -t user -d weakpwddic -v <enabled | disabled>"
+  },
+  {
+    "section": "7.9.16",
+    "name": "weakpwddic -v export",
+    "title": "导出弱口令字典",
+    "command": "ipmcset -t user -d weakpwddic -v export <filepath | file_URL>",
+    "description": "weakpwddic -v export命令用于导出iBMC的弱口令字典。",
+    "params": [
+      "参数说明",
+      "filepath",
+      "将弱口令字典导出到iBMC",
+      "file_URL",
+      "将弱口令字典导出到远程",
+      "iBMC当前仅支持SMB"
+    ],
+    "example": "ipmcset -t user -d weakpwddic -v export <filepath | file_URL>"
+  },
+  {
+    "section": "7.9.17",
+    "name": "weakpwddic -v import",
+    "title": "导入弱口令字典",
+    "command": "ipmcset -t user -d weakpwddic -v import <filepath | file_URL>",
+    "description": "weakpwddic -v import命令用于导入iBMC的弱口令字典。",
+    "params": [
+      "参数说明",
+      "filepath",
+      "将弱口令字典导入iBMC",
+      "file_URL",
+      "将弱口令字典导入iBMC",
+      "iBMC当前仅支持SMB"
+    ],
+    "example": "ipmcset -t user -d weakpwddic -v import <filepath | file_URL>"
+  },
+  {
+    "section": "7.11.2",
+    "name": "identify",
+    "title": "设置UID 指示灯状态",
+    "command": "ipmcset -d identify [-v {time | force} ]",
+    "description": "identify命令用于设置UID指示灯状态。",
+    "params": [
+      "参数说明",
+      "time",
+      "表示UID指示灯闪烁时",
+      "force",
+      "表示永久点亮UID指示"
+    ],
+    "example": "ipmcset -d identify -v force"
+  },
+  {
+    "section": "7.15.1",
+    "name": "sol -d activate",
+    "title": "建立SOL 会话",
+    "command": "ipmcset -t sol -d activate -v <option> <mode>",
+    "description": "sol -d activate命令用于建立SOL会话连接系统或iBMC串口。",
+    "params": [
+      "参数说明",
+      "option",
+      "板串口切换为IMU串口",
+      "不同服务器的参数取值及",
+      "串口的连接方向可能不",
+      "sol",
+      "参数取值及串口的连接方",
+      "向",
+      "mode",
+      "在任意一路SOL会话中",
+      "许同时存在一路SOL会"
+    ],
+    "example": "ipmcset -t sol -d activate -v 1 0"
+  },
+  {
+    "section": "7.15.2",
+    "name": "sol -d deactivate",
+    "title": "注销SOL 会话",
+    "command": "ipmcset -t sol -d deactivate -v <index>",
+    "description": "sol -d deactivate命令用于强制注销SOL会话。",
+    "params": [
+      "参数说明",
+      "index"
+    ],
+    "example": "ipmcset -t sol -d deactivate -v 1"
+  },
+  {
+    "section": "7.15.4",
+    "name": "sol -d session",
+    "title": "查询SOL 会话列表",
+    "command": "ipmcget -t sol -d session",
+    "description": "sol -d session命令用于查询SOL会话列表。",
+    "params": [],
+    "example": "ipmcget -t sol -d session"
+  },
+  {
+    "section": "7.16.1",
+    "name": "lsw -d reset",
+    "title": "复位LSW 芯片",
+    "command": "ipmcset -t lsw -d reset -v <device><type>",
+    "description": "lsw -d reset命令用于复位并修复LSW芯片。",
+    "params": [
+      "参数说明",
+      "device",
+      "复位器件",
+      "type",
+      "复位类型"
+    ],
+    "example": "ipmcset -t lsw -d reset -v 1 1"
+  },
+  {
+    "section": "7.17.1",
+    "name": "help",
+    "title": "查看帮助信息",
+    "command": "ipmcget -d help",
+    "description": "help命令用于查看帮助信息，也可以查看某条命令的具体使用方法。",
+    "params": [
+      "参数说明",
+      "command",
+      "具体命令"
+    ],
+    "example": "ipmcget -d help"
+  },
+  {
+    "section": "7.17.2",
+    "name": "exit",
+    "title": "断开连接",
+    "command": "ipmcget -d exit",
+    "description": "exit命令用于断开客户端与iBMC的连接。",
+    "params": [],
+    "example": "ipmcget -d exit"
+  },
+  {
+    "section": "7.17.4",
+    "name": "free",
+    "title": "free 命令",
+    "command": "ipmcget -d free",
+    "description": "该命令用于执行Linux中的free命令。",
+    "params": [],
+    "example": "ipmcget -d free"
+  },
+  {
+    "section": "7.17.5",
+    "name": "netstat",
+    "title": "netstat 命令",
+    "command": "ipmcget -d netstat",
+    "description": "该命令用于执行Linux中的netstat命令。",
+    "params": [],
+    "example": "ipmcget -d netstat"
+  },
+  {
+    "section": "7.17.6",
+    "name": "df",
+    "title": "df 命令",
+    "command": "ipmcget -d df",
+    "description": "该命令用于执行Linux中的df命令。",
+    "params": [],
+    "example": "ipmcget -d df"
+  },
+  {
+    "section": "7.17.7",
+    "name": "top",
+    "title": "top 命令",
+    "command": "ipmcget -d top",
+    "description": "该命令用于执行Linux中的top命令。",
+    "params": [],
+    "example": "ipmcget -d top"
+  },
+  {
+    "section": "7.17.8",
+    "name": "notimeout",
+    "title": "禁止CLP 超时",
+    "command": "ipmcget -d notimeout",
+    "description": "notimeout命令用于禁止CLP超时，确保可以在CLP命令行进行长时间操作。",
+    "params": [],
+    "example": "ipmcget -d notimeout"
+  }
+]

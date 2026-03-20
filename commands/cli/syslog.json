@@ -1,0 +1,110 @@
+[
+  {
+    "chapter": "7.5",
+    "section": "7.5.1",
+    "name": "syslog -d state",
+    "title": "查询和设置syslog 使能状态",
+    "command": "ipmcget -t syslog -d state [-v destination]",
+    "description": "syslog -d state命令用于查询和设置iBMC的syslog上报功能的使能状态。",
+    "example": "ipmcset -t syslog -d state -v enabled"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.2",
+    "name": "syslog -d auth",
+    "title": "查询和设置证书认证方式",
+    "command": "ipmcget -t syslog -d auth",
+    "description": "syslog -d auth命令用于查询和设置证书认证方式。",
+    "example": "ipmcset -t syslog -d auth -v 2"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.3",
+    "name": "syslog -d identity",
+    "title": "查询和设置syslog 主机标识",
+    "command": "ipmcget -t syslog -d identity",
+    "description": "syslog -d identity命令用于查询和设置syslog日志上报时使用的主机标识。",
+    "example": "ipmcget -t syslog -d identity"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.4",
+    "name": "syslog -d protocol",
+    "title": "查询和设置传输协议类型",
+    "command": "ipmcget -t syslog -d protocol",
+    "description": "syslog -d protocol命令用于查询和设置上报syslog日志时采用的传输协议类型。",
+    "example": "ipmcget -t syslog -d protocol"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.5",
+    "name": "syslog -d severity",
+    "title": "查询和设置上报日志的级别",
+    "command": "ipmcget -t syslog -d severity",
+    "description": "syslog -d severity命令用于查询和设置通过syslog上报的日志的级别。",
+    "example": "ipmcset -t syslog -d severity -v critical"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.6",
+    "name": "syslog -d rootcertificate",
+    "title": "查询服务器根证书",
+    "command": "ipmcget -t syslog -d rootcertificate",
+    "description": "syslog -d rootcertificate命令可查询当前根证书信息。",
+    "example": "ipmcget -t syslog -d rootcertificate"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.7",
+    "name": "syslog -d clientcertificate",
+    "title": "查询本地证书",
+    "command": "ipmcget -t syslog -d clientcertificate",
+    "description": "syslog -d clientcertificate命令可查询本地证书信息。",
+    "example": "ipmcget -t syslog -d clientcertificate"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.8",
+    "name": "syslog -d address",
+    "title": "设置syslog 服务器地址",
+    "command": "ipmcset -t syslog -d address -v <destination> <ipaddr>",
+    "description": "syslog -d address命令用于设置syslog服务器地址。",
+    "example": "ipmcset -t syslog -d address -v <destination> <ipaddr>"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.9",
+    "name": "syslog -d port",
+    "title": "设置syslog 服务器端口号",
+    "command": "ipmcset -t syslog -d port -v <destination> <portvalue>",
+    "description": "syslog -d port命令用于设置syslog服务器端口号。",
+    "example": "ipmcset -t syslog -d port -v <destination> <portvalue>"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.10",
+    "name": "syslog -d logtype",
+    "title": "设置上报日志类型",
+    "command": "ipmcset -t syslog -d logtype -v <destination> <type>",
+    "description": "syslog -d logtype命令用于设置通过syslog报文上报的日志的类型。",
+    "example": "ipmcset -t syslog -d logtype -v <destination> <type>"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.11",
+    "name": "syslog -d test",
+    "title": "测试syslog 服务器是否可连接",
+    "command": "ipmcset -t syslog -d test -v <destination>",
+    "description": "syslog -d test命令用于测试配置的syslog服务器是否可连接。",
+    "example": "ipmcset -t syslog -d test -v <destination>"
+  },
+  {
+    "chapter": "7.5",
+    "section": "7.5.12",
+    "name": "syslog -d iteminfo",
+    "title": "查询所有syslog 上报通道配置信息",
+    "command": "ipmcget -t syslog -d iteminfo",
+    "description": "syslog -d iteminfo命令用于查询4条syslog日志上报通道的配置情况。",
+    "example": "ipmcget -t syslog -d iteminfo"
+  }
+]

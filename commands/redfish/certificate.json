@@ -1,0 +1,65 @@
+[
+  {
+    "section": "3.12.1",
+    "title": "查询证书服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/CertificateService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/CertificateService'",
+    "description": "查询服务器当前证书服务的信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.2",
+    "title": "修改证书服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/CertificateService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/CertificateService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改服务器当前证书服务的相关属性。",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.3",
+    "title": "查询证书路径信息",
+    "method": "GET",
+    "url": "/redfish/v1/CertificateService/CertificateLocations",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/CertificateService/CertificateLocations'",
+    "description": "查询服务器当前各业务使用的所有证书资源路径信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.4",
+    "title": "导入CA 证书",
+    "method": "POST",
+    "url": "/redfish/v1/CertificateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/CertificateService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "CA证书导入。所有BMC业务使用的CA证书进行统一管理，不再按业务单独提供各自证书管理接口。此接口导入证书会影响到其他所有包含CA证书（远程HTTPS服务器、Syslog服务端证书、Smtp服务端证书、LDAP域控制器证书、双因素根证书、证书更  新）的接口。   ## 命令格式  操作类型：POST  URL：https://device_ip/redfish/v1/CertificateSer",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.5",
+    "title": "删除CA 证书",
+    "method": "POST",
+    "url": "/redfish/v1/CertificateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/CertificateService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "CA证书删除。",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.6",
+    "title": "导入CA 证书的吊销列表",
+    "method": "POST",
+    "url": "/redfish/v1/CertificateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/CertificateService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导入CA证书的吊销列表。证书吊销列表和所有其他BMC业务公用，此接口导入吊销列表会影响到其他包含CA证书吊销列表的接口。",
+    "request_body": ""
+  },
+  {
+    "section": "3.12.7",
+    "title": "生成CSR",
+    "method": "POST",
+    "url": "/redfish/v1/CertificateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/CertificateService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "生成SSL证书的CSR。",
+    "request_body": ""
+  }
+]

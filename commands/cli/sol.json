@@ -1,0 +1,47 @@
+[
+  {
+    "chapter": "7.15",
+    "section": "7.15.1",
+    "name": "sol -d activate",
+    "title": "建立SOL 会话",
+    "command": "ipmcset -t sol -d activate -v <option> <mode>",
+    "description": "sol -d activate命令用于建立SOL会话连接系统或iBMC串口。",
+    "example": "ipmcset -t sol -d activate -v 1 0"
+  },
+  {
+    "chapter": "7.15",
+    "section": "7.15.2",
+    "name": "sol -d deactivate",
+    "title": "注销SOL 会话",
+    "command": "ipmcset -t sol -d deactivate -v <index>",
+    "description": "sol -d deactivate命令用于强制注销SOL会话。",
+    "example": "ipmcset -t sol -d deactivate -v 1"
+  },
+  {
+    "chapter": "7.15",
+    "section": "7.15.3",
+    "name": "sol -d timeout",
+    "title": "设置SOL 会话超时时间",
+    "command": "ipmcset -t sol -d timeout -v <value>",
+    "description": "sol -d timeout命令用于设置SOL会话超时时间。设置超时时间后，用户在SOL会话中 无输入并达到超时时间后，SOL会话将退出并返回iBMC命令行界面。",
+    "example": "ipmcset -t sol -d timeout -v 20"
+  },
+  {
+    "chapter": "7.15",
+    "section": "7.15.4",
+    "name": "sol -d session",
+    "title": "查询SOL 会话列表",
+    "command": "ipmcget -t sol -d session",
+    "description": "sol -d session命令用于查询SOL会话列表。",
+    "example": "ipmcget -t sol -d session"
+  },
+  {
+    "chapter": "7.15",
+    "section": "7.15.5",
+    "name": "sol -d info",
+    "title": "查询SOL 会话配置信息",
+    "command": "ipmcget -t sol -d info",
+    "description": "sol -d info命令用于查询SOL会话配置信息，如查询SOL会话超时时间。",
+    "example": "ipmcget -t sol -d info"
+  }
+]

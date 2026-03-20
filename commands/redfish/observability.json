@@ -1,0 +1,29 @@
+[
+  {
+    "section": "3.17.1",
+    "title": "查询可观测服务配置资源",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/ObservabilityService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/ObservabilityService'",
+    "description": "查询服务器当前可观测服务配置资源。  说明  iBMC300 5.10.0.1及以上版本，当前只针对BMC系统提供可观测服务能力",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCA3.crl\"\n}"
+  },
+  {
+    "section": "3.17.2",
+    "title": "设置可观测服务配置资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/Oem/Huawei/ObservabilityService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Oem/Huawei/ObservabilityService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改服务器当前可观测服务配置资源。  说明  iBMC300 5.10.0.1及以上版本，当前只针对BMC系统提供可观测服务能力命令格式 操作类型：PATCH  URL：https://device_ip/redfish/v1/Oem/Huawei/ObservabilityService请求头：  请求消息体：",
+    "request_body": ""
+  },
+  {
+    "section": "3.17.3",
+    "title": "发送可观测服务测试报文",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/ObservabilityService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/ObservabilityService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "发送可观测服务的测试报文，测试连通性。  说明  iBMC300 5.10.0.1及以上版本，当前只针对BMC系统提供可观测服务能力",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  }
+]

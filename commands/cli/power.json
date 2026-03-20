@@ -1,0 +1,111 @@
+[
+  {
+    "section": "7.3.14",
+    "name": "reset",
+    "title": "重启iBMC 管理系统",
+    "command": "ipmcset -d reset",
+    "description": "reset命令用来重启iBMC管理系统。",
+    "params": [],
+    "example": "ipmcset -d reset"
+  },
+  {
+    "section": "7.7.2",
+    "name": "frucontrol",
+    "title": "设置服务器重启方式",
+    "command": "ipmcset [-t fru0] -d frucontrol -v <option>",
+    "description": "frucontrol命令设置服务器的重启方式。",
+    "params": [
+      "参数说明",
+      "option",
+      "服务器重启方式",
+      "器",
+      "电服务器"
+    ],
+    "example": "ipmcset -d frucontrol -v 0"
+  },
+  {
+    "section": "7.7.3",
+    "name": "powerstate",
+    "title": "查询和设置服务器上下电状态",
+    "command": "ipmcget [-t fru0] -d powerstate",
+    "description": "powerstate命令用于查询和控制服务器的上电和下电状态。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 278   ---  ## Page 290",
+    "params": [
+      "参数说明",
+      "option",
+      "要对服务器进行的操作"
+    ],
+    "example": "ipmcset -d powerstate -v 1"
+  },
+  {
+    "section": "7.7.4",
+    "name": "shutdowntimeout",
+    "title": "查询和设置服务器的下电时限",
+    "command": "ipmcget [-t fru0] -d shutdowntimeout",
+    "description": "shutdowntimeout命令用来查询和设置服务器的下电时限。 下电时限：执行下电操作后，iBMC系统等待操作系统下电的时间。如果超过该时间操 作系统仍未自动下电，iBMC会强制执行下电操作。",
+    "params": [
+      "参数说明",
+      "time"
+    ],
+    "example": "ipmcset -d shutdowntimeout -v 600"
+  },
+  {
+    "section": "7.7.5",
+    "name": "frucontrol",
+    "title": "设置全域重启方式",
+    "command": "ipmcset -t fru4 -d frucontrol -v <option>",
+    "description": "frucontrol命令进行全域重启方式。",
+    "params": [
+      "参数说明",
+      "option",
+      "全域重启方式",
+      "上电",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "280"
+    ],
+    "example": "ipmcset -t fru4 -d frucontrol -v 0"
+  },
+  {
+    "section": "7.7.6",
+    "name": "powerstate",
+    "title": "设置全域下电",
+    "command": "ipmcset -t fru4 -d powerstate -v <option>",
+    "description": "powerstate命令进行全域下电。",
+    "params": [
+      "参数说明",
+      "option",
+      "全域下电"
+    ],
+    "example": "ipmcset -t fru4 -d frucontrol -v 0"
+  },
+  {
+    "section": "7.8.20",
+    "name": "poweronlock",
+    "title": "查询和清除上电锁的锁定状态",
+    "command": "ipmcget -t maintenance -d poweronlock",
+    "description": "默认状态下，若服务器在指定时间内未完成上电，则通过iBMC为服务器上电的功能被 锁定，服务器将无法通过iBMC上电。 poweronlock命令用来查询此上电锁的锁定状态，并可清除此上电锁，取消上述限 制。",
+    "params": [],
+    "example": "ipmcget -t maintenance -d poweronlock"
+  },
+  {
+    "section": "7.8.22",
+    "name": "resetiME",
+    "title": "重启鲲鹏智能管理引擎",
+    "command": "ipmcset -t maintenance -d resetiME",
+    "description": "resetiME命令用于重启鲲鹏智能管理引擎，当鲲鹏智能管理引擎无法正常运行时，可 使用该命令将其重启。",
+    "params": [],
+    "example": "ipmcset -t maintenance -d resetiME"
+  },
+  {
+    "section": "7.14.1",
+    "name": "psuinfo",
+    "title": "查询电源具体信息",
+    "command": "ipmcget -d psuinfo",
+    "description": "psuinfo命令用来获取电源信息。",
+    "params": [],
+    "example": "ipmcget -d psuinfo"
+  }
+]

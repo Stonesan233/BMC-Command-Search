@@ -1,0 +1,47 @@
+[
+  {
+    "section": "3.13.1",
+    "title": "查询资源服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/AssetService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/AssetService'",
+    "description": "查询服务器当前资源服务信息。",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.13.2",
+    "title": "查询硬件资产清单信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/AssetService/AssetList",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/AssetService/AssetList'",
+    "description": "查询服务器当前硬件资产信息。",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.13.3",
+    "title": "查询硬件资产变更信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/AssetService/AssetChange",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/AssetService/AssetChange'",
+    "description": "查询服务器当前资产变更信息",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.13.4",
+    "title": "刷新硬件资产变更信息",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/AssetService/AssetChange/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/AssetService/AssetChange/' -H 'Content-Type: application/json' -d '{  \"HostName\": \"huawei\" }'",
+    "description": "刷新服务器当前资产变更信息。",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.13.5",
+    "title": "确认供应链配置检查信息命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/AssetService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/AssetService/Actions/' -H 'Content-Type: application/json' -d '{  \"HostName\": \"huawei\" }'",
+    "description": "确认供应链配置检查信息命令功能",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  }
+]

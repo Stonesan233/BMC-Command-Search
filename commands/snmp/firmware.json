@@ -1,0 +1,18 @@
+[
+  {
+    "table_id": "11",
+    "table_name": "firmwareProperty",
+    "oid": "iso(1).org(3).dod(6).internet(1).private(4).enterprises(1).huawei(2011).products(2) .hwServer(235).hwBMC(1).hwiBMC(1).firmwareProperty(11)",
+    "command": "snmpwalk -v2c -c public <bmc_ip> .1.3.6.1.4.1.2011.2.235.1.1.11",
+    "description": "固件版本信息，包括固件名称、固件类型、固件发布时间日期、固件版本、固件位置号信息管理。  firmwareProperty表节点的OID： iso(1).org(3).dod(6).internet(1).private(4).enterprises(1).huawei(2011).products(2) .hwServer(235).hwBMC(1).hwiBMC(1).firmwareProp",
+    "nodes": []
+  },
+  {
+    "table_id": "28",
+    "table_name": "firmwareUpgrade",
+    "oid": "iso(1).org(3).dod(6).internet(1).private(4).enterprises(1).huawei(2011).products(2) .hwServer(235).hwBMC(1).hwiBMC(1). firmwareUpgrade (30)",
+    "command": "snmpwalk -v2c -c public <bmc_ip> .1.3.6.1.4.1.2011.2.235.1.1.28",
+    "description": "firmwareUpgrade提供升级功能，其子节点firmwareUpgradeStart为启动升级功能, firmwareUpgradeState查询升级状态及进度，firmwareUpgradeDetailedResults查询详细升级结果。  firmwareUpgrade模块节点的OID： iso(1).org(3).dod(6).internet(1).private(4).enter",
+    "nodes": []
+  }
+]

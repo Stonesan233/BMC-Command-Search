@@ -1,0 +1,308 @@
+[
+  {
+    "section": "7.3.19",
+    "name": "service -d state",
+    "title": "设置服务状态",
+    "command": "ipmcset -t service -d state -v <option> <enabled | disabled>",
+    "description": "service -d state命令用于设置iBMC的服务状态。",
+    "params": [
+      "参数说明",
+      "option",
+      "服务类型",
+      "enabled",
+      "启用服务",
+      "disabled",
+      "禁用服务"
+    ],
+    "example": "ipmcset -t service -d state -v http enabled"
+  },
+  {
+    "section": "7.3.21",
+    "name": "service -d list",
+    "title": "查询服务状态",
+    "command": "ipmcget -t service -d list",
+    "description": "service -d list命令用于查询服务状态。",
+    "params": [
+      "无",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "249"
+    ],
+    "example": "ipmcget -t service -d list"
+  },
+  {
+    "section": "7.4.1",
+    "name": "trap -d state",
+    "title": "查询和设置SNMP trap 状态",
+    "command": "ipmcget -t trap -d state [-v destination]",
+    "description": "trap -d state命令用于查询和设置iBMC的SNMP trap功能的使能和禁止状态。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示SNMP",
+      "disabled",
+      "表示禁用SNMP",
+      "enabled",
+      "表示启用SNMP"
+    ],
+    "example": "ipmcset -t trap -d state -v 1 disabled"
+  },
+  {
+    "section": "7.4.3",
+    "name": "trap -d community",
+    "title": "设置SNMP trap 团体名称",
+    "command": "ipmcset -t trap -d community",
+    "description": "trap -d community命令用于设置iBMC的SNMP trap团体名称。",
+    "params": [
+      "参数说明",
+      "Community",
+      "表示SNMP",
+      "硬件产品",
+      "不开启密码检查时的取值",
+      "除空格外的特殊字符组",
+      "开启密码检查时的取值原",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "260"
+    ],
+    "example": "ipmcset -t trap -d community"
+  },
+  {
+    "section": "7.4.6",
+    "name": "trap -d version",
+    "title": "查询和设置SNMP trap 版本信息",
+    "command": "ipmcget -t trap -d version",
+    "description": "trap -d version命令用于查询和设置SNMP trap版本信息。",
+    "params": [
+      "参数说明",
+      "V1",
+      "表示SNMP",
+      "V2C",
+      "表示SNMP",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "262",
+      "参数说明",
+      "V3",
+      "表示SNMP"
+    ],
+    "example": "ipmcset -t trap -d version -v V2C"
+  },
+  {
+    "section": "7.4.7",
+    "name": "trap -d severity",
+    "title": "查询和设置SNMP trap 告警发送级别",
+    "command": "ipmcget -t trap -d severity",
+    "description": "trap -d severity命令用于查询和设置SNMP trap的告警发送级别。",
+    "params": [
+      "参数说明",
+      "level",
+      "表示SNMP",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "263"
+    ],
+    "example": "ipmcset -t trap -d severity -v minor"
+  },
+  {
+    "section": "7.5.6",
+    "name": "syslog -d rootcertificate",
+    "title": "查询服务器根证书",
+    "command": "ipmcget -t syslog -d rootcertificate",
+    "description": "syslog -d rootcertificate命令可查询当前根证书信息。",
+    "params": [],
+    "example": "ipmcget -t syslog -d rootcertificate"
+  },
+  {
+    "section": "7.5.8",
+    "name": "syslog -d address",
+    "title": "设置syslog 服务器地址",
+    "command": "ipmcset -t syslog -d address -v <destination> <ipaddr>",
+    "description": "syslog -d address命令用于设置syslog服务器地址。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示syslog上报通道的编",
+      "1",
+      "ipaddr"
+    ],
+    "example": "ipmcset -t syslog -d address -v <destination> <ipaddr>"
+  },
+  {
+    "section": "7.5.11",
+    "name": "syslog -d test",
+    "title": "测试syslog 服务器是否可连接",
+    "command": "ipmcset -t syslog -d test -v <destination>",
+    "description": "syslog -d test命令用于测试配置的syslog服务器是否可连接。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示syslog上报通道的编",
+      "1"
+    ],
+    "example": "ipmcset -t syslog -d test -v <destination>"
+  },
+  {
+    "section": "7.6.1",
+    "name": "vnc -d info",
+    "title": "查询VNC 服务信息",
+    "command": "ipmcget -t vnc -d info",
+    "description": "vnc -d info命令用于查询VNC服务的信息。",
+    "params": [],
+    "example": "ipmcget -t vnc -d info"
+  },
+  {
+    "section": "7.6.3",
+    "name": "vnc -d timeout",
+    "title": "设置VNC 服务的超时时长",
+    "command": "ipmcset -t vnc -d timeout -v <value>",
+    "description": "vnc -d timeout命令用于设置VNC服务的超时时长。",
+    "params": [
+      "参数说明",
+      "value",
+      "表示VNC服务的超时时长",
+      "位为分钟"
+    ],
+    "example": "ipmcset -t vnc -d timeout -v 0"
+  },
+  {
+    "section": "7.6.4",
+    "name": "vnc -d ssl",
+    "title": "设置VNC 服务SSL 加密功能的状态",
+    "command": "ipmcset -t vnc -d ssl -v <enabled|disabled>",
+    "description": "vnc -d ssl命令用于设置VNC服务SSL加密功能的状态。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 275   ---  ## Page 287",
+    "params": [
+      "参数说明",
+      "enabled",
+      "表示启用SSL加密功能",
+      "disabled",
+      "表示禁止SSL加密功能"
+    ],
+    "example": "ipmcset -t vnc -d ssl -v enabled"
+  },
+  {
+    "section": "7.6.5",
+    "name": "vnc -d keyboardlayout",
+    "title": "设置VNC 服务的键盘布局",
+    "command": "ipmcset -t vnc -d keyboardlayout -v <en|jp|de>",
+    "description": "vnc -d keyboardlayout命令用于设置VNC服务的键盘布局。",
+    "params": [
+      "参数说明",
+      "en",
+      "表示美式键盘",
+      "jp",
+      "表示日式键盘",
+      "de",
+      "表示德式键盘"
+    ],
+    "example": "ipmcset -t vnc -d keyboardlayout -v jp"
+  },
+  {
+    "section": "7.7.7",
+    "name": "macaddr",
+    "title": "查询服务器板载网卡MAC 地址",
+    "command": "ipmcget -d macaddr",
+    "description": "macaddr命令用来查询服务器主板上网口的MAC地址。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 281   ---  ## Page 293",
+    "params": [],
+    "example": "ipmcget -d macaddr"
+  },
+  {
+    "section": "7.7.21",
+    "name": "bbuinfo",
+    "title": "查询服务器BBU 模块信息",
+    "command": "ipmcget -d bbuinfo",
+    "description": "bbuinfo命令用来查询服务器BBU模块基本信息。",
+    "params": [],
+    "example": "ipmcget -d bbuinfo"
+  },
+  {
+    "section": "7.8.8",
+    "name": "serialnumber",
+    "title": "查询服务器的设备序列号",
+    "command": "ipmcget [-t smbios] -d serialnumber",
+    "description": "serialnumber命令用来查询服务器的设备序列号。",
+    "params": [],
+    "example": "ipmcget -d serialnumber"
+  },
+  {
+    "section": "7.10.4",
+    "name": "ntp -d preferredserver",
+    "title": "设置首选NTP 服务器地址",
+    "command": "ipmcset -t ntp -d preferredserver -v addr",
+    "description": "ntp -d preferredserver命令用于设置首选NTP服务器地址信息。",
+    "params": [
+      "参数说明",
+      "addr",
+      "表示首选NTP服务器地址"
+    ],
+    "example": "ipmcset -t ntp -d preferredserver -v example.com"
+  },
+  {
+    "section": "7.10.5",
+    "name": "ntp -d alternativeserver",
+    "title": "设置备用NTP 服务器地址",
+    "command": "ipmcset -t ntp -d alternativeserver -v addr",
+    "description": "ntp -d alternativeserver命令用于设置备用NTP服务器地址信息。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 348   ---  ## Page 360",
+    "params": [
+      "参数说明",
+      "addr",
+      "表示备用NTP服务器地址"
+    ],
+    "example": "ipmcget -d ntpinfo"
+  },
+  {
+    "section": "7.10.6",
+    "name": "ntp -d extraserver",
+    "title": "设置拓展NTP 服务器地址",
+    "command": "ipmcset -t ntp -d extraserver -v addr",
+    "description": "ntp -d extraserver命令用于设置拓展NTP服务器地址信息。",
+    "params": [
+      "参数说明",
+      "addr",
+      "表示拓展NTP服务器地址"
+    ],
+    "example": "ipmcset -t ntp -d extraserver -v 192.168.2.2"
+  },
+  {
+    "section": "7.10.7",
+    "name": "ntp -d authstatus",
+    "title": "设置服务器身份认证状态",
+    "command": "ipmcset -t ntp -d authstatus -v status",
+    "description": "ntp -d authstatus命令用于设置服务器身份认证状态。 ● 使能身份认证后，iBMC与NTP服务器通信时会进行身份校验。 ● 禁用身份认证后，iBMC与NTP服务器通信时无需进行身份校验。",
+    "params": [
+      "参数说明",
+      "status",
+      "表示服务器身份认证状态"
+    ],
+    "example": "ipmcset -t ntp -d authstatus -v enabled"
+  },
+  {
+    "section": "7.11.1",
+    "name": "ledinfo",
+    "title": "查询服务器指示灯信息",
+    "command": "ipmcget -d ledinfo",
+    "description": "ledinfo命令用来查询服务器指示灯信息。",
+    "params": [
+      "无",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "351"
+    ],
+    "example": "ipmcget -d ledinfo"
+  }
+]

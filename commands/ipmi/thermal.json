@@ -1,0 +1,170 @@
+[
+  {
+    "title": "3.32 获取总体温度（Get total Temperature）命令功能 获取总体温度。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "3.32 获取总体温度（Get total Temperature）命令功能 获取总体温度。"
+  },
+  {
+    "title": "7.1 设置散热模式（Set thermal enforce policy）命令功能 设置散热模式。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "7.1 设置散热模式（Set thermal enforce policy）命令功能 设置散热模式。"
+  },
+  {
+    "title": "7.3 设置风扇模式（Set Fan Mode）命令功能 设置风扇模式（不适用于无风扇服务器）。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "7.3 设置风扇模式（Set Fan Mode）命令功能 设置风扇模式（不适用于无风扇服务器）。"
+  },
+  {
+    "title": "7.5 获取风扇信息（Get Fan information）命令功能 获取风扇模式（不适用于无风扇服务器）。",
+    "netfn": "3E",
+    "cmd": "10",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x10",
+    "description": "7.5 获取风扇信息（Get Fan information）命令功能 获取风扇模式（不适用于无风扇服务器）。"
+  },
+  {
+    "title": "设置风扇等级。",
+    "netfn": "C",
+    "cmd": "15",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x15",
+    "description": "设置风扇等级。"
+  },
+  {
+    "title": "获取风扇等级。",
+    "netfn": "C",
+    "cmd": "16",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x16",
+    "description": "获取风扇等级。"
+  },
+  {
+    "title": "7.22 获取散热策略记录（Get Cooling Policy record）命令功能 获取散热策略记录（只适用于osca服务器）。",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "7.22 获取散热策略记录（Get Cooling Policy record）命令功能 获取散热策略记录（只适用于osca服务器）。"
+  },
+  {
+    "title": "获取BBU温度。",
+    "netfn": "32",
+    "cmd": "39",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x39",
+    "description": "获取BBU温度。"
+  },
+  {
+    "title": "设置风扇档位",
+    "netfn": "32",
+    "cmd": "26",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x26",
+    "description": "设置风扇档位"
+  },
+  {
+    "title": "查询风扇档位。",
+    "netfn": "32",
+    "cmd": "25",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x25",
+    "description": "查询风扇档位。"
+  },
+  {
+    "title": "获取风扇名称。",
+    "netfn": "32",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x60",
+    "description": "获取风扇名称。"
+  },
+  {
+    "title": "命令功能 查询风扇LED灯状态",
+    "netfn": "32",
+    "cmd": "7a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x7a",
+    "description": "命令功能 查询风扇LED灯状态"
+  },
+  {
+    "title": "查询风扇丝印",
+    "netfn": "32",
+    "cmd": "a1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xa1",
+    "description": "查询风扇丝印"
+  },
+  {
+    "title": "查询风扇工作状态。",
+    "netfn": "32",
+    "cmd": "f6",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xf6",
+    "description": "查询风扇工作状态。"
+  },
+  {
+    "title": "设置风扇状态。",
+    "netfn": "32",
+    "cmd": "2a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x2a",
+    "description": "设置风扇状态。"
+  },
+  {
+    "title": "查询风扇在位状态。",
+    "netfn": "32",
+    "cmd": "06",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x06",
+    "description": "查询风扇在位状态。"
+  },
+  {
+    "title": "查询风扇健康状态。",
+    "netfn": "32",
+    "cmd": "e9",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xe9",
+    "description": "查询风扇健康状态。"
+  },
+  {
+    "title": "查询风扇转速。",
+    "netfn": "32",
+    "cmd": "23",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x23",
+    "description": "查询风扇转速。"
+  },
+  {
+    "title": "查询风扇高中低档位。",
+    "netfn": "32",
+    "cmd": "b4",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xb4",
+    "description": "查询风扇高中低档位。"
+  },
+  {
+    "title": "查询风扇工作模式。",
+    "netfn": "32",
+    "cmd": "27",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x27",
+    "description": "查询风扇工作模式。"
+  },
+  {
+    "title": "命令功能 设置风扇工作模式。",
+    "netfn": "32",
+    "cmd": "28",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x28",
+    "description": "命令功能 设置风扇工作模式。"
+  },
+  {
+    "title": "查询风扇详细工作状态。",
+    "netfn": "32",
+    "cmd": "29",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x29",
+    "description": "查询风扇详细工作状态。"
+  },
+  {
+    "title": "查询风扇电子标签。",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "查询风扇电子标签。"
+  },
+  {
+    "title": "设置风扇最低档位。",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "设置风扇最低档位。"
+  }
+]

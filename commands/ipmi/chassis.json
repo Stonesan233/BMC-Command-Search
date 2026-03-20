@@ -1,0 +1,44 @@
+[
+  {
+    "title": "14.77 设置机箱能力（Set Chassis Capabilities）命令功能 设置机箱功能。",
+    "netfn": "C",
+    "cmd": "05",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x05",
+    "description": "14.77 设置机箱能力（Set Chassis Capabilities）命令功能 设置机箱功能。"
+  },
+  {
+    "title": "14.77 设置机箱能力（Set Chassis Capabilities）命令功能 设置机箱功能。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "14.77 设置机箱能力（Set Chassis Capabilities）命令功能 设置机箱功能。"
+  },
+  {
+    "title": "15.3 获取机框信息（Get Chassis Info）命令功能 获取机框配置参数",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "15.3 获取机框信息（Get Chassis Info）命令功能 获取机框配置参数"
+  },
+  {
+    "title": "15.11 设置机框位置信息（Set Chassis Location Info）命令功能 设置机框位置信息。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "15.11 设置机框位置信息（Set Chassis Location Info）命令功能 设置机框位置信息。"
+  },
+  {
+    "title": "15.21 获取机框能力（Get Chassis Capabilities）命令功能 获取机箱功能。",
+    "netfn": "C",
+    "cmd": "00",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x00",
+    "description": "15.21 获取机框能力（Get Chassis Capabilities）命令功能 获取机箱功能。"
+  },
+  {
+    "title": "15.22 获取机框状态（Get Chassis Status）命令功能 获取机箱状态。",
+    "netfn": "C",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x01",
+    "description": "15.22 获取机框状态（Get Chassis Status）命令功能 获取机箱状态。"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "title": "获取版本信息。",
+    "netfn": "3E",
+    "cmd": "07",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x07",
+    "description": "获取版本信息。"
+  },
+  {
+    "title": "MM910、920和921获取各部件版本信息。",
+    "netfn": "30",
+    "cmd": "15",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x15",
+    "description": "MM910、920和921获取各部件版本信息。"
+  },
+  {
+    "title": "设置BIOS版本。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "设置BIOS版本。"
+  },
+  {
+    "title": "11.34 获取防火墙功能使能（Get Firmware Firewall）命令功能 获取防火墙功能使能状态。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "11.34 获取防火墙功能使能（Get Firmware Firewall）命令功能 获取防火墙功能使能状态。"
+  },
+  {
+    "title": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。"
+  },
+  {
+    "title": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。",
+    "netfn": "C",
+    "cmd": "30",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x30",
+    "description": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。"
+  },
+  {
+    "title": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。",
+    "netfn": "C",
+    "cmd": "31",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x31",
+    "description": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。"
+  },
+  {
+    "title": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。",
+    "netfn": "C",
+    "cmd": "32",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x32",
+    "description": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。"
+  },
+  {
+    "title": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。",
+    "netfn": "C",
+    "cmd": "33",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x33",
+    "description": "14.49 获取Dft 接口版本（Get Dft Interface Version）命令功能 获取Dft接口版本。"
+  },
+  {
+    "title": "命令功能 激活固件。",
+    "netfn": "C",
+    "cmd": "35",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x35",
+    "description": "命令功能 激活固件。"
+  },
+  {
+    "title": "获取固件的属性。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "获取固件的属性。"
+  },
+  {
+    "title": "设置活动固件。",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "设置活动固件。"
+  },
+  {
+    "title": "14.116 获取通道有效载荷版本（Get Channel Payload Version） 命令功能 获取渠道有效载荷版本。",
+    "netfn": "A",
+    "cmd": "4F",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x4F",
+    "description": "14.116 获取通道有效载荷版本（Get Channel Payload Version） 命令功能 获取渠道有效载荷版本。"
+  },
+  {
+    "title": "查询软件版本号命令。",
+    "netfn": "32",
+    "cmd": "0b",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x0b",
+    "description": "查询软件版本号命令。"
+  },
+  {
+    "title": "获取BBU软硬件版本",
+    "netfn": "32",
+    "cmd": "b4",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xb4",
+    "description": "获取BBU软硬件版本"
+  },
+  {
+    "title": "17.109 获取BBU 硬件版本 命令功能 获取BBU硬件版本。",
+    "netfn": "32",
+    "cmd": "0a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x0a",
+    "description": "17.109 获取BBU 硬件版本 命令功能 获取BBU硬件版本。"
+  }
+]

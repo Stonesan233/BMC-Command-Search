@@ -1,0 +1,20 @@
+[
+  {
+    "section": "3.1.8",
+    "title": "查询所有归档资源",
+    "method": "GET",
+    "url": "/redfish/v1/Registries",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Registries'",
+    "description": "查询服务器当前所有的归档文件资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.1.9",
+    "title": "查询单个归档资源",
+    "method": "GET",
+    "url": "/redfish/v1/Registries/registries_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Registries/registries_id'",
+    "description": "查询服务器当前具体的消息归档文件资源。",
+    "request_body": ""
+  }
+]

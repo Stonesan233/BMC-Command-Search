@@ -1,0 +1,70 @@
+[
+  {
+    "section": "7.8.3",
+    "name": "time",
+    "title": "查询iBMC 时间",
+    "command": "ipmcget -d time",
+    "description": "time命令用来查询iBMC时间。",
+    "params": [],
+    "example": "ipmcget -d time"
+  },
+  {
+    "section": "7.10.1",
+    "name": "ntpinfo",
+    "title": "查询NTP 信息",
+    "command": "ipmcget -d ntpinfo",
+    "description": "ntpinfo命令用于查询iBMC的NTP信息。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 345   ---  ## Page 357",
+    "params": [],
+    "example": "ipmcget -d ntpinfo"
+  },
+  {
+    "section": "7.10.2",
+    "name": "ntp -d status",
+    "title": "设置NTP 状态",
+    "command": "ipmcset -t ntp -d status -v status",
+    "description": "ntp -d status命令用于设置NTP功能的使能状态。",
+    "params": [
+      "参数说明",
+      "status",
+      "表示NTP功能的使能状态"
+    ],
+    "example": "ipmcset -t ntp -d status -v enabled"
+  },
+  {
+    "section": "7.10.3",
+    "name": "ntp -d mode",
+    "title": "设置NTP 信息获取方式",
+    "command": "ipmcset -t ntp -d mode -v mode",
+    "description": "ntp -d mode命令用于设置NTP信息获取方式。",
+    "params": [
+      "参数说明",
+      "mode",
+      "表示NTP信息获取方式",
+      "信息",
+      "自动获取NTP信息",
+      "自动获取NTP信息"
+    ],
+    "example": "ipmcset -t ntp -d mode -v manual"
+  },
+  {
+    "section": "7.15.3",
+    "name": "sol -d timeout",
+    "title": "设置SOL 会话超时时间",
+    "command": "ipmcset -t sol -d timeout -v <value>",
+    "description": "sol -d timeout命令用于设置SOL会话超时时间。设置超时时间后，用户在SOL会话中 无输入并达到超时时间后，SOL会话将退出并返回iBMC命令行界面。",
+    "params": [
+      "参数说明",
+      "value",
+      "表示SOL会话用户无输入",
+      "0",
+      "超时时间的默认取值为15",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "371"
+    ],
+    "example": "ipmcset -t sol -d timeout -v 20"
+  }
+]

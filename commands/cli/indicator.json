@@ -1,0 +1,20 @@
+[
+  {
+    "chapter": "7.11",
+    "section": "7.11.1",
+    "name": "ledinfo",
+    "title": "查询服务器指示灯信息",
+    "command": "ipmcget -d ledinfo",
+    "description": "ledinfo命令用来查询服务器指示灯信息。",
+    "example": "ipmcget -d ledinfo"
+  },
+  {
+    "chapter": "7.11",
+    "section": "7.11.2",
+    "name": "identify",
+    "title": "设置UID 指示灯状态",
+    "command": "ipmcset -d identify [-v {time | force} ]",
+    "description": "identify命令用于设置UID指示灯状态。",
+    "example": "ipmcset -d identify -v force"
+  }
+]

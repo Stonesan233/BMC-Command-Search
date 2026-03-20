@@ -1,0 +1,765 @@
+[
+  {
+    "title": "获取BusinessPort的BDF和MAC信息。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "获取BusinessPort的BDF和MAC信息。"
+  },
+  {
+    "title": "3.4 获取跨槽映射（Get span slot mapping）命令功能 获取跨槽映射。",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "3.4 获取跨槽映射（Get span slot mapping）命令功能 获取跨槽映射。"
+  },
+  {
+    "title": "获取CPU读数。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "获取CPU读数。"
+  },
+  {
+    "title": "3.17 查询分区状态（Get Multi-host Parameter）命令功能 查询分区状态（只适用于8P以上服务器）。",
+    "netfn": "30",
+    "cmd": "97",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x97",
+    "description": "3.17 查询分区状态（Get Multi-host Parameter）命令功能 查询分区状态（只适用于8P以上服务器）。"
+  },
+  {
+    "title": "3.23 获取设备信息（Get Device Information）命令功能 获取定制设备的信息。",
+    "netfn": "3E",
+    "cmd": "40",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x40",
+    "description": "3.23 获取设备信息（Get Device Information）命令功能 获取定制设备的信息。"
+  },
+  {
+    "title": "3.45 设置无状态计算参数（Set Stateless Compute Parameter） 命令功能 设置无状态计算参数。",
+    "netfn": "30",
+    "cmd": "95",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x95",
+    "description": "3.45 设置无状态计算参数（Set Stateless Compute Parameter） 命令功能 设置无状态计算参数。"
+  },
+  {
+    "title": "设置CPLD寄存器。",
+    "netfn": "30",
+    "cmd": "96",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x96",
+    "description": "设置CPLD寄存器。"
+  },
+  {
+    "title": "3.63 设置信息（Set Info）",
+    "netfn": "30",
+    "cmd": "40",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x40",
+    "description": "3.63 设置信息（Set Info）"
+  },
+  {
+    "title": "3.64 获取信息（Get Info） 命令功能 获取信息。 参数说明",
+    "netfn": "A",
+    "cmd": "08",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x08",
+    "description": "3.64 获取信息（Get Info） 命令功能 获取信息。 参数说明"
+  },
+  {
+    "title": "3.70 获取设备ID（Get Device ID）命令功能 获取设备ID。 参数说明",
+    "netfn": "A",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x01",
+    "description": "3.70 获取设备ID（Get Device ID）命令功能 获取设备ID。 参数说明"
+  },
+  {
+    "title": "3.76 获取LED 颜色功能（Get LED Color Capabilities）命令功能 获取LED颜色功能。",
+    "netfn": "C",
+    "cmd": "06",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x06",
+    "description": "3.76 获取LED 颜色功能（Get LED Color Capabilities）命令功能 获取LED颜色功能。"
+  },
+  {
+    "title": "3.79 获取设备定位器记录ID（Get Device Locator Record ID） 命令功能 获取设备定位器记录ID。",
+    "netfn": "C",
+    "cmd": "0D",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0D",
+    "description": "3.79 获取设备定位器记录ID（Get Device Locator Record ID） 命令功能 获取设备定位器记录ID。"
+  },
+  {
+    "title": "查询自检结果。",
+    "netfn": "C",
+    "cmd": "36",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x36",
+    "description": "查询自检结果。"
+  },
+  {
+    "title": "设置指定槽位的扩展信息。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "设置指定槽位的扩展信息。"
+  },
+  {
+    "title": "3.95 查询Loadline 参数（Get Loadline Parameters）命令功能 查询Loadline参数。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "3.95 查询Loadline 参数（Get Loadline Parameters）命令功能 查询Loadline参数。"
+  },
+  {
+    "title": "3.97 接收来自交换的配置恢复命令加入处理队列（Switch Config） 命令功能 接收来自交换的配置恢复命令加入处理队列。",
+    "netfn": "30",
+    "cmd": "E5",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0xE5",
+    "description": "3.97 接收来自交换的配置恢复命令加入处理队列（Switch Config） 命令功能 接收来自交换的配置恢复命令加入处理队列。"
+  },
+  {
+    "title": "3.97 接收来自交换的配置恢复命令加入处理队列（Switch Config） 命令功能 接收来自交换的配置恢复命令加入处理队列。",
+    "netfn": "0",
+    "cmd": "F1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x0 0xF1",
+    "description": "3.97 接收来自交换的配置恢复命令加入处理队列（Switch Config） 命令功能 接收来自交换的配置恢复命令加入处理队列。"
+  },
+  {
+    "title": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。",
+    "netfn": "38",
+    "cmd": "13",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x38 0x13",
+    "description": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。"
+  },
+  {
+    "title": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。",
+    "netfn": "C",
+    "cmd": "10",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x10",
+    "description": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。"
+  },
+  {
+    "title": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。",
+    "netfn": "C",
+    "cmd": "11",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x11",
+    "description": "5.7 获取NVMe 盘信息（Get NVMe Info）命令功能 获取NVMe信息。"
+  },
+  {
+    "title": "获取功率等级。",
+    "netfn": "C",
+    "cmd": "12",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x12",
+    "description": "获取功率等级。"
+  },
+  {
+    "title": "6.19 获取BBU 信息（Get BBU Info）命令功能 获取BBU信息",
+    "netfn": "30",
+    "cmd": "6",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x6",
+    "description": "6.19 获取BBU 信息（Get BBU Info）命令功能 获取BBU信息"
+  },
+  {
+    "title": "设置前面板按钮启用。",
+    "netfn": "C",
+    "cmd": "0A",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0A",
+    "description": "设置前面板按钮启用。"
+  },
+  {
+    "title": "8.17 查询设备健康状态（Get Device Health Status）命令功能 查询设备状态情况。",
+    "netfn": "3E",
+    "cmd": "03",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x03",
+    "description": "8.17 查询设备健康状态（Get Device Health Status）命令功能 查询设备状态情况。"
+  },
+  {
+    "title": "设置BMC看门狗计时器。",
+    "netfn": "A",
+    "cmd": "24",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x24",
+    "description": "设置BMC看门狗计时器。"
+  },
+  {
+    "title": "9.6 获取截屏文件（Get Screen Snapshot）命令功能 获取截屏文件。",
+    "netfn": "3E",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x60",
+    "description": "9.6 获取截屏文件（Get Screen Snapshot）命令功能 获取截屏文件。"
+  },
+  {
+    "title": "9.15 恢复出厂设置（Restore to Manufacture setting）命令功能 恢复出厂设置。",
+    "netfn": "3E",
+    "cmd": "3f",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x3f",
+    "description": "9.15 恢复出厂设置（Restore to Manufacture setting）命令功能 恢复出厂设置。"
+  },
+  {
+    "title": "9.37 获取SOL 配置（Get SOL Configuration Parameters） 命令功能 获取SOL配置。",
+    "netfn": "a",
+    "cmd": "22",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x22",
+    "description": "9.37 获取SOL 配置（Get SOL Configuration Parameters） 命令功能 获取SOL配置。"
+  },
+  {
+    "title": "获取BMC记录的内存硬隔离地址信息。",
+    "netfn": "E",
+    "cmd": "24",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x24",
+    "description": "获取BMC记录的内存硬隔离地址信息。"
+  },
+  {
+    "title": "命令功能 设置频道安全密钥。",
+    "netfn": "A",
+    "cmd": "56",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x56",
+    "description": "命令功能 设置频道安全密钥。"
+  },
+  {
+    "title": "获取安全状态。",
+    "netfn": "3E",
+    "cmd": "5B",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x5B",
+    "description": "获取安全状态。"
+  },
+  {
+    "title": "设置安全状态。",
+    "netfn": "3E",
+    "cmd": "5A",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x3E 0x5A",
+    "description": "设置安全状态。"
+  },
+  {
+    "title": "设置端口状态。",
+    "netfn": "C",
+    "cmd": "0E",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0E",
+    "description": "设置端口状态。"
+  },
+  {
+    "title": "获取端口状态。",
+    "netfn": "C",
+    "cmd": "0F",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0F",
+    "description": "获取端口状态。"
+  },
+  {
+    "title": "获取端口测试结果。",
+    "netfn": "30",
+    "cmd": "b0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0xb0",
+    "description": "获取端口测试结果。"
+  },
+  {
+    "title": "获取升级状态。",
+    "netfn": "C",
+    "cmd": "34",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x34",
+    "description": "获取升级状态。"
+  },
+  {
+    "title": "命令功能 查询回滚状态。",
+    "netfn": "C",
+    "cmd": "37",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x37",
+    "description": "命令功能 查询回滚状态。"
+  },
+  {
+    "title": "命令功能 查询回滚状态。",
+    "netfn": "C",
+    "cmd": "38",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x38",
+    "description": "命令功能 查询回滚状态。"
+  },
+  {
+    "title": "获取PICMG属性。",
+    "netfn": "C",
+    "cmd": "00",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x00",
+    "description": "获取PICMG属性。"
+  },
+  {
+    "title": "获取组件属性。",
+    "netfn": "C",
+    "cmd": "2F",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x2F",
+    "description": "获取组件属性。"
+  },
+  {
+    "title": "14.103 冷复位（Cold Reset）命令功能 冷复位。",
+    "netfn": "A",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x02",
+    "description": "14.103 冷复位（Cold Reset）命令功能 冷复位。"
+  },
+  {
+    "title": "14.104 清除消息标志（Clear Message Flags）命令功能 清除消息标志。",
+    "netfn": "A",
+    "cmd": "30",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x30",
+    "description": "14.104 清除消息标志（Clear Message Flags）命令功能 清除消息标志。"
+  },
+  {
+    "title": "获取消息标志。",
+    "netfn": "A",
+    "cmd": "31",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x31",
+    "description": "获取消息标志。"
+  },
+  {
+    "title": "14.106 获取消息（Get Message）命令功能 获取消息。 参数说明",
+    "netfn": "A",
+    "cmd": "33",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x33",
+    "description": "14.106 获取消息（Get Message）命令功能 获取消息。 参数说明"
+  },
+  {
+    "title": "14.106 获取消息（Get Message）命令功能 获取消息。 参数说明",
+    "netfn": "A",
+    "cmd": "34",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x34",
+    "description": "14.106 获取消息（Get Message）命令功能 获取消息。 参数说明"
+  },
+  {
+    "title": "14.108 获取频道信息（Get Channel Info）命令功能 获取频道信息。",
+    "netfn": "A",
+    "cmd": "42",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x42",
+    "description": "14.108 获取频道信息（Get Channel Info）命令功能 获取频道信息。"
+  },
+  {
+    "title": "14.109 激活有效载荷（Activate Payload）命令功能 激活有效载荷。",
+    "netfn": "A",
+    "cmd": "48",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x48",
+    "description": "14.109 激活有效载荷（Activate Payload）命令功能 激活有效载荷。"
+  },
+  {
+    "title": "14.109 激活有效载荷（Activate Payload）命令功能 激活有效载荷。",
+    "netfn": "A",
+    "cmd": "49",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x49",
+    "description": "14.109 激活有效载荷（Activate Payload）命令功能 激活有效载荷。"
+  },
+  {
+    "title": "命令功能 获取有效负载实例信息。",
+    "netfn": "A",
+    "cmd": "4B",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x4B",
+    "description": "命令功能 获取有效负载实例信息。"
+  },
+  {
+    "title": "命令功能 获取通道有效载荷支持。",
+    "netfn": "A",
+    "cmd": "4E",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x4E",
+    "description": "命令功能 获取通道有效载荷支持。"
+  },
+  {
+    "title": "14.122 挂起/恢复有效负载加密（Suspend/Resume Payload Encryption） 命令功能 挂起/恢复有效负载加密。",
+    "netfn": "A",
+    "cmd": "55",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x55",
+    "description": "14.122 挂起/恢复有效负载加密（Suspend/Resume Payload Encryption） 命令功能 挂起/恢复有效负载加密。"
+  },
+  {
+    "title": "命令功能 设置频道访问。",
+    "netfn": "A",
+    "cmd": "40",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x40",
+    "description": "命令功能 设置频道访问。"
+  },
+  {
+    "title": "14.125 获取频道访问（Get Channel Access）命令功能 获取频道访问。",
+    "netfn": "A",
+    "cmd": "41",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x41",
+    "description": "14.125 获取频道访问（Get Channel Access）命令功能 获取频道访问。"
+  },
+  {
+    "title": "14.126 设置BMC 全局启用（Set BMC Global Enables）命令功能 设置BMC全局启用。",
+    "netfn": "A",
+    "cmd": "2E",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x2E",
+    "description": "14.126 设置BMC 全局启用（Set BMC Global Enables）命令功能 设置BMC全局启用。"
+  },
+  {
+    "title": "获取BMC全局启用。",
+    "netfn": "A",
+    "cmd": "2F",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x2F",
+    "description": "获取BMC全局启用。"
+  },
+  {
+    "title": "14.128 获取频道身份验证功能（Get Channel Authentication Capabilities） 命令功能 获取频道身份验证功能。",
+    "netfn": "A",
+    "cmd": "38",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x38",
+    "description": "14.128 获取频道身份验证功能（Get Channel Authentication Capabilities） 命令功能 获取频道身份验证功能。"
+  },
+  {
+    "title": "14.128 获取频道身份验证功能（Get Channel Authentication Capabilities） 命令功能 获取频道身份验证功能。",
+    "netfn": "A",
+    "cmd": "3C",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x3C",
+    "description": "14.128 获取频道身份验证功能（Get Channel Authentication Capabilities） 命令功能 获取频道身份验证功能。"
+  },
+  {
+    "title": "17.1 获取Riser 卡在位信号 命令功能 获取Riser卡在位信号。",
+    "netfn": "32",
+    "cmd": "06",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x06",
+    "description": "17.1 获取Riser 卡在位信号 命令功能 获取Riser卡在位信号。"
+  },
+  {
+    "title": "17.2 获取Riser 卡类型 命令功能 获取Riser卡类型。",
+    "netfn": "32",
+    "cmd": "09",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x09",
+    "description": "17.2 获取Riser 卡类型 命令功能 获取Riser卡类型。"
+  },
+  {
+    "title": "获取Riser卡丝印。",
+    "netfn": "32",
+    "cmd": "a1",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xa1",
+    "description": "获取Riser卡丝印。"
+  },
+  {
+    "title": "查询Riser卡电子标签",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "查询Riser卡电子标签"
+  },
+  {
+    "title": "17.7 设置Pangea 接口卡类型 命令功能 设置Pangea接口卡类型。",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "17.7 设置Pangea 接口卡类型 命令功能 设置Pangea接口卡类型。"
+  },
+  {
+    "title": "17.19 查询器件是否支持升级命令命令功能 查询器件是否支持升级命令。",
+    "netfn": "32",
+    "cmd": "d4",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd4",
+    "description": "17.19 查询器件是否支持升级命令命令功能 查询器件是否支持升级命令。"
+  },
+  {
+    "title": "17.20 查询器件升级状态 命令功能 查询器件是否支持升级命令。",
+    "netfn": "32",
+    "cmd": "51",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x51",
+    "description": "17.20 查询器件升级状态 命令功能 查询器件是否支持升级命令。"
+  },
+  {
+    "title": "获取全局配置。",
+    "netfn": "32",
+    "cmd": "d9",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd9",
+    "description": "获取全局配置。"
+  },
+  {
+    "title": "查询器件链路状态。",
+    "netfn": "32",
+    "cmd": "da",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xda",
+    "description": "查询器件链路状态。"
+  },
+  {
+    "title": "查询器件链路状态。",
+    "netfn": "32",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x01",
+    "description": "查询器件链路状态。"
+  },
+  {
+    "title": "查询器件链路状态。",
+    "netfn": "32",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x02",
+    "description": "查询器件链路状态。"
+  },
+  {
+    "title": "执行升级激活动作。",
+    "netfn": "32",
+    "cmd": "03",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x03",
+    "description": "执行升级激活动作。"
+  },
+  {
+    "title": "查询VRD剩余寿命，某些厂家VRD存在寿命限制，需要在升级前检测；针对无寿命限制的VRD，返回0xff",
+    "netfn": "32",
+    "cmd": "74",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x74",
+    "description": "查询VRD剩余寿命，某些厂家VRD存在寿命限制，需要在升级前检测；针对无寿命限制的VRD，返回0xff"
+  },
+  {
+    "title": "17.29 获取cpld 各片名称 命令功能 获取CPLD各片名称回cpld0、cpld1、cpld2 …参数说明",
+    "netfn": "32",
+    "cmd": "7e",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x7e",
+    "description": "17.29 获取cpld 各片名称 命令功能 获取CPLD各片名称回cpld0、cpld1、cpld2 …参数说明"
+  },
+  {
+    "title": "17.34 获取BMC 基础类型 命令功能 获取BMC基础类型：返回1代表底层基于iBMC实现，原eBMC无此接口，供DMI判断BMC类型 参数说明",
+    "netfn": "32",
+    "cmd": "72",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x72",
+    "description": "17.34 获取BMC 基础类型 命令功能 获取BMC基础类型：返回1代表底层基于iBMC实现，原eBMC无此接口，供DMI判断BMC类型 参数说明"
+  },
+  {
+    "title": "设置CPLD的RAM信息。",
+    "netfn": "32",
+    "cmd": "71",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x71",
+    "description": "设置CPLD的RAM信息。"
+  },
+  {
+    "title": "17.37 获取主板电子标签 命令功能 获取主板电子标签。",
+    "netfn": "32",
+    "cmd": "12",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x12",
+    "description": "17.37 获取主板电子标签 命令功能 获取主板电子标签。"
+  },
+  {
+    "title": "获取节点主备信息。",
+    "netfn": "32",
+    "cmd": "1d",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x1d",
+    "description": "获取节点主备信息。"
+  },
+  {
+    "title": "17.40 设置节点主备 命令功能 设置节点主备。",
+    "netfn": "32",
+    "cmd": "1c",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x1c",
+    "description": "17.40 设置节点主备 命令功能 设置节点主备。"
+  },
+  {
+    "title": "17.41 设置IMU 密钥文件 命令功能 设置IMU密钥文件。",
+    "netfn": "32",
+    "cmd": "d7",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd7",
+    "description": "17.41 设置IMU 密钥文件 命令功能 设置IMU密钥文件。"
+  },
+  {
+    "title": "17.42 查询密钥设置状态 命令功能 查询密钥设置状态。",
+    "netfn": "32",
+    "cmd": "d6",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd6",
+    "description": "17.42 查询密钥设置状态 命令功能 查询密钥设置状态。"
+  },
+  {
+    "title": "17.43 设置imu 密钥注销 命令功能 设置imu密钥注销。",
+    "netfn": "32",
+    "cmd": "d5",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd5",
+    "description": "17.43 设置imu 密钥注销 命令功能 设置imu密钥注销。"
+  },
+  {
+    "title": "17.45 获取Numa 标志 命令功能 获取Numa标志。",
+    "netfn": "32",
+    "cmd": "B4",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB4",
+    "description": "17.45 获取Numa 标志 命令功能 获取Numa标志。"
+  },
+  {
+    "title": "17.46 设置Numa 标志 命令功能 设置Numa标志。",
+    "netfn": "32",
+    "cmd": "B5",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB5",
+    "description": "17.46 设置Numa 标志 命令功能 设置Numa标志。"
+  },
+  {
+    "title": "获取盘古卡的电子标签内容",
+    "netfn": "32",
+    "cmd": "4b",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x4b",
+    "description": "获取盘古卡的电子标签内容"
+  },
+  {
+    "title": "17.62 设置装备测试模式 命令功能 设置装备测试模式。",
+    "netfn": "32",
+    "cmd": "6b",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x6b",
+    "description": "17.62 设置装备测试模式 命令功能 设置装备测试模式。"
+  },
+  {
+    "title": "17.69 获取交换芯片端口link 状态命令功能 获取交换芯片端口link状态 参数说明",
+    "netfn": "32",
+    "cmd": "8a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x8a",
+    "description": "17.69 获取交换芯片端口link 状态命令功能 获取交换芯片端口link状态 参数说明"
+  },
+  {
+    "title": "获取交换芯片端口速率。",
+    "netfn": "32",
+    "cmd": "8b",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x8b",
+    "description": "获取交换芯片端口速率。"
+  },
+  {
+    "title": "17.79 获取BBU 电池包生产日期命令功能 获取BBU电池包生产日期。",
+    "netfn": "32",
+    "cmd": "16",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x16",
+    "description": "17.79 获取BBU 电池包生产日期命令功能 获取BBU电池包生产日期。"
+  },
+  {
+    "title": "获取BBU剩余容量。",
+    "netfn": "32",
+    "cmd": "47",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x47",
+    "description": "获取BBU剩余容量。"
+  },
+  {
+    "title": "获取BBU电芯电压",
+    "netfn": "32",
+    "cmd": "45",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x45",
+    "description": "获取BBU电芯电压"
+  },
+  {
+    "title": "获取BBU电压。",
+    "netfn": "32",
+    "cmd": "3e",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x3e",
+    "description": "获取BBU电压。"
+  },
+  {
+    "title": "获取BBU在线测试开关。",
+    "netfn": "32",
+    "cmd": "b4",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xb4",
+    "description": "获取BBU在线测试开关。"
+  },
+  {
+    "title": "设置BBU在线测试开关",
+    "netfn": "32",
+    "cmd": "b5",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xb5",
+    "description": "设置BBU在线测试开关"
+  },
+  {
+    "title": "获取单板在位",
+    "netfn": "32",
+    "cmd": "56",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x56",
+    "description": "获取单板在位"
+  },
+  {
+    "title": "获取单板名称。",
+    "netfn": "32",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x60",
+    "description": "获取单板名称。"
+  },
+  {
+    "title": "17.120 获取单板复位原因 命令功能 获取单板复位原因。",
+    "netfn": "32",
+    "cmd": "9a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x9a",
+    "description": "17.120 获取单板复位原因 命令功能 获取单板复位原因。"
+  },
+  {
+    "title": "17.121 复位单板 命令功能 复位单板。 参数说明",
+    "netfn": "32",
+    "cmd": "04",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x04",
+    "description": "17.121 复位单板 命令功能 复位单板。 参数说明"
+  },
+  {
+    "title": "查询背板EEPROM中的数据。",
+    "netfn": "32",
+    "cmd": "ead",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xead",
+    "description": "查询背板EEPROM中的数据。"
+  },
+  {
+    "title": "该命令可分帧查询BayConfig数据",
+    "netfn": "32",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x91",
+    "description": "该命令可分帧查询BayConfig数据"
+  },
+  {
+    "title": "分帧设置BayConfig数据。",
+    "netfn": "32",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x94",
+    "description": "分帧设置BayConfig数据。"
+  },
+  {
+    "title": "17.133 获取BayConfig 数据长度命令功能 获取BayConfig数据的长度 参数说明",
+    "netfn": "32",
+    "cmd": "14",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x14",
+    "description": "17.133 获取BayConfig 数据长度命令功能 获取BayConfig数据的长度 参数说明"
+  },
+  {
+    "title": "17.134 License 数据设置 命令功能 分帧设置License数据。",
+    "netfn": "32",
+    "cmd": "15",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x15",
+    "description": "17.134 License 数据设置 命令功能 分帧设置License数据。"
+  },
+  {
+    "title": "17.143 设置设备灯状态 命令功能 可以点亮或关闭控制器和机框上的健康灯，定位灯。",
+    "netfn": "32",
+    "cmd": "4c",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x4c",
+    "description": "17.143 设置设备灯状态 命令功能 可以点亮或关闭控制器和机框上的健康灯，定位灯。"
+  },
+  {
+    "title": "查询控制器上和机框上的健康灯，定位灯的灯状态。",
+    "netfn": "32",
+    "cmd": "7a",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x7a",
+    "description": "查询控制器上和机框上的健康灯，定位灯的灯状态。"
+  },
+  {
+    "title": "查询背板类型",
+    "netfn": "32",
+    "cmd": "a2",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xa2",
+    "description": "查询背板类型"
+  },
+  {
+    "title": "命令功能 设置ARB脑裂更新中断通知OS重新注册脑裂信息",
+    "netfn": "32",
+    "cmd": "f9",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xf9",
+    "description": "命令功能 设置ARB脑裂更新中断通知OS重新注册脑裂信息"
+  },
+  {
+    "title": "设置框号信息到数码管",
+    "netfn": "32",
+    "cmd": "69",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x69",
+    "description": "设置框号信息到数码管"
+  },
+  {
+    "title": "查询数码管显示的框号信息",
+    "netfn": "32",
+    "cmd": "68",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x68",
+    "description": "查询数码管显示的框号信息"
+  },
+  {
+    "title": "查询灯板是否支持升级。",
+    "netfn": "32",
+    "cmd": "73",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x73",
+    "description": "查询灯板是否支持升级。"
+  },
+  {
+    "title": "命令功能 查询所有硬盘的LED灯状态。",
+    "netfn": "32",
+    "cmd": "d0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xd0",
+    "description": "命令功能 查询所有硬盘的LED灯状态。"
+  },
+  {
+    "title": "命令功能 查询Pangea接口卡槽位ID。",
+    "netfn": "32",
+    "cmd": "21",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x21",
+    "description": "命令功能 查询Pangea接口卡槽位ID。"
+  }
+]

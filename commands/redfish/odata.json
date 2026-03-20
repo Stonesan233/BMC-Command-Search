@@ -1,0 +1,11 @@
+[
+  {
+    "section": "3.1.10",
+    "title": "查询OData 服务文档",
+    "method": "GET",
+    "url": "/redfish/v1/odata",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/odata'",
+    "description": "查询OData服务文档。",
+    "request_body": ""
+  }
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "section": "7.5.5",
+    "name": "syslog -d severity",
+    "title": "查询和设置上报日志的级别",
+    "command": "ipmcget -t syslog -d severity",
+    "description": "syslog -d severity命令用于查询和设置通过syslog上报的日志的级别。",
+    "params": [
+      "参数说明",
+      "level",
+      "表示上报日志的级"
+    ],
+    "example": "ipmcset -t syslog -d severity -v critical"
+  },
+  {
+    "section": "7.5.10",
+    "name": "syslog -d logtype",
+    "title": "设置上报日志类型",
+    "command": "ipmcset -t syslog -d logtype -v <destination> <type>",
+    "description": "syslog -d logtype命令用于设置通过syslog报文上报的日志的类型。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示syslog上报通道的编",
+      "1",
+      "type",
+      "作日志",
+      "全日志",
+      "日志"
+    ],
+    "example": "ipmcset -t syslog -d logtype -v <destination> <type>"
+  },
+  {
+    "section": "7.8.7",
+    "name": "healthevents",
+    "title": "查询系统的健康事件信息",
+    "command": "ipmcget [-t fru0] -d healthevents",
+    "description": "healthevents命令用来查询系统的健康事件信息。",
+    "params": [],
+    "example": "ipmcget -d healthevents"
+  },
+  {
+    "section": "7.8.9",
+    "name": "sel",
+    "title": "查询和清除系统SEL 信息",
+    "command": "ipmcget -d sel -v <option> [sel_id]",
+    "description": "sel命令用来查询和清除系统SEL信息。",
+    "params": [
+      "参数说明",
+      "option",
+      "要进行的操作",
+      "系统最多可保留日志信息",
+      "5000条日志信息以释放空",
+      "sel_id",
+      "要获取处理建议的SEL的",
+      "clear"
+    ],
+    "example": "ipmcget -d sel -v info"
+  },
+  {
+    "section": "7.8.10",
+    "name": "operatelog",
+    "title": "查询系统操作日志",
+    "command": "ipmcget -d operatelog",
+    "description": "operatelog命令用来查询系统操作日志。",
+    "params": [],
+    "example": "ipmcget -d operatelog"
+  },
+  {
+    "section": "7.8.11",
+    "name": "loglist",
+    "title": "查询一键收集日志列表",
+    "command": "ipmcget -t maintenance -d loglist",
+    "description": "loglist命令用来查询一键收集日志列表。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 311   ---  ## Page 323",
+    "params": [],
+    "example": "ipmcget -d loglist"
+  },
+  {
+    "section": "7.8.12",
+    "name": "catlog",
+    "title": "查询一键收集日志信息",
+    "command": "ipmcget -t maintenance -d catlog -v <logname> <logcnt> [filter]",
+    "description": "catlog命令用来查询一键收集日志信息。",
+    "params": [
+      "参数说明",
+      "logname",
+      "查询的日志文件名",
+      "通过ipmcget",
+      "maintenance",
+      "获取可查询日志范围",
+      "logcnt",
+      "查询的日志条数",
+      "filter",
+      "查询日志的过滤条件",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "312"
+    ],
+    "example": "ipmcget -t maintenance -d catlog -v app.log 20"
+  },
+  {
+    "section": "7.8.27",
+    "name": "dumpdfxlog",
+    "title": "下载处理器dfx 日志",
+    "command": "ipmcget -t maintenance -d dumpdfxlog -v <option> [-s <systemid>]",
+    "description": "dumpdfxlog命令用于下载处理器dfx日志。",
+    "params": [
+      "参数说明",
+      "option",
+      "获取dfx日志对应处理器的",
+      "类型",
+      "gz",
+      "systemid",
+      "要操作的system"
+    ],
+    "example": "ipmcget -t maintenance -d dumpdfxlog -v 0"
+  },
+  {
+    "section": "7.13.4",
+    "name": "precisealarm",
+    "title": "模拟事件",
+    "command": "ipmcset -t precisealarm -d mock -v {eventcode |stopall} [subjectindex]",
+    "description": "precisealarm命令用于模拟iBMC定义的事件。",
+    "params": [
+      "参数说明",
+      "eventcode",
+      "iBMC定义的全部事",
+      "事件码的第一个字节表",
+      "处理文档中的详细描",
+      "stopall",
+      "subjectindex",
+      "要模拟的指定事件的事件",
+      "主体类型代表的事件序",
+      "与模拟事件相关的事件序",
+      "目标事件对应的事件序",
+      "eventstatus"
+    ],
+    "example": "ipmcset -t precisealarm -d mock -v 0x2C000025 assert"
+  }
+]

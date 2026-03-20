@@ -1,0 +1,48 @@
+[
+  {
+    "section": "7.3.29",
+    "name": "vmm -d connect",
+    "title": "挂载文件到虚拟光驱",
+    "command": "ipmcset -t vmm -d connect -v <URL>",
+    "description": "vmm -d connect命令用于挂载文件到虚拟光驱。",
+    "params": [
+      "参数说明",
+      "URL",
+      "待挂载的文件所在的",
+      "iBMC当前仅支持SMB",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "256"
+    ],
+    "example": "ipmcset -t vmm -d connect -v <URL>"
+  },
+  {
+    "section": "7.3.30",
+    "name": "vmm -d disconnect",
+    "title": "中断虚拟光驱的连接",
+    "command": "ipmcset -t vmm -d disconnect",
+    "description": "vmm -d disconnect命令用于断开虚拟光驱的连接。",
+    "params": [],
+    "example": "ipmcset -t vmm -d disconnect"
+  },
+  {
+    "section": "7.3.31",
+    "name": "vmm -d info",
+    "title": "查询虚拟媒体信息",
+    "command": "ipmcget -t vmm -d info",
+    "description": "vmm -d info命令用于查询iBMC虚拟媒体信息。",
+    "params": [
+      "无",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "257"
+    ],
+    "example": "ipmcget -t vmm -d info"
+  }
+]

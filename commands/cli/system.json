@@ -1,0 +1,43 @@
+[
+  {
+    "section": "7.3.16",
+    "name": "printscreen",
+    "title": "截屏命令",
+    "command": "ipmcset -d printscreen [-v wakeup]",
+    "description": "printscreen命令用于截取服务器当前所显示的屏幕图片。",
+    "params": [
+      "参数说明",
+      "wakeup",
+      "截取屏幕图片的同时唤醒",
+      "系统屏保"
+    ],
+    "example": "ipmcset -d printscreen"
+  },
+  {
+    "section": "7.8.1",
+    "name": "systemname",
+    "title": "查询系统名称",
+    "command": "ipmcget -t smbios -d systemname",
+    "description": "systemname命令用来查询系统名称。",
+    "params": [],
+    "example": "ipmcget -t smbios -d systemname"
+  },
+  {
+    "section": "7.8.6",
+    "name": "health",
+    "title": "查询系统的健康状态",
+    "command": "ipmcget [-t fru0] -d health",
+    "description": "health命令用来查询系统的健康状态。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 307   ---  ## Page 319",
+    "params": [],
+    "example": "ipmcget -d health"
+  },
+  {
+    "section": "7.8.18",
+    "name": "securityenhance -d updatemasterkey",
+    "title": "更新系统主密钥",
+    "command": "ipmcset -t securityenhance -d updatemasterkey",
+    "description": "securityenhance -d updatemasterkey命令用来更新系统主密钥。",
+    "params": [],
+    "example": "ipmcset -t securityenhance -d updatemasterkey"
+  }
+]

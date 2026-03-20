@@ -1,0 +1,121 @@
+[
+  {
+    "title": "3.34 获取FRU 信息（Get Fruid Info）命令功能 获取FRU信息。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "3.34 获取FRU 信息（Get Fruid Info）命令功能 获取FRU信息。"
+  },
+  {
+    "title": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。",
+    "netfn": "a",
+    "cmd": "10",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x10",
+    "description": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。"
+  },
+  {
+    "title": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。",
+    "netfn": "a",
+    "cmd": "11",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x11",
+    "description": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。"
+  },
+  {
+    "title": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。",
+    "netfn": "a",
+    "cmd": "12",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x12",
+    "description": "3.72 获取FRU 库存区域信息（Get FRU Inventory Area Info） 命令功能 获取FRU库存区域信息。"
+  },
+  {
+    "title": "获取FRU LED属性。",
+    "netfn": "C",
+    "cmd": "05",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x05",
+    "description": "获取FRU LED属性。"
+  },
+  {
+    "title": "命令功能 设置FRU LED状态。",
+    "netfn": "C",
+    "cmd": "07",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x07",
+    "description": "命令功能 设置FRU LED状态。"
+  },
+  {
+    "title": "获取FRU LED状态。",
+    "netfn": "C",
+    "cmd": "08",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x08",
+    "description": "获取FRU LED状态。"
+  },
+  {
+    "title": "设置FRU激活。",
+    "netfn": "C",
+    "cmd": "0C",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0C",
+    "description": "设置FRU激活。"
+  },
+  {
+    "title": "设置FRU激活。",
+    "netfn": "C",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x02",
+    "description": "设置FRU激活。"
+  },
+  {
+    "title": "设置FRU激活策略。",
+    "netfn": "C",
+    "cmd": "0A",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0A",
+    "description": "设置FRU激活策略。"
+  },
+  {
+    "title": "6.32 获取FRU 激活策略（Get FRU Activation Policy）命令功能 获取FRU激活策略。",
+    "netfn": "C",
+    "cmd": "0B",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x0B",
+    "description": "6.32 获取FRU 激活策略（Get FRU Activation Policy）命令功能 获取FRU激活策略。"
+  },
+  {
+    "title": "查询FRU告警聚合",
+    "netfn": "32",
+    "cmd": "B3",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xB3",
+    "description": "查询FRU告警聚合"
+  },
+  {
+    "title": "获取BBU电池包产品名称",
+    "netfn": "32",
+    "cmd": "16",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x16",
+    "description": "获取BBU电池包产品名称"
+  },
+  {
+    "title": "获取BBU Fru名称",
+    "netfn": "32",
+    "cmd": "60",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x60",
+    "description": "获取BBU Fru名称"
+  },
+  {
+    "title": "17.96 获取BBU Fru 类型 命令功能 获取BBU Fru类型 参数说明",
+    "netfn": "32",
+    "cmd": "06",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x06",
+    "description": "17.96 获取BBU Fru 类型 命令功能 获取BBU Fru类型 参数说明"
+  },
+  {
+    "title": "命令功能 查询背板EEPROM产品数据通用接口",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "命令功能 查询背板EEPROM产品数据通用接口"
+  },
+  {
+    "title": "命令功能 设置背板EEPROM产品数据通用接口",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "命令功能 设置背板EEPROM产品数据通用接口"
+  }
+]

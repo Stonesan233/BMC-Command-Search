@@ -1,0 +1,128 @@
+[
+  {
+    "section": "3.7.1",
+    "title": "查询升级服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/UpdateService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/UpdateService'",
+    "description": "查询服务器当前升级服务资源的信息。",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.7.2",
+    "title": "修改升级服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/UpdateService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/UpdateService' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Disconnect\" }'",
+    "description": "修改升级服务资源，设置是否允许降级升级。",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.7.3",
+    "title": "查询可升级固件集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/UpdateService/FirmwareInventory",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/UpdateService/FirmwareInventory'",
+    "description": "查询服务器当前可升级的固件集合资源的信息。",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.7.4",
+    "title": "查询指定可升级固件资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/UpdateService/FirmwareInventory/softid",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/UpdateService/FirmwareInventory/softid'",
+    "description": "查询服务器指定的可升级固件资源的信息。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.7.5",
+    "title": "升级固件",
+    "method": "POST",
+    "url": "/redfish/v1/UpdateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/UpdateService/Actions/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "升级服务器固件。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.7.6",
+    "title": "文件上传",
+    "method": "POST",
+    "url": "/redfish/v1/UpdateService/FirmwareInventory",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/UpdateService/FirmwareInventory' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "通过redfish接口进行文件上传，上传成功后文件被放在/tmp/web目录下。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.7.7",
+    "title": "生效固件",
+    "method": "POST",
+    "url": "/redfish/v1/UpdateService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/UpdateService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "所有待生效固件开始生效",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.7.8",
+    "title": "并行升级",
+    "method": "POST",
+    "url": "/redfish/v1/UpdateService/Actions/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/UpdateService/Actions/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "执行并行升级",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.10.2",
+    "title": "带内升级软件/固件",
+    "method": "POST",
+    "url": "/redfish/v1/Sms/1/UpdateService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "设置iBMA下载相关升级包的参数信息，如升级包路径，升级包类型等并启动升级。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.10.3",
+    "title": "查询升级进度",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService/Progress",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/Progress'",
+    "description": "查询升级进度。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.10.4",
+    "title": "查询带内升级软件集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService/SoftwareInventory",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/SoftwareInventory'",
+    "description": "查询带内升级软件集合资源信息命令功能",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.10.5",
+    "title": "查询指定带内升级软件资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService/SoftwareInventory/{item}",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/SoftwareInventory/{item}'",
+    "description": "查询指定带内升级软件资源信息命令功能",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.10.6",
+    "title": "查询带内升级固件集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService/FirmwareInventory",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/FirmwareInventory'",
+    "description": "查询iBMA升级服务固件清单相关资源。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.10.7",
+    "title": "查询指定带内升级固件资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService/FirmwareInventory/{item}",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService/FirmwareInventory/{item}'",
+    "description": "查询指定带内升级固件资源信息命令功能",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  }
+]

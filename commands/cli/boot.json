@@ -1,0 +1,31 @@
+[
+  {
+    "section": "7.7.1",
+    "name": "bootdevice",
+    "title": "查询和设置启动设备",
+    "command": "ipmcget -d bootdevice",
+    "description": "bootdevice用来查询和设置启动设备。",
+    "params": [
+      "参数说明",
+      "option",
+      "设置的启动设备编",
+      "once",
+      "系统启动项的设置仅",
+      "在下一次重启时生",
+      "统启动项自动恢复为",
+      "BIOS中设置的默认方",
+      "permanent",
+      "系统启动项的设置永"
+    ],
+    "example": "ipmcset -d bootdevice -v 2 once"
+  },
+  {
+    "section": "7.17.9",
+    "name": "reboot",
+    "title": "reboot 命令",
+    "command": "ipmcget -d reboot",
+    "description": "reboot命令用于重启iBMC系统。",
+    "params": [],
+    "example": "ipmcget -d reboot"
+  }
+]

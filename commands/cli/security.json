@@ -1,0 +1,43 @@
+[
+  {
+    "section": "7.3.22",
+    "name": "securitybanner -d\nstate",
+    "title": "设置登录安全性信息功能的使能状态",
+    "command": "ipmcset -t securitybanner -d state -v <enabled | disabled>",
+    "description": "securitybanner -d state命令用于设置是否在iBMC登录界面显示安全信息。",
+    "params": [
+      "参数说明",
+      "enabled",
+      "表示在登录界面显示安全",
+      "disabled",
+      "表示不在登录界面显示安"
+    ],
+    "example": "ipmcset -t securitybanner -d state -v enabled"
+  },
+  {
+    "section": "7.3.23",
+    "name": "securitybanner -d content",
+    "title": "定制登录安全信息",
+    "command": "ipmcset -t securitybanner -d content -v < default | \"option\">",
+    "description": "securitybanner -d content命令用于设置在iBMC登录界面显示的安全信息的具体内 容。",
+    "params": [
+      "参数说明",
+      "default",
+      "表示使用默认的安全信",
+      "option",
+      "表示安全信息的具体内容",
+      "0",
+      "符串"
+    ],
+    "example": "ipmcset -t securitybanner -d content -v < default | \"option\">"
+  },
+  {
+    "section": "7.3.24",
+    "name": "securitybanner -d info",
+    "title": "查询登录安全信息",
+    "command": "ipmcget -t securitybanner -d info",
+    "description": "securitybanner -d info命令用于查询iBMC登录界面显示的安全信息的详细内容。",
+    "params": [],
+    "example": "ipmcget -t securitybanner -d info"
+  }
+]

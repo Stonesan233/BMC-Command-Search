@@ -1,0 +1,141 @@
+[
+  {
+    "section": "7.12.1",
+    "name": "fanlevel",
+    "title": "设置风扇运行速度",
+    "command": "ipmcset -d fanlevel -v <fanlevel> [fanid]",
+    "description": "fanlevel命令用于设置风扇运行速度。",
+    "params": [
+      "参数说明",
+      "fanlevel",
+      "表示设置当前风扇PWM占",
+      "转换为风扇真实的转速",
+      "fanid",
+      "表示风扇的ID",
+      "不同服务器的取值范围不"
+    ],
+    "example": "ipmcset -d fanlevel -v 50 2"
+  },
+  {
+    "section": "7.12.2",
+    "name": "faninfo",
+    "title": "查询风扇工作状态",
+    "command": "ipmcget -d faninfo",
+    "description": "faninfo命令用来查询风扇的工作模式和当前转速。",
+    "params": [],
+    "example": "ipmcget -d faninfo"
+  },
+  {
+    "section": "7.12.3",
+    "name": "fanmode",
+    "title": "设置风扇运行模式",
+    "command": "ipmcset -d fanmode -v <mode> [timeout]",
+    "description": "fanmode命令用来设置风扇的运行模式。",
+    "params": [
+      "参数说明",
+      "mode",
+      "表示风扇工作模式",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "354",
+      "参数说明",
+      "timeout",
+      "表示由手动模式转换成自"
+    ],
+    "example": "ipmcset -d fanmode -v 1 60"
+  },
+  {
+    "section": "7.12.4",
+    "name": "coolingmode",
+    "title": "设置散热设备运行模式",
+    "command": "ipmcset -d coolingmode -v <devicetype> <mode> [timeout]",
+    "description": "coolingmode命令用来设置散热设备的运行模式。",
+    "params": [
+      "参数说明",
+      "devicetype",
+      "表示散热设备类型",
+      "mode",
+      "表示散热设备工作模式",
+      "timeout",
+      "表示由手动模式转换成自",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "355"
+    ],
+    "example": "ipmcset -d fan -v 1 60"
+  },
+  {
+    "section": "7.12.5",
+    "name": "coolingdeviceinfo",
+    "title": "查询散热设备工作状态",
+    "command": "ipmcget -d coolingdeviceinfo -v <devicetype>",
+    "description": "coolingdeviceinfo命令用来查询散热设备的工作模式和当前转速。",
+    "params": [
+      "参数说明",
+      "devicetype",
+      "表示散热设备类型"
+    ],
+    "example": "ipmcget -d coolingdeviceinfo -v fan"
+  },
+  {
+    "section": "7.12.6",
+    "name": "coolinglevel",
+    "title": "设置散热设备运行速度",
+    "command": "ipmcset -d coolinglevel -v <devicetype> <level> [id]",
+    "description": "coolinglevel命令用于设置散热设备运行速度。",
+    "params": [
+      "参数说明",
+      "devicetype",
+      "表示设备类型",
+      "level",
+      "表示设置当前散热设备",
+      "PWM占空比",
+      "id",
+      "表示散热设备的ID"
+    ],
+    "example": "ipmcset -d coolinglevel -v fan 50 2"
+  },
+  {
+    "section": "7.13.1",
+    "name": "sensor -d list",
+    "title": "查询所有传感器的所有信息",
+    "command": "ipmcget -t sensor -d list",
+    "description": "sensor -d list命令用来查询所有传感器信息。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 357   ---  ## Page 369",
+    "params": [],
+    "example": "ipmcget -t sensor -d list"
+  },
+  {
+    "section": "7.13.2",
+    "name": "sensor -d test",
+    "title": "传感器测试命令",
+    "command": "ipmcset -t sensor -d test -v <sensorname/stopall> [value/stop]",
+    "description": "test命令用于模拟传感器状态或读数。 须知 测试之前请先使用ipmcget -t sensor -d list命令查询传感器状态，确保在传感器状态 正常的情况下进行测试，否则已经故障告警的传感器在测试结束后会重复上报一次故 障告警。",
+    "params": [
+      "参数说明",
+      "sensorname",
+      "传感器名称",
+      "模拟值"
+    ],
+    "example": "ipmcset -t sensor -d test -v \"CPU1 Core Rem\" 100"
+  },
+  {
+    "section": "7.13.3",
+    "name": "sensor -d state",
+    "title": "设置传感器使能状态",
+    "command": "ipmcset -t sensor -d state -v <sensorname> <enabled | disabled>",
+    "description": "sensor -d state命令用于设置传感器的使能状态。 说明 该命令只支持离散型传感器，不支持门限型传感器。",
+    "params": [
+      "参数说明",
+      "sensorname",
+      "传感器名称",
+      "enabled"
+    ],
+    "example": "ipmcset -t sensor -d state -v \"SEL Status\" enabled"
+  }
+]

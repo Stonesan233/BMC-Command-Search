@@ -1,0 +1,86 @@
+[
+  {
+    "title": "查询用户NUMA网卡对应关系配置。",
+    "netfn": "30",
+    "cmd": "95",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x95",
+    "description": "查询用户NUMA网卡对应关系配置。"
+  },
+  {
+    "title": "命令功能 查询用户服务配置。",
+    "netfn": "0",
+    "cmd": "0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x0 0x0",
+    "description": "命令功能 查询用户服务配置。"
+  },
+  {
+    "title": "设置BMC用户名。",
+    "netfn": "A",
+    "cmd": "45",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x45",
+    "description": "设置BMC用户名。"
+  },
+  {
+    "title": "获取BMC用户名。",
+    "netfn": "A",
+    "cmd": "46",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x46",
+    "description": "获取BMC用户名。"
+  },
+  {
+    "title": "设置BMC用户密码。",
+    "netfn": "A",
+    "cmd": "47",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x47",
+    "description": "设置BMC用户密码。"
+  },
+  {
+    "title": "设置用户SNMPv3鉴权算法",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "设置用户SNMPv3鉴权算法"
+  },
+  {
+    "title": "设置BMC用户访问权限。",
+    "netfn": "A",
+    "cmd": "43",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x43",
+    "description": "设置BMC用户访问权限。"
+  },
+  {
+    "title": "获取BMC用户访问权限。",
+    "netfn": "A",
+    "cmd": "44",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x44",
+    "description": "获取BMC用户访问权限。"
+  },
+  {
+    "title": "获取BMC用户访问权限。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "获取BMC用户访问权限。"
+  },
+  {
+    "title": "14.113 设置用户有效载荷访问（Set User Payload Access） 命令功能 设置用户有效载荷访问。",
+    "netfn": "A",
+    "cmd": "4C",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x4C",
+    "description": "14.113 设置用户有效载荷访问（Set User Payload Access） 命令功能 设置用户有效载荷访问。"
+  },
+  {
+    "title": "14.114 获取用户有效载荷访问（Get User Payload Access） 命令功能 获取用户有效载荷访问。",
+    "netfn": "A",
+    "cmd": "4D",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x4D",
+    "description": "14.114 获取用户有效载荷访问（Get User Payload Access） 命令功能 获取用户有效载荷访问。"
+  },
+  {
+    "title": "17.76 同步存储用户到BMC 命令功能 同步存储用户到BMC。",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "17.76 同步存储用户到BMC 命令功能 同步存储用户到BMC。"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "section": "7.3.25",
+    "name": "certificate -d import",
+    "title": "导入SSL 证书",
+    "command": "ipmcset -t certificate -d import -v <localpath | URL> <type> [passphrase]",
+    "description": "certificate -d import命令用于导入SSL证书到iBMC系统。",
+    "params": [
+      "参数说明",
+      "localpath",
+      "待导入的SSL证书的",
+      "路径",
+      "URL",
+      "待导入的远程SSL证",
+      "书文件的URL",
+      "iBMC当前仅支持SMB",
+      "type",
+      "SSL证书类型",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "252",
+      "参数说明",
+      "passphrase",
+      "生成SSL证书时的密",
+      "码"
+    ],
+    "example": "ipmcset -t certificate -d import -v <localpath | URL> <type> [passphrase]"
+  },
+  {
+    "section": "7.3.26",
+    "name": "certificate -d info",
+    "title": "查询SSL 证书信息",
+    "command": "ipmcget -t certificate -d info",
+    "description": "certificate -d info命令用于查询SSL证书的信息。",
+    "params": [],
+    "example": "ipmcget -t certificate -d info"
+  },
+  {
+    "section": "7.5.2",
+    "name": "syslog -d auth",
+    "title": "查询和设置证书认证方式",
+    "command": "ipmcget -t syslog -d auth",
+    "description": "syslog -d auth命令用于查询和设置证书认证方式。",
+    "params": [
+      "参数说明",
+      "option"
+    ],
+    "example": "ipmcset -t syslog -d auth -v 2"
+  },
+  {
+    "section": "7.5.7",
+    "name": "syslog -d clientcertificate",
+    "title": "查询本地证书",
+    "command": "ipmcget -t syslog -d clientcertificate",
+    "description": "syslog -d clientcertificate命令可查询本地证书信息。",
+    "params": [],
+    "example": "ipmcget -t syslog -d clientcertificate"
+  }
+]

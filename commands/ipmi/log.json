@@ -1,0 +1,100 @@
+[
+  {
+    "title": "9.2 获取BMC 的自检结果（Get Self Test Results）命令功能 获取BMC的自检结果。",
+    "netfn": "A",
+    "cmd": "04",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x04",
+    "description": "9.2 获取BMC 的自检结果（Get Self Test Results）命令功能 获取BMC的自检结果。"
+  },
+  {
+    "title": "9.41 获取基础计算组件故障寄存器日志信息（Get BCU diagnosis data） 命令功能 获取OS发生硬件不可纠正故障信息。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "9.41 获取基础计算组件故障寄存器日志信息（Get BCU diagnosis data） 命令功能 获取OS发生硬件不可纠正故障信息。"
+  },
+  {
+    "title": "9.41 获取基础计算组件故障寄存器日志信息（Get BCU diagnosis data） 命令功能 获取OS发生硬件不可纠正故障信息。",
+    "netfn": "30",
+    "cmd": "98",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x98",
+    "description": "9.41 获取基础计算组件故障寄存器日志信息（Get BCU diagnosis data） 命令功能 获取OS发生硬件不可纠正故障信息。"
+  },
+  {
+    "title": "请求重报未恢复事件。",
+    "netfn": "30",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x94",
+    "description": "请求重报未恢复事件。"
+  },
+  {
+    "title": "10.19 设置事件接收器（Set Event Receiver）命令功能 设置事件接收器。",
+    "netfn": "E",
+    "cmd": "00",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x00",
+    "description": "10.19 设置事件接收器（Set Event Receiver）命令功能 设置事件接收器。"
+  },
+  {
+    "title": "获取事件接收器。",
+    "netfn": "E",
+    "cmd": "01",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x01",
+    "description": "获取事件接收器。"
+  },
+  {
+    "title": "10.21 恢复事件（Clear Event）",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "10.21 恢复事件（Clear Event）"
+  },
+  {
+    "title": "向BMC添加SEL日志。",
+    "netfn": "a",
+    "cmd": "44",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x44",
+    "description": "向BMC添加SEL日志。"
+  },
+  {
+    "title": "10.23 配置事件告警级别（Set Event Severity Level）命令功能 配置事件告警级别。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "10.23 配置事件告警级别（Set Event Severity Level）命令功能 配置事件告警级别。"
+  },
+  {
+    "title": "10.51 清除SEL（Clear SEL） 命令功能 清除SEL。 参数说明",
+    "netfn": "a",
+    "cmd": "47",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x47",
+    "description": "10.51 清除SEL（Clear SEL） 命令功能 清除SEL。 参数说明"
+  },
+  {
+    "title": "10.55 获取SEL 信息（Get SEL Info）命令功能 获取SEL信息。",
+    "netfn": "a",
+    "cmd": "40",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x40",
+    "description": "10.55 获取SEL 信息（Get SEL Info）命令功能 获取SEL信息。"
+  },
+  {
+    "title": "命令功能 获取SEL分配信息。",
+    "netfn": "a",
+    "cmd": "41",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x41",
+    "description": "命令功能 获取SEL分配信息。"
+  },
+  {
+    "title": "命令功能 获取SEL条目。",
+    "netfn": "a",
+    "cmd": "43",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x43",
+    "description": "命令功能 获取SEL条目。"
+  },
+  {
+    "title": "设置SEL时间。",
+    "netfn": "a",
+    "cmd": "49",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xa 0x49",
+    "description": "设置SEL时间。"
+  }
+]

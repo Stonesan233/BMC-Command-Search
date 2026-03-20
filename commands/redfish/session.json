@@ -1,0 +1,74 @@
+[
+  {
+    "section": "3.5.1",
+    "title": "查询会话服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/SessionService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/SessionService'",
+    "description": "查询服务器当前会话服务的信息。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.5.2",
+    "title": "修改会话服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/SessionService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/SessionService' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "修改服务器当前会话服务的超时时间。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.5.3",
+    "title": "创建会话",
+    "method": "POST",
+    "url": "/redfish/v1/SessionService/Sessions",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/SessionService/Sessions' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "创建新会话。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.5.4",
+    "title": "查询会话集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/SessionService/Sessions",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/SessionService/Sessions'",
+    "description": "查询服务器当前会话集合资源信息。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.5.5",
+    "title": "查询指定会话资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/SessionService/Sessions/session_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/SessionService/Sessions/session_id'",
+    "description": "查询服务器指定会话资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.5.6",
+    "title": "删除指定会话",
+    "method": "DELETE",
+    "url": "/redfish/v1/SessionService/Sessions/session_id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/SessionService/Sessions/session_id'",
+    "description": "删除指定会话。",
+    "request_body": ""
+  },
+  {
+    "section": "3.5.7",
+    "title": "创建Web 会话",
+    "method": "POST",
+    "url": "/redfish/v1/SessionService/Sessions",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/SessionService/Sessions' -H 'Content-Type: application/json' -d '{}'",
+    "description": "创建新会话，Web使用此会话可通过Redfish接口获取和设置信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.5.8",
+    "title": "Web 执行操作",
+    "method": "GET",
+    "url": "/redfish/v1/SessionService/Sessions",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/SessionService/Sessions'",
+    "description": "使用Web会话通过Redfish接口执行查询、设置操作。所有请求中不再携带X-Auth-Token，所有操作响应头中不再返回“ETag”参数，PATCH操作请求头不再携带“If-Match”。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "title": "3.15 设置系统信息（Set System Info Parameters）命令功能 通过该命令将第三方信息保存到BMC上。",
+    "netfn": "A",
+    "cmd": "58",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x58",
+    "description": "3.15 设置系统信息（Set System Info Parameters）命令功能 通过该命令将第三方信息保存到BMC上。"
+  },
+  {
+    "title": "3.16 查询系统信息（Get System Info Parameters）命令功能 查询保存在BMC上的第三方信息。",
+    "netfn": "A",
+    "cmd": "59",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x59",
+    "description": "3.16 查询系统信息（Get System Info Parameters）命令功能 查询保存在BMC上的第三方信息。"
+  },
+  {
+    "title": "命令功能 获取系统启动寄存器。",
+    "netfn": "30",
+    "cmd": "97",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x97",
+    "description": "命令功能 获取系统启动寄存器。"
+  },
+  {
+    "title": "3.71 获取系统GUID（Get System GUID）命令功能 获取系统GUID。",
+    "netfn": "A",
+    "cmd": "37",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x37",
+    "description": "3.71 获取系统GUID（Get System GUID）命令功能 获取系统GUID。"
+  },
+  {
+    "title": "设置系统的带内信息，如CPU、内存、磁盘的使用率门限等。",
+    "netfn": "30",
+    "cmd": "92",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x92",
+    "description": "设置系统的带内信息，如CPU、内存、磁盘的使用率门限等。"
+  },
+  {
+    "title": "4.4 设置资源利用率告警门限（Set Resource Usage Alarm Threshold） 命令功能 查询系统的带内信息，如CPU、内存、磁盘的使用率门限等。",
+    "netfn": "30",
+    "cmd": "93",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x93",
+    "description": "4.4 设置资源利用率告警门限（Set Resource Usage Alarm Threshold） 命令功能 查询系统的带内信息，如CPU、内存、磁盘的使用率门限等。"
+  },
+  {
+    "title": "6.4 标准DCMI 命令获取系统功耗命令（Get Power Reading） 命令功能 查询系统功耗信息。",
+    "netfn": "C",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x02",
+    "description": "6.4 标准DCMI 命令获取系统功耗命令（Get Power Reading） 命令功能 查询系统功耗信息。"
+  },
+  {
+    "title": "6.4 标准DCMI 命令获取系统功耗命令（Get Power Reading） 命令功能 查询系统功耗信息。",
+    "netfn": "C",
+    "cmd": "05",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x05",
+    "description": "6.4 标准DCMI 命令获取系统功耗命令（Get Power Reading） 命令功能 查询系统功耗信息。"
+  },
+  {
+    "title": "6.6 标准DCMI 命令获取功耗封顶配置命令（Get Power Limit） 命令功能 获取系统功耗封顶配置命令。",
+    "netfn": "0",
+    "cmd": "0",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x0 0x0",
+    "description": "6.6 标准DCMI 命令获取功耗封顶配置命令（Get Power Limit） 命令功能 获取系统功耗封顶配置命令。"
+  },
+  {
+    "title": "8.11 设置系统启动选项（Set System Boot Options）命令功能 设置系统启动选项。",
+    "netfn": "C",
+    "cmd": "08",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x08",
+    "description": "8.11 设置系统启动选项（Set System Boot Options）命令功能 设置系统启动选项。"
+  },
+  {
+    "title": "8.12 获取系统启动选项（Get System Boot Options）命令功能 获取系统启动选项。",
+    "netfn": "C",
+    "cmd": "09",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x09",
+    "description": "8.12 获取系统启动选项（Get System Boot Options）命令功能 获取系统启动选项。"
+  },
+  {
+    "title": "10.24 获取系统健康状态（Get System Health）命令功能 获取系统健康状态。",
+    "netfn": "30",
+    "cmd": "91",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x91",
+    "description": "10.24 获取系统健康状态（Get System Health）命令功能 获取系统健康状态。"
+  },
+  {
+    "title": "10.29 获取系统重启原因（Get System Restart Cause）命令功能 获取系统重启原因。",
+    "netfn": "C",
+    "cmd": "07",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x07",
+    "description": "10.29 获取系统重启原因（Get System Restart Cause）命令功能 获取系统重启原因。"
+  },
+  {
+    "title": "10.29 获取系统重启原因（Get System Restart Cause）命令功能 获取系统重启原因。",
+    "netfn": "E",
+    "cmd": "02",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xE 0x02",
+    "description": "10.29 获取系统重启原因（Get System Restart Cause）命令功能 获取系统重启原因。"
+  },
+  {
+    "title": "10.54 设置系统事件相关配置（Set System Event Configuration） 命令功能 设置系统事件相关配置。",
+    "netfn": "30",
+    "cmd": "90",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x30 0x90",
+    "description": "10.54 设置系统事件相关配置（Set System Event Configuration） 命令功能 设置系统事件相关配置。"
+  },
+  {
+    "title": "14.123 获取系统接口功能（Get System Interface Capabilities） 命令功能 获取系统接口功能。",
+    "netfn": "A",
+    "cmd": "57",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xA 0x57",
+    "description": "14.123 获取系统接口功能（Get System Interface Capabilities） 命令功能 获取系统接口功能。"
+  },
+  {
+    "title": "获取system id，根据当前ipmb通道返回该os所对应的system id",
+    "netfn": "C",
+    "cmd": "94",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0xC 0x94",
+    "description": "获取system id，根据当前ipmb通道返回该os所对应的system id"
+  },
+  {
+    "title": "17.71 大系统同步秘钥文件给BMC命令功能 大系统同步秘钥文件给BMC 参数说明",
+    "netfn": "32",
+    "cmd": "bb",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbb",
+    "description": "17.71 大系统同步秘钥文件给BMC命令功能 大系统同步秘钥文件给BMC 参数说明"
+  },
+  {
+    "title": "设置控制器BMC复位大系统",
+    "netfn": "32",
+    "cmd": "71",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0x71",
+    "description": "设置控制器BMC复位大系统"
+  },
+  {
+    "title": "设置系统供电模式",
+    "netfn": "32",
+    "cmd": "bc",
+    "command": "ipmitool -H <bmc_ip> -U admin -P password raw 0x32 0xbc",
+    "description": "设置系统供电模式"
+  }
+]

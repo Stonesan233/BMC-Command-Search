@@ -1,0 +1,1505 @@
+[
+  {
+    "section": "3.2.1",
+    "title": "查询管理集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers'",
+    "description": "查询服务器当前管理集合资源的信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.2",
+    "title": "查询指定管理资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id'",
+    "description": "查询服务器指定管理资源信息，当前仅可查询服务器自身iBMC管理资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.3",
+    "title": "修改指定管理资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改服务器指定管理资源信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.4",
+    "title": "卸载语言",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "卸载语言",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.5",
+    "title": "恢复出厂设置（自定义接口）",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "恢复出厂设置",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.6",
+    "title": "一键收集",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "收集单板所有模块的维护相关信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.7",
+    "title": "导入BIOS、BMC 和RAID 控制器配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导入BIOS、BMC和RAID控制器配置 注：导入BIOS配置资源表示已下发BIOS setup项，但当前还未生效，下次系统重启时生效。下电状态导入RAID控制器配置，在下次系统重启时生效。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.8",
+    "title": "导出BIOS、BMC 和RAID 控制器配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出BIOS、BMC和RAID控制器配置。  注：RAID控制器配置需在操作系统重启完成之后导出才有效。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.9",
+    "title": "下载BMC 文件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "下载BMC文件",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.10",
+    "title": "进入最小系统",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "进入最小系统",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.11",
+    "title": "查询虚拟媒体集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia'",
+    "description": "查询虚拟媒体集合资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.12",
+    "title": "查询虚拟媒体资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/CD",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/CD'",
+    "description": "查询虚拟媒体资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.13",
+    "title": "设置虚拟媒体资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/CD",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/CD' -H 'Content-Type: application/json' -d '{}'",
+    "description": "设置虚拟媒体资源",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.14",
+    "title": "连接虚拟媒体",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "连接虚拟媒体",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.15",
+    "title": "断开虚拟媒体",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "断开虚拟媒体",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.16",
+    "title": "查询虚拟SP U 盘资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/'",
+    "description": "查询虚拟SP U盘资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.17",
+    "title": "查询虚拟iBMA U 盘资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/'",
+    "description": "查询虚拟iBMA U盘资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.18",
+    "title": "连接虚拟iBMA U 盘",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "连接虚拟iBMA U盘",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.19",
+    "title": "断开虚拟iBMA U 盘",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/VirtualMedia/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VirtualMedia/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "断开虚拟iBMA U盘",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.20",
+    "title": "查询NTP 配置资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NtpService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NtpService'",
+    "description": "查询NTP配置资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.21",
+    "title": "修改NTP 资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/NtpService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NtpService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "NTP资源属性设置",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.22",
+    "title": "上传NTP 组密钥",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/NtpService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NtpService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "NTP组密钥导入。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.23",
+    "title": "查询SNMP 资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SnmpService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SnmpService'",
+    "description": "查询服务器SNMP资源信息。   ## 命令格式  操作类型：GET  URL：https://device_ip/redfish/v1/Managers/manager_id/SnmpService  请求头：   ## 参数说明  表3-73查询SNMP 资源信息参数说明",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.24",
+    "title": "修改SNMP 资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SnmpService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SnmpService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改服务器SNMP资源属性信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.25",
+    "title": "修改指定用户SNMP v3 加密密码",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SnmpService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SnmpService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改指定用户SNMP v3加密密码。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.26",
+    "title": "SNMP 发送测试事件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SnmpService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SnmpService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "SNMP发送测试事件。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.27",
+    "title": "查询SMTP 资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SmtpService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmtpService'",
+    "description": "查询SMTP资源信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.28",
+    "title": "修改SMTP 资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SmtpService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmtpService' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "修改SMTP资源属性",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.29",
+    "title": "导入SMTP 根证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SmtpService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmtpService/Actions/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "导入Smtp根证书  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS服务器、双",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.30",
+    "title": "发送SMTP 测试邮件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SmtpService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmtpService/Actions/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "发送SMTP测试邮件",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.31",
+    "title": "查询Syslog 资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService'",
+    "description": "查询Syslog资源信息",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.32",
+    "title": "修改指定Syslog 资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "Syslog资源属性设置",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.33",
+    "title": "导入Syslog 根证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "导入Syslog根证书  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS服务器",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.34",
+    "title": "导入Syslog 本地证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "导入Syslog本地证书  此资源已经废弃，仅供兼容性用途使用。归一到/redfish/v1/Managers/manager_id/ SecurityService/HttpsCert进行管理   ## 命令格式  操作类型：POST  URL：https://device_ip/redfish/v1/Managers/manager_id/SyslogService/ Actions/Sysl",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.2.35",
+    "title": "Syslog 发送测试事件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "发送测试事件",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.36",
+    "title": "导入Syslog 服务器证书吊销列表",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SyslogService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SyslogService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导入Syslog服务器证书吊销列表。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程H",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.37",
+    "title": "删除Syslog 服务器证书吊销列表",
+    "method": "",
+    "url": "",
+    "command": "# 删除Syslog 服务器证书吊销列表",
+    "description": "删除Syslog服务器证书吊销列表。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程H",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.38",
+    "title": "查询KVM 资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/KvmService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/KvmService'",
+    "description": "查询KVM资源。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.39",
+    "title": "修改KVM 资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/KvmService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/KvmService' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "修改KVM资源属性",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.40",
+    "title": "设置KVM Key",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/KvmService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/KvmService/Actions/' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "设置KVM Key。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.41",
+    "title": "查询iBMC 网口集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/EthernetInterfaces",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/EthernetInterfaces'",
+    "description": "查询服务器指定管理资源的网口集合信息，当前仅可查询iBMC管理资源的网口集合资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.42",
+    "title": "查询指定iBMC 网口资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/EthernetInterfaces/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/EthernetInterfaces/'",
+    "description": "查询服务器指定iBMC网口资源信息，当前仅可查询iBMC管理网口的资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.43",
+    "title": "修改指定iBMC 网口信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/EthernetInterfaces/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/EthernetInterfaces/' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "修改服务器指定iBMC网口的信息，当前仅可修改iBMC管理网口的信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.2.44",
+    "title": "查询iBMC 服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NetworkProtocol",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NetworkProtocol'",
+    "description": "查询服务器当前iBMC支持的服务指定状态及端口信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.45",
+    "title": "修改iBMC 服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/NetworkProtocol",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NetworkProtocol' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "修改服务器iBMC指定服务的使能状态及端口号。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.46",
+    "title": "重启iBMC",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "重启iBMC。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.47",
+    "title": "切换iBMC 镜像",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "切换iBMC镜像。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.48",
+    "title": "查询安全服务集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService'",
+    "description": "查询服务器当前支持的安全服务集合的信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.49",
+    "title": "修改安全服务集合资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "修改服务器当前支持的安全服务集合的信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.2.50",
+    "title": "查询安全策略集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityPolicy",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityPolicy'",
+    "description": "查询服务器当前支持的安全策略集合的信息。",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.2.51",
+    "title": "修改安全策略集合资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SecurityPolicy",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityPolicy' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Connect\",  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\" }'",
+    "description": "修改服务器当前支持的安全策略集合的信息。",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.2.52",
+    "title": "更新系统主密钥",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Disconnect\" }'",
+    "description": "更新系统主密钥。",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.2.53",
+    "title": "导入远程HTTPS 传输服务器根证书",
+    "method": "",
+    "url": "",
+    "command": "# 导入远程HTTPS 传输服务器根证书",
+    "description": "远程HTTPS传输服务器证书导入。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HT",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.2.54",
+    "title": "删除远程HTTPS 传输服务器根证书",
+    "method": "",
+    "url": "",
+    "command": "# 删除远程HTTPS 传输服务器根证书",
+    "description": "远程HTTPS传输服务器证书删除。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HT",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.2.55",
+    "title": "导入远程HTTPS 传输服务器根证书的吊销列表",
+    "method": "",
+    "url": "",
+    "command": "# 导入远程HTTPS 传输服务器根证书的吊销列表",
+    "description": "导入远程HTTPS 传输服务器根证书的吊销列表",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.2.56",
+    "title": "查询SSL 证书资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/'",
+    "description": "查询服务器当前支持的SSL证书资源的信息。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.2.57",
+    "title": "生成CSR",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "生成SSL证书的CSR。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.2.58",
+    "title": "导出CSR",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "导出SSL证书的CSR。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.2.59",
+    "title": "导入服务器证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导入服务器证书。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.60",
+    "title": "导入自定义证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "导入自定义的证书文件。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.61",
+    "title": "查询SSL 证书更新服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/'",
+    "description": "查询iBMC当前支持的证书更新服务资源的信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.62",
+    "title": "修改SSL 证书更新服务资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "修改证书更新服务资源信息",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.63",
+    "title": "导入SSL 证书更新服务的CA 证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "导入SSL证书自动更新的CA服务器证书  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.64",
+    "title": "导入SSL 证书更新服务的CA 证书吊销列表",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "导入CA服务器的证书吊销列表  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.65",
+    "title": "删除SSL 证书更新服务的CA 证书吊销列表",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "删除CA服务器的证书吊销列表  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.66",
+    "title": "导入SSL 证书更新服务的客户端证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "导入CA服务器的客户端证书",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.2.67",
+    "title": "更新BMC 证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "更新BMC证书",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.68",
+    "title": "查询VNC 资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/VncService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VncService'",
+    "description": "查询VNC资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.69",
+    "title": "修改VNC 资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/VNCService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/VNCService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改VNC资源属性",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.70",
+    "title": "查询SP 服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService'",
+    "description": "查询SP服务资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.71",
+    "title": "修改SP 服务资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SPService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改SP服务资源属性",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.72",
+    "title": "删除SP 服务的升级文件或者配置文件命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "删除SP 服务的升级文件或者配置文件命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.73",
+    "title": "触发导出SP 服务的RAID 当前配置命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "触发导出SP 服务的RAID 当前配置命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.74",
+    "title": "更新SP 相关的schema 文件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "更新SP相关的schema。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.75",
+    "title": "收集SP 相关的日志信息",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Actions/' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "收集SP相关的日志信息",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.76",
+    "title": "查询SP 服务的OS 安装配置集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP的OS安装配置集合资源的信息。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.77",
+    "title": "创建SP 服务的OS 安装配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "创建SP服务的OS安装配置。本资源受许可证控制，需要通过许可证授权后才能使用。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.78",
+    "title": "查询SP 服务的OS 安装配置资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP的OS安装配置资源的信息。本资源受许可证控制，需要通过许可证授权后才能  使用。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.79",
+    "title": "查询SP 服务的升级集合资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP 服务的升级集合资源命令功能",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.80",
+    "title": "查询SP 服务的升级资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP的升级资源的信息。",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.2.81",
+    "title": "升级SP 或者升级固件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "升级SP或者升级固件。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.82",
+    "title": "查询SP 服务的硬件信息资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/DeviceInfo",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/DeviceInfo'",
+    "description": "查询SP 服务的硬件信息资源命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.83",
+    "title": "查询SP 服务的配置结果集合资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPResult",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPResult'",
+    "description": "查询SP 服务的配置结果集合资源命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.84",
+    "title": "查询SP 服务的配置结果资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPResult/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPResult/'",
+    "description": "查询SP 服务的配置结果资源命令功能",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.2.85",
+    "title": "查询SP 服务的配置信息集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPCfg",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPCfg'",
+    "description": "查询SP服务的配置信息资源。",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.2.86",
+    "title": "查询SP 服务的配置信息资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPCfg/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPCfg/'",
+    "description": "查询SP服务的配置信息资源。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.2.87",
+    "title": "查询SP 服务的诊断配置集合资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPDiagnose",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPDiagnose'",
+    "description": "查询SP 服务的诊断配置集合资源命令功能",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.2.88",
+    "title": "创建SP 服务的诊断配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPDiagnose",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPDiagnose' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": true }'",
+    "description": "创建SP服务的诊断配置。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.2.89",
+    "title": "查询SP 服务的诊断配置资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP 服务的诊断配置资源命令功能",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.2.90",
+    "title": "查询SP 服务的硬盘擦除配置集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP的硬盘擦除配置集合资源的信息。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.2.91",
+    "title": "创建SP 服务的硬盘擦除配置命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\" }'",
+    "description": "创建SP 服务的硬盘擦除配置命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.92",
+    "title": "查询SP 服务的硬盘擦除配置资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP 服务的硬盘擦除配置资源命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.93",
+    "title": "查询SP 系统擦除配置集合资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询SP 系统擦除配置集合资源命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.2.94",
+    "title": "创建SP 系统擦除配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"content\",  \"Password\": \"123\" }'",
+    "description": "创建SP系统擦除配置文件。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  },
+  {
+    "section": "3.2.95",
+    "title": "查询指定SP 系统擦除配置",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/'",
+    "description": "查询指定SP系统擦除配置信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  },
+  {
+    "section": "3.2.96",
+    "title": "查询SP 插件集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Plugins",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Plugins'",
+    "description": "查询SP插件集合资源的信息。",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.2.97",
+    "title": "查询SP 插件资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SPService//Plugins/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService//Plugins/'",
+    "description": "查询SP插件资源的信息。",
+    "request_body": "{\n  \"MemberId\": \"0\"\n}"
+  },
+  {
+    "section": "3.2.98",
+    "title": "安装SP 插件",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/Plugins",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/Plugins' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "安装SP插件。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.99",
+    "title": "删除SP 插件资源",
+    "method": "DELETE",
+    "url": "/redfish/v1/Managers/manager_id/SPService//Plugins/",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService//Plugins/'",
+    "description": "删除SP插件资源。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.100",
+    "title": "查询诊断服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService'",
+    "description": "查询诊断服务资源。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.101",
+    "title": "修改诊断服务资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改诊断服务资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.102",
+    "title": "停止录像回放",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "断开正在播放录像的网络链路。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.103",
+    "title": "导出录像",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出录像文件。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.104",
+    "title": "截屏",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "截取业务侧系统屏幕图像。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.105",
+    "title": "删除截屏",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "删除手动截屏文件。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.106",
+    "title": "导出黑匣子",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出黑匣子。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.107",
+    "title": "导出串口数据",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出串口数据。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.108",
+    "title": "导出NPU 日志",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出NPU日志。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.109",
+    "title": "导出NPU 运行日志",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "导出NPU运行日志",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.110",
+    "title": "查询工作记录信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/'",
+    "description": "查询工作记录信息。工作记录信息保存了自己日常的工作内容，方便以后查看。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.111",
+    "title": "添加工作记录",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{  \"HostName\": \"huawei\" }'",
+    "description": "添加工作记录。",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.2.115",
+    "title": "查询指定日志服务资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/'",
+    "description": "查询指定日志服务资源信息命令功能",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.2.116",
+    "title": "导出日志信息",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/' -H 'Content-Type: application/json' -d '{  \"HostName\": \"huawei\" }'",
+    "description": "导出日志信息。",
+    "request_body": "{\n  \"HostName\": \"huawei\"\n}"
+  },
+  {
+    "section": "3.2.117",
+    "title": "查询日志集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/'",
+    "description": "查询服务器当前日志集合资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.118",
+    "title": "查询日志资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/'",
+    "description": "查询服务器当前日志资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.119",
+    "title": "查询License 服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LicenseService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LicenseService'",
+    "description": "查询License服务信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.120",
+    "title": "安装license",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LicenseService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LicenseService/' -H 'Content-Type: application/json' -d '{  \"ResetType\": \"ForceRestart\" }'",
+    "description": "安装license。",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.121",
+    "title": "导出license",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LicenseService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LicenseService/' -H 'Content-Type: application/json' -d '{  \"ResetType\": \"ForceRestart\" }'",
+    "description": "导出license。",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.122",
+    "title": "失效license",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LicenseService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LicenseService/' -H 'Content-Type: application/json' -d '{  \"ResetType\": \"ForceRestart\" }'",
+    "description": "失效license。",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.123",
+    "title": "删除license",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LicenseService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LicenseService/' -H 'Content-Type: application/json' -d '{  \"ResetType\": \"ForceRestart\" }'",
+    "description": "删除license。",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.124",
+    "title": "查询FDMService 服务资源命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/FDMService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/FDMService'",
+    "description": "查询FDMService 服务资源命令功能",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.125",
+    "title": "修改FDMService 服务资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/FDMService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/FDMService' -H 'Content-Type: application/json' -d '{  \"ResetType\": \"ForceRestart\" }'",
+    "description": "修改FDMService的资源属性。",
+    "request_body": "{\n  \"ResetType\": \"ForceRestart\"\n}"
+  },
+  {
+    "section": "3.2.126",
+    "title": "查询NIC 集合资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NICs",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NICs'",
+    "description": "查询NIC集合信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.127",
+    "title": "查询指定NIC 资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NICs/nicid",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NICs/nicid'",
+    "description": "查询指定NIC信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.128",
+    "title": "修改指定NIC 资源",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/NICs/nicid",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NICs/nicid' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改指定NIC资源",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.129",
+    "title": "查询LLDP 服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LldpService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LldpService'",
+    "description": "查询LLDP配置资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.130",
+    "title": "修改LLDP 服务资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/LldpService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LldpService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "LLDP服务资源属性设置",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.131",
+    "title": "查询SMS 服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SmsService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmsService'",
+    "description": "查询SMS配置资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.132",
+    "title": "修改SMS 服务资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SmsService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmsService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "SMS服务资源属性设置",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.133",
+    "title": "刷新可安装的BMA",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SmsService/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SmsService/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "刷新可安装的BMA",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.134",
+    "title": "查询USB 管理服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/USBMgmtService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/USBMgmtService'",
+    "description": "查询USB管理服务配置资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.135",
+    "title": "修改USB 管理服务资源信息命令功能",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/USBMgmtService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/USBMgmtService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改USB 管理服务资源信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.136",
+    "title": "查询FPCService 服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/FPCService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/FPCService'",
+    "description": "查询FPCService资源属性",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.137",
+    "title": "查询FPC 内存健康状态信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/FPCService/Memory",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/FPCService/Memory'",
+    "description": "查询服务器当前FPC内存健康状态信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.138",
+    "title": "内存隔离联动模式下发隔离任务命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/FPCService/Memory/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/FPCService/Memory/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "内存隔离联动模式下发隔离任务命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.139",
+    "title": "查询场景化智能节能信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/EnergySavingService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/EnergySavingService'",
+    "description": "查询场景化智能节能信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.140",
+    "title": "智能节能场景配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/EnergySavingService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/EnergySavingService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "智能节能场景配置。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.141",
+    "title": "创建SP 服务的RAID 配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SPService/SPRAID",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SPService/SPRAID' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "创建SP服务的RAID配置。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.142",
+    "title": "报废处置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "产品报废处置。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.143",
+    "title": "查询DICE 证书资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/'",
+    "description": "查询服务器当前支持的DICE证书资源的信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.144",
+    "title": "导出DICE CSR",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "导出DICE CSR。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.145",
+    "title": "导入DICE 证书",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "导入DICE证书。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.2.146",
+    "title": "导出DICE 证书链",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"RootCertId\": 1 }'",
+    "description": "导出DICE证书链。",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.2.147",
+    "title": "导出融合身份认证证书链",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"RootCertId\": 1 }'",
+    "description": "导出融合身份认证证书链。",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.2.148",
+    "title": "查询TPCM 服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/'",
+    "description": "查询TPCM服务信息",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.2.149",
+    "title": "设置TPCM 服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/SecurityService/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/SecurityService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"123\",  \"RootCertId\": 1 }'",
+    "description": "设置TPCM服务信息",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.2.150",
+    "title": "查询CA 证书集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/Certificates",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Certificates'",
+    "description": "查询设备当前CA证书集合资源信息。  说明  自iBMC300 5.2.0.1版本后证书升级为资源池，根证书和所有其他BMC业务公用。建议使用此接口对CA证书进行管理。  共用根证书的包括BMC所有校验对端服务器的业务，如Syslog、SMTP、LDAP、SSL证书更新、远程HTTPS服务器、双因素登录。   ## 命令格式  操作类型：GET  URL：https://device_ip/red",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.2.151",
+    "title": "查询指定CA 证书资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/Certificates/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Certificates/'",
+    "description": "查询指定用户资源信息。  说明  自iBMC300 5.2.0.1版本后证书升级为资源池，根证书和所有其他BMC业务公用。建议使用此接口对CA证书、吊销列表进行管理。  共用根证书的包括BMC所有校验对端服务器的业务，如Syslog、SMTP、LDAP、SSL证书更新、远程HTTPS服务器、双因素登录。  自iBMC300 5.9.0.1版本后此接口升级为Redfish标准资源（可通过配置导入导出",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCA3.crl\"\n}"
+  },
+  {
+    "section": "3.2.152",
+    "title": "删除CA 证书的吊销列表",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Certificates/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Certificates/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "CA证书吊销列表删除。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.153",
+    "title": "查询全量告警信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/EventLog",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/EventLog'",
+    "description": "查询服务器全量告警资源信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.154",
+    "title": "设置事件记录模式",
+    "method": "PATCH",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/EventLog",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/EventLog' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "设置事件记录模式",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.155",
+    "title": "查询PRBS 测试接口集合的资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/'",
+    "description": "查询PRBS 测试接口集合的资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.156",
+    "title": "查询PRBS 测试对象集合的资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/'",
+    "description": "查询PRBS 测试对象集合的资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.157",
+    "title": "查询单个PRBS 测试对象信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/'",
+    "description": "查询单个PRBS 测试对象信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.158",
+    "title": "查询PRBS 测试信息",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "查询PRBS测试信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.2.159",
+    "title": "下发PRBS 测试配置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "下发PRBS测试配置",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.160",
+    "title": "清除PRBS 测试统计",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "清除PRBS测试统计。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.161",
+    "title": "终止PRBS 测试",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/DiagnosticService/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/DiagnosticService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "终止PRBS测试。",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.162",
+    "title": "下发入侵检测配置信息",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "支持网管侧下发入侵检测配置信息到安全组件",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.163",
+    "title": "查询系统日志集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/'",
+    "description": "查询服务器当前日志集合资源信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.2.164",
+    "title": "查询系统日志资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/'",
+    "description": "查询系统日志资源信息",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.165",
+    "title": "清空日志信息",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/LogServices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/LogServices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/HuaweiCATest.crt\" }'",
+    "description": "查询系统日志资源信息",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.166",
+    "title": "设置BMC 吊销版本列表",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/HuaweiCATest.crt\" }'",
+    "description": "设置BMC吊销版本列表",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.167",
+    "title": "恢复出厂设置",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/HuaweiCATest.crt\" }'",
+    "description": "恢复出厂设置",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.168",
+    "title": "测试文件服务器连通性",
+    "method": "POST",
+    "url": "/redfish/v1/Managers/manager_id/Actions/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Managers/manager_id/Actions/Oem/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/HuaweiCATest.crt\" }'",
+    "description": "测试文件服务器连通性",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.169",
+    "title": "查询SSL 证书集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NetworkProtocol/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NetworkProtocol/'",
+    "description": "查询SSL 证书集合资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  },
+  {
+    "section": "3.2.170",
+    "title": "查询指定SSL 证书资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Managers/manager_id/NetworkProtocol/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Managers/manager_id/NetworkProtocol/'",
+    "description": "查询指定SSL证书资源信息，当前仅支持Subject下的AlternativeNames字段查询，剩余SSL证书历史资源请在redfish/v1/Managers/manager_id/SecurityService/HttpsCert下进行查看",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCATest.crt\"\n}"
+  }
+]

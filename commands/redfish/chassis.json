@@ -1,0 +1,524 @@
+[
+  {
+    "section": "3.4.1",
+    "title": "查询机箱集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis'",
+    "description": "查询服务器系统内的机箱集合资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.2",
+    "title": "查询指定机箱资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id'",
+    "description": "查询指定的服务器机箱资源信息。  说明 \tGA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.3",
+    "title": "修改指定机箱资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改指定的服务器机箱资源信息。  说明  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。   ## 命令格式  操作类型：PATCH  URL：https://device_ip/redfish/v1/Chassis/chassis_id  请求头：  请求消息体：   ## 参数说明  表3-524修改机箱定位指示灯参数说明",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.4",
+    "title": "控制机箱定位指示灯状态",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/Chassis_id/Oem/Huawei/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/Chassis_id/Oem/Huawei/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "控制机箱定位指示灯状态。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.5",
+    "title": "恢复超节点配置信息为默认值命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/Chassis_id/Oem/Huawei/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/Chassis_id/Oem/Huawei/Actions/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "恢复超节点配置信息为默认值命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.6",
+    "title": "查询指定机箱散热资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Thermal",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Thermal'",
+    "description": "查询指定服务器机箱的温度和风扇传感器信息。  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。   ## 命令格式  操作类型：GET  URL：https://device_ip/redfish/v1/Chassis/chassis_id/Thermal  请求头：  请求消息体：无   ## 参数说明  表3-530查询指定机箱散热资源参数说明",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.7",
+    "title": "修改指定机箱散热资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/Thermal",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Thermal' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改指定机箱散热资源信息。  说明  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.8",
+    "title": "清空进风口历史温度数据",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Thermal/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Thermal/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "清空进风口历史温度的数据",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.9",
+    "title": "查询指定机箱电源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Power",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power'",
+    "description": "查询指定服务器机箱的电压、功率和电源信息。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.10",
+    "title": "修改指定电源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/Power",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "修改服务器指定电源属性。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.11",
+    "title": "清空历史功率数据",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "清空历史功率数据。  说明  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。   ## 命令格式  操作类型：POST  URL：https://device_ip/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/ Actions/Power.ResetHistoryData  请求头：  请求消息体：   ## 参数说明  表3-541清",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.12",
+    "title": "重新统计功率数据",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "重新统计功率数据。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.13",
+    "title": "收集功率统计数据",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Language\": \"fr\" }'",
+    "description": "收集功率统计数据  说明  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.14",
+    "title": "查询指定机箱电源子系统信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PowerSubsystem",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PowerSubsystem'",
+    "description": "查询指定服务器机箱的电源子系统信息",
+    "request_body": "{\n  \"Language\": \"fr\"\n}"
+  },
+  {
+    "section": "3.4.15",
+    "title": "查询电源转换器集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PowerSubsystem/Oem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PowerSubsystem/Oem/'",
+    "description": "查询电源转换器集合资源信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.16",
+    "title": "查询电源转换器单个资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PowerSubsystem/Oem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PowerSubsystem/Oem/'",
+    "description": "查询电源转换器单个资源信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.17",
+    "title": "查询网络适配器集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/NetworkAdapters",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/NetworkAdapters'",
+    "description": "查询网络适配器集合资源信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.18",
+    "title": "查询网络适配器单个资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/NetworkAdapters/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/NetworkAdapters/'",
+    "description": "查询网络适配器单个资源信息命令功能",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.19",
+    "title": "查询网络端口集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/NetworkAdapters/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/NetworkAdapters/'",
+    "description": "查询网络端口集合资源信息命令功能",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.20",
+    "title": "查询网络端口单个资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/NetworkAdapters/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/NetworkAdapters/'",
+    "description": "查询指定服务器机箱的网络端口单个资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.21",
+    "title": "修改网络端口单个资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/NetworkAdapters/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/NetworkAdapters/' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "修改指定服务器机箱的网络端口单个资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.22",
+    "title": "查询网络端口上接的光模块资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Transceivers/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Transceivers/'",
+    "description": "查询指定服务器机箱的网络端口上接的光模块资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.23",
+    "title": "查询网络端口上接的光模块集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Transceivers",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Transceivers'",
+    "description": "查询网络端口上接的光模块集合资源信息命令功能",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.4.24",
+    "title": "查询驱动器集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Drives",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Drives'",
+    "description": "查询驱动器集合资源信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.25",
+    "title": "查询指定驱动器资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/drives/drive_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/drives/drive_id'",
+    "description": "查询服务器指定驱动器的信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.26",
+    "title": "修改指定驱动器属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/Drives/drives_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Drives/drives_id' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "修改服务器指定驱动器的属性。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.27",
+    "title": "加密盘的数据安全擦除",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Drives/drives_id/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Drives/drives_id/' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "加密盘的数据安全擦除。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.28",
+    "title": "查询扩展板卡集合资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Boards",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Boards'",
+    "description": "查询扩展板卡集合资源信息命令功能",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.29",
+    "title": "查询指定扩展板卡资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Boards/board_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Boards/board_id'",
+    "description": "查询指定扩展板卡资源信息命令功能",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.4.30",
+    "title": "修改指定拓展板卡资源属性",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/Boards/board_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Boards/board_id' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Connect\",  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\" }'",
+    "description": "修改服务器指定扩展板卡资源属性。   ## 命令格式  操作类型：PATCH  URL：https://device_ip/redfish/v1/Chassis/chassis_id/Boards/board_id  请求头：  请求消息体：   ## 参数说明  表3-582修改指定扩展板资源参数说明",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.4.31",
+    "title": "NPU 模组复位",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Boards/board_id/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Boards/board_id/Actions/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Connect\",  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\" }'",
+    "description": "复位NPU模组。",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.4.32",
+    "title": "查询PCIe 设备集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices'",
+    "description": "查询PCIe设备集合资源信息。",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.4.33",
+    "title": "查询指定PCIe 设备资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/pciedevices_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/pciedevices_id'",
+    "description": "查询指定PCIe 设备资源信息命令功能",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.4.34",
+    "title": "修改指定PCIe 设备资源信息命令功能",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/pciedevices_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/pciedevices_id' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "修改指定PCIe 设备资源信息命令功能",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.4.35",
+    "title": "复位指定SDI 卡",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "复位指定SDI卡",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.4.36",
+    "title": "设置指定SDI 卡电源状态",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "设置指定SDI卡电源状态",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.4.37",
+    "title": "指定PCIe 设备资源导入https 证书命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "指定PCIe 设备资源导入https 证书命令功能",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.4.38",
+    "title": "查询指定PCIe 功能资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/PCIeDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/PCIeDevices/'",
+    "description": "查询服务器指定PCIe功能资源信息。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.4.39",
+    "title": "查询进风口历史温度资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/Thermal/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Thermal/'",
+    "description": "查询进风口历史温度资源信息",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.40",
+    "title": "查询历史功率资源信息",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Power/Oem/Huawei/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "查询历史功率资源信息  说明 \tGA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.41",
+    "title": "查询门限传感器列表资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThresholdSensors",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThresholdSensors'",
+    "description": "查询门限传感器列表资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.42",
+    "title": "查询离散型传感器列表资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/DiscreteSensors",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/DiscreteSensors'",
+    "description": "查询离散型传感器列表资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.43",
+    "title": "查询备电集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/BackupBatteryUnits",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/BackupBatteryUnits'",
+    "description": "查询备电集合资源信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.44",
+    "title": "查询备电单个资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/BackupBatteryUnits/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/BackupBatteryUnits/'",
+    "description": "查询指定备电单个资源信息。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.45",
+    "title": "查询指定机箱泵资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem'",
+    "description": "查询指定机箱泵资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.46",
+    "title": "修改指定机箱泵资源信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "修改指定服务器机箱泵资源信息。  说明  iBMC300 5.5.0.1 及以上版本支持。   ## 命令格式  操作类型：PATCH  URL：https://device_ip/redfish/v1/Chassis/chassis_id/ThermalSubsystem  请求头：  请求消息体：   ## 参数说明  表3-611修改指定机箱泵资源参数说明",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.4.47",
+    "title": "重启整机服务器",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Actions/Chassis.Reset",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Actions/Chassis.Reset' -H 'Content-Type: application/json' -d '{}'",
+    "description": "重启整机多个服务器。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.48",
+    "title": "查询漏液检测系统信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/'",
+    "description": "查询液冷系统信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.49",
+    "title": "查询漏液检测器集合",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/'",
+    "description": "查询漏液检测器集合资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.50",
+    "title": "查询漏液检测",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/'",
+    "description": "查询指定检测器的漏液状态。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.51",
+    "title": "查询风扇集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/Fans",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/Fans'",
+    "description": "查询风扇集合资源信息。  说明 \tGA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.52",
+    "title": "查询风扇单个资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/Fans/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/Fans/'",
+    "description": "查询风扇单个资源信息。  说明  GA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.53",
+    "title": "设置风扇组、泵组转速批量下发",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/Sensors",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/Sensors' -H 'Content-Type: application/json' -d '{}'",
+    "description": "风扇组、泵组批量转速下发  说明 \tGA140C等机型为纯液冷散热，响应体以实际返回结果为准。",
+    "request_body": ""
+  },
+  {
+    "section": "3.4.55",
+    "title": "查询指定Sensor 资源信息",
+    "method": "GET",
+    "url": "",
+    "command": "# 查询指定Sensor 资源信息",
+    "description": "查询服务器指定Sensor资源信息。   ## 命令格式  操作类型：GET  URL：https://device_ip/ redfish/v1/Chassis/chassis_id/Sensors/sensor_id  请求头：",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.4.56",
+    "title": "查询指定机箱散热度量资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/'",
+    "description": "查询指定机箱散热度量资源信息命令功能",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.4.57",
+    "title": "重新统计散热组件累计耗电量数据",
+    "method": "POST",
+    "url": "/redfish/v1/Chassis/chassis_id/ThermalSubsystem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Chassis/chassis_id/ThermalSubsystem/' -H 'Content-Type: application/json' -d '{  \"ServiceEnabled\": false,  \"CertVerificationEnabled\": false,  \"ServerAddress\": \"device_ip\",  \"ServerPort\": 25,  \"TLSEnabled\": true,  \"AnonymousLoginEnabled\": false,  \"SenderUserName\": \"huawei\",  \"SenderPassword\": \"Password\",  \"SenderAddress\": \"huawei@outlook.com\",  \"EmailSubject\": \"Server Alert\",  \"EmailSubjectContains\": [],  \"AlarmSeverity\": \"Normal\",  \"ReportType\": \"SEL\",  \"RecipientAddresses\": [   {    \"Enabled\": false,    \"EmailAddress\": \"smtptest@it.software.com\",    \"Description\": \"smtptest\"   }  ] }'",
+    "description": "重新统计散热组件累计耗电量数据",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.4.58",
+    "title": "查询单个电源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/ChassisId/PowerSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/ChassisId/PowerSubsystem/'",
+    "description": "查询单个电源信息",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  },
+  {
+    "section": "3.4.59",
+    "title": "查询单个电源度量信息",
+    "method": "GET",
+    "url": "/redfish/v1/Chassis/ChassisId/PowerSubsystem/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Chassis/ChassisId/PowerSubsystem/'",
+    "description": "查询单个电源度量信息",
+    "request_body": "{\n  \"ServiceEnabled\": false,\n  \"CertVerificationEnabled\": false,\n  \"ServerAddress\": \"device_ip\",\n  \"ServerPort\": 25,\n  \"TLSEnabled\": true,\n  \"AnonymousLoginEnabled\": false,\n  \"SenderUserName\": \"huawei\",\n  \"SenderPassword\": \"Password\",\n  \"SenderAddress\": \"huawei@outlook.com\",\n  \"EmailSubject\": \"Server Alert\",\n  \"EmailSubjectContains\": [],\n  \"AlarmSeverity\": \"Normal\",\n  \"ReportType\": \"SEL\",\n  \"RecipientAddresses\": [\n    {\n      \"Enabled\": false,\n      \"EmailAddress\": \"smtptest@it.software.com\",\n      \"Description\": \"smtptest\"\n    }\n  ]\n}"
+  }
+]

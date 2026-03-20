@@ -1,0 +1,280 @@
+[
+  {
+    "section": "7.3.1",
+    "name": "ipinfo",
+    "title": "查询iBMC 管理网口的IP 信息",
+    "command": "ipmcget -d ipinfo",
+    "description": "ipinfo命令用来查询iBMC管理网口的IP信息。",
+    "params": [],
+    "example": "ipmcget -d ipinfo"
+  },
+  {
+    "section": "7.3.2",
+    "name": "ipaddr",
+    "title": "设置iBMC 管理网口的IPv4 信息",
+    "command": "ipmcset -d ipaddr -v <ipaddr> <mask> [gateway]",
+    "description": "ipaddr命令用于设置iBMC管理网口的IPv4地址、掩码、网关。",
+    "params": [
+      "参数说明",
+      "ipaddr",
+      "表示要设置的iBMC网口的",
+      "mask",
+      "表示要设置的iBMC网口的",
+      "gateway",
+      "表示要设置的iBMC网口的"
+    ],
+    "example": "ipmcset -d ipaddr -v 192.168.0.25 255.255.255.0 192.168.0.25"
+  },
+  {
+    "section": "7.3.3",
+    "name": "ipversion",
+    "title": "设置iBMC 网络协议版本",
+    "command": "ipmcset -d ipversion -v <ipversion>",
+    "description": "ipversion命令用于设置iBMC网络协议版本。",
+    "params": [
+      "参数说明",
+      "ipversion",
+      "表示要设置的iBMC网络协",
+      "议版本"
+    ],
+    "example": "ipmcset -d ipversion -v 0"
+  },
+  {
+    "section": "7.3.4",
+    "name": "backupipaddr",
+    "title": "设置iBMC 管理网口的备份IPv4 信息",
+    "command": "ipmcset -d backupipaddr -v <ipaddr> <mask>",
+    "description": "backupipaddr命令用于设置iBMC管理网口的备份IPv4地址。 ● 在DHCP功能开启时： – 若iBMC管理网口未分配到IP地址，此时您可以使用备份IP地址登录iBMC系统 进行配置。 – 若iBMC管理网口已分配到IP地址，但用户无法确认分配的具体地址时，您可 以使用备份IP地址登录iBMC系统进行查询。（前提条件为通过DHCP服务器 分配的地址与当前备份地址分布在不同网段，否则无法登录。） ● 在DHCP功能未开启时：备份IP地址不生效，不可使用。",
+    "params": [
+      "参数说明",
+      "ipaddr",
+      "表示要设置的iBMC网口的",
+      "mask",
+      "表示要设置的备份IPv4地址"
+    ],
+    "example": "ipmcset -d backupipaddr -v 192.168.0.25 255.255.255.0"
+  },
+  {
+    "section": "7.3.5",
+    "name": "ipmode",
+    "title": "设置iBMC 管理网口的IPv4 模式",
+    "command": "ipmcset -d ipmode -v <dhcp | static>",
+    "description": "ipmode命令用于设置iBMC网口的IPv4模式。",
+    "params": [
+      "参数说明",
+      "dhcp",
+      "表示地址模式为dhcp",
+      "static",
+      "表示地址模式为static"
+    ],
+    "example": "ipmcset -d ipmode -v dhcp"
+  },
+  {
+    "section": "7.3.6",
+    "name": "gateway",
+    "title": "设置iBMC 管理网口的IPv4 网关",
+    "command": "ipmcset -d gateway -v <gateway>",
+    "description": "gateway命令用来设置iBMC网口的IPv4网关地址。",
+    "params": [
+      "参数说明",
+      "gateway",
+      "表示iBMC网口的IPv4网"
+    ],
+    "example": "ipmcset -d gateway -v 192.168.0.1"
+  },
+  {
+    "section": "7.3.7",
+    "name": "ipaddr6",
+    "title": "设置iBMC 管理网口的IPv6 信息",
+    "command": "ipmcset -d ipaddr6 -v <ipaddr6/prefixlen> [gateway6]",
+    "description": "ipaddr6命令用于设置iBMC网口的IPv6地址、前缀长度和网关地址。",
+    "params": [
+      "参数说明",
+      "ipaddr6",
+      "表示要设置的iBMC网",
+      "prefixlen",
+      "表示要设置的iBMC网",
+      "gateway6",
+      "表示要设置的iBMC网"
+    ],
+    "example": "ipmcset -d ipaddr6 -v fc00::6516/64 fc00::1"
+  },
+  {
+    "section": "7.3.8",
+    "name": "ipmode6",
+    "title": "设置iBMC 管理网口的IPv6 模式",
+    "command": "ipmcset -d ipmode6 -v <dhcp | static>",
+    "description": "ipmode6命令用于设置iBMC网口的IPv6模式。",
+    "params": [
+      "参数说明",
+      "dhcp",
+      "表示地址模式为dhcp",
+      "static",
+      "表示地址模式为static"
+    ],
+    "example": "ipmcset -d ipmode6 -v dhcp"
+  },
+  {
+    "section": "7.3.9",
+    "name": "gateway6",
+    "title": "设置iBMC 管理网口的IPv6 网关",
+    "command": "ipmcset -d gateway6 -v <gateway>",
+    "description": "gateway6命令用来设置iBMC网口的IPv6网关地址。",
+    "params": [
+      "参数说明",
+      "gateway",
+      "表示iBMC网口的"
+    ],
+    "example": "ipmcset -d gateway6 -v fc00::1"
+  },
+  {
+    "section": "7.3.10",
+    "name": "netmode",
+    "title": "设置管理网口模式",
+    "command": "ipmcset -d netmode -v <option>",
+    "description": "netmode命令用于设置网口模式。",
+    "params": [
+      "参数说明",
+      "option",
+      "网口模式"
+    ],
+    "example": "ipmcset -d netmode -v 1"
+  },
+  {
+    "section": "7.3.11",
+    "name": "activeport",
+    "title": "设置激活端口",
+    "command": "ipmcset -d activeport -v <option> [portid]",
+    "description": "activeport命令用于设置iBMC管理网口的激活端口。",
+    "params": [
+      "参数说明",
+      "option",
+      "激活端口类型",
+      "不同服务器的参数取值范围",
+      "portid",
+      "激活端口编号"
+    ],
+    "example": "ipmcset -d activeport -v 0"
+  },
+  {
+    "section": "7.3.12",
+    "name": "vlan",
+    "title": "设置管理网口VLAN",
+    "command": "ipmcset -d vlan -v <off | id> [port type]",
+    "description": "vlan命令用于设置网口的VLAN信息。",
+    "params": [
+      "参数说明",
+      "off",
+      "禁止VLAN",
+      "id",
+      "网口所属VLAN",
+      "port",
+      "iBMC"
+    ],
+    "example": "ipmcset -d vlan -v 405"
+  },
+  {
+    "section": "7.3.20",
+    "name": "service -d port",
+    "title": "设置指定服务的端口号",
+    "command": "ipmcset -t service -d port -v <option> <port1value> [port2value]",
+    "description": "service -d port命令用于设置iBMC指定服务的端口号。",
+    "params": [
+      "参数说明",
+      "option",
+      "服务类型",
+      "port1value",
+      "服务的端口号",
+      "port2value",
+      "RMCP服务可以设置此端",
+      "口"
+    ],
+    "example": "ipmcset -t service -d port -v https 443"
+  },
+  {
+    "section": "7.4.2",
+    "name": "trap -d port",
+    "title": "设置SNMP trap 上报端口号",
+    "command": "ipmcset -t trap -d port -v <destination> <portvalue>",
+    "description": "trap -d port命令用于设置iBMC的SNMP trap上报端口号。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示SNMP",
+      "1",
+      "portvalue",
+      "表示SNMP",
+      "SNMP",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "259"
+    ],
+    "example": "ipmcset -t trap -d port -v 1 1024"
+  },
+  {
+    "section": "7.4.4",
+    "name": "trap -d address",
+    "title": "设置SNMP trap 目的IP 地址",
+    "command": "ipmcset -t trap -d address -v <destination> <ipaddr>",
+    "description": "trap -d address命令用于设置SNMP trap上报信息的目的IP地址。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示SNMP",
+      "ipaddr",
+      "表示接收事件信息上报的"
+    ],
+    "example": "ipmcset -t trap -d address -v 1 10.10.10.10"
+  },
+  {
+    "section": "7.5.9",
+    "name": "syslog -d port",
+    "title": "设置syslog 服务器端口号",
+    "command": "ipmcset -t syslog -d port -v <destination> <portvalue>",
+    "description": "syslog -d port命令用于设置syslog服务器端口号。",
+    "params": [
+      "参数说明",
+      "destination",
+      "表示syslog上报通道的编",
+      "1",
+      "portvalue",
+      "表示syslog服务器端口",
+      "1"
+    ],
+    "example": "ipmcset -t syslog -d port -v <destination> <portvalue>"
+  },
+  {
+    "section": "7.7.8",
+    "name": "ethport",
+    "title": "查询系统可用网口",
+    "command": "ipmcget -d ethport",
+    "description": "ethport命令用来查询iBMC可用网口，包括iBMC专用网口以及支持NCSI功能的网口。",
+    "params": [],
+    "example": "ipmcget -d ethport"
+  },
+  {
+    "section": "7.17.3",
+    "name": "ping, ping6",
+    "title": "检查网络连通性",
+    "command": "ipmcget -d ping, ping6",
+    "description": "ping或ping6命令用于检查网络是否连通。",
+    "params": [
+      "参数说明",
+      "IPv4",
+      "目标IPv4地址",
+      "Atlas",
+      "用户指南",
+      "7",
+      "文档版本",
+      "版权所有",
+      "375",
+      "参数说明",
+      "IPv6",
+      "目标IPv6地址"
+    ],
+    "example": "ipmcget -d ping, ping6"
+  }
+]

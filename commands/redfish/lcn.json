@@ -1,0 +1,155 @@
+[
+  {
+    "section": "3.16.1",
+    "title": "查询LCNService 资源",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService'",
+    "description": "查询服务器当前LCNService资源。  说明  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支持。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.16.2",
+    "title": "查询LCN 设备集合信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices'",
+    "description": "查询LCN设备集合资源的信息。  说明  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.16.3",
+    "title": "查询指定LCN 设备信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/'",
+    "description": "查询指定LCN设备信息。  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支\t\t\t持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.16.4",
+    "title": "修改指定LCN 设备信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"\" }'",
+    "description": "修改指定LCN设备信息。  说明  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支  持",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.16.5",
+    "title": "查询LCN 设备子卡集合信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/'",
+    "description": "查询LCN 设备子卡集合信息命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"\"\n}"
+  },
+  {
+    "section": "3.16.6",
+    "title": "查询指定LCN 设备子卡信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/'",
+    "description": "查询指定LCN设备子卡信息。  说明 iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支持",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.16.7",
+    "title": "查询LCN 设备用户信息",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/'",
+    "description": "查询LCN设备用户信息。  说明  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支  持",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.16.8",
+    "title": "导出指定LCN 设备日志",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"RootCertId\": 1 }'",
+    "description": "导出指定LCN设备日志。  说明 \t\t\t\tiBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支\t\t\t\t持",
+    "request_body": "{\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.16.9",
+    "title": "设置与指定LCN 设备通信的内部网络命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"123\",  \"RootCertId\": 1 }'",
+    "description": "设置与指定LCN 设备通信的内部网络命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.16.10",
+    "title": "设置指定LCN 设备的网络接口命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"text\",  \"Content\": \"123\",  \"RootCertId\": 1 }'",
+    "description": "设置指定LCN 设备的网络接口命令功能",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"123\",\n  \"RootCertId\": 1\n}"
+  },
+  {
+    "section": "3.16.11",
+    "title": "创建指定LCN 设备的用户",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/HuaweiCA3.crl\" }'",
+    "description": "创建指定LCN设备的用户。  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支持   ## 命令格式  操作类型：POST  URL：https://device_ip/redfish/v1/Oem/Huawei/LCNService/LCNDevices/ device_id/Accounts/Ac",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/HuaweiCA3.crl\"\n}"
+  },
+  {
+    "section": "3.16.12",
+    "title": "删除指定LCN 设备的用户",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "删除指定LCN设备的用户。  说明  iBMC300 5.8.3.27及以上版本，Atlas900 A3 SuperPod，Atlas 800T A3，Atlas 800I A3机型支持",
+    "request_body": ""
+  },
+  {
+    "section": "3.16.13",
+    "title": "修改指定LCN 设备的用户密码命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "修改指定LCN 设备的用户密码命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.16.14",
+    "title": "重启指定LCN 设备",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "重启指定的LCN设备。  说明 \tiBMC300 5.8.3.51及以上版本，Atlas 800T A3，Atlas 800I A3机型支持",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.16.15",
+    "title": "重启指定LCN 设备并恢复默认出厂配置命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "重启指定LCN 设备并恢复默认出厂配置命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.16.16",
+    "title": "查询指定LCN 设备升级服务的资源信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/'",
+    "description": "查询指定LCN 设备升级服务的资源信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  },
+  {
+    "section": "3.16.17",
+    "title": "升级指定LCN 设备的系统软件命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/Oem/Huawei/LCNService/LCNDevices/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/Oem/Huawei/LCNService/LCNDevices/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/c.csr\" }'",
+    "description": "升级指定LCN 设备的系统软件命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/c.csr\"\n}"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "reset",
+    "title": "重启iBMC 管理系统",
+    "command": "ipmcset -d reset",
+    "description": "reset命令用来重启iBMC管理系统。",
+    "params": {},
+    "example": "ipmcset -d reset",
+    "section": "7.3.14"
+  }
+]

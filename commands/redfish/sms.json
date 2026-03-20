@@ -1,0 +1,65 @@
+[
+  {
+    "section": "3.10.1",
+    "title": "查询升级服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/UpdateService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/UpdateService'",
+    "description": "查询iBMA升级服务相关资源。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.10.8",
+    "title": "异步升级操作",
+    "method": "POST",
+    "url": "",
+    "command": "# 异步升级操作",
+    "description": "设置iBMA下载相关升级包的参数信息，如升级包路径，升级包类型等并启动升级。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.10.9",
+    "title": "异步升级生效",
+    "method": "POST",
+    "url": "",
+    "command": "# 异步升级生效",
+    "description": "升级功能生效。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.10.10",
+    "title": "文件上传操作",
+    "method": "POST",
+    "url": "",
+    "command": "# 文件上传操作",
+    "description": "将文件上传至操作系统的约定目录下，请求会反馈一个TaskId，可以用来查询上传进度以及上传结果。  此接口仅供Smart Provisioning使用。",
+    "request_body": "{\n  \"ServiceEnabled\": true\n}"
+  },
+  {
+    "section": "3.10.11",
+    "title": "查询任务服务资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/Sms/1/TaskService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/Sms/1/TaskService'",
+    "description": "查询服务器当前任务服务资源的信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\"\n}"
+  },
+  {
+    "section": "3.10.14",
+    "title": "收集日志资源",
+    "method": "POST",
+    "url": "",
+    "command": "# 收集日志资源",
+    "description": "收集服务器当前日志资源信息。",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  },
+  {
+    "section": "3.10.15",
+    "title": "带内事件上报",
+    "method": "POST",
+    "url": "",
+    "command": "# 带内事件上报",
+    "description": "接收由带内上报过来的事件",
+    "request_body": "{\n  \"Type\": \"text\",\n  \"Content\": \"content\",\n  \"Password\": \"123\"\n}"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "chapter": "7.6",
+    "section": "7.6.1",
+    "name": "vnc -d info",
+    "title": "查询VNC 服务信息",
+    "command": "ipmcget -t vnc -d info",
+    "description": "vnc -d info命令用于查询VNC服务的信息。",
+    "example": "ipmcget -t vnc -d info"
+  },
+  {
+    "chapter": "7.6",
+    "section": "7.6.2",
+    "name": "vnc -d password",
+    "title": "设置VNC 服务的密码",
+    "command": "ipmcset -t vnc -d password",
+    "description": "vnc -d password命令用于设置VNC服务的密码。",
+    "example": "ipmcset -t vnc -d password"
+  },
+  {
+    "chapter": "7.6",
+    "section": "7.6.3",
+    "name": "vnc -d timeout",
+    "title": "设置VNC 服务的超时时长",
+    "command": "ipmcset -t vnc -d timeout -v <value>",
+    "description": "vnc -d timeout命令用于设置VNC服务的超时时长。",
+    "example": "ipmcset -t vnc -d timeout -v 0"
+  },
+  {
+    "chapter": "7.6",
+    "section": "7.6.4",
+    "name": "vnc -d ssl",
+    "title": "设置VNC 服务SSL 加密功能的状态",
+    "command": "ipmcset -t vnc -d ssl -v <enabled|disabled>",
+    "description": "vnc -d ssl命令用于设置VNC服务SSL加密功能的状态。 Atlas 900 A3 SuperPoD 超节点 iBMC 用户指南 7 CLI 介绍 文档版本 04 (2025-12-09) 版权所有 © 华为技术有限公司 275   ---  ## Page 287",
+    "example": "ipmcset -t vnc -d ssl -v enabled"
+  },
+  {
+    "chapter": "7.6",
+    "section": "7.6.5",
+    "name": "vnc -d keyboardlayout",
+    "title": "设置VNC 服务的键盘布局",
+    "command": "ipmcset -t vnc -d keyboardlayout -v <en|jp|de>",
+    "description": "vnc -d keyboardlayout命令用于设置VNC服务的键盘布局。",
+    "example": "ipmcset -t vnc -d keyboardlayout -v jp"
+  }
+]

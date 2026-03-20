@@ -1,0 +1,74 @@
+[
+  {
+    "chapter": "7.4",
+    "section": "7.4.1",
+    "name": "trap -d state",
+    "title": "查询和设置SNMP trap 状态",
+    "command": "ipmcget -t trap -d state [-v destination]",
+    "description": "trap -d state命令用于查询和设置iBMC的SNMP trap功能的使能和禁止状态。",
+    "example": "ipmcset -t trap -d state -v 1 disabled"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.2",
+    "name": "trap -d port",
+    "title": "设置SNMP trap 上报端口号",
+    "command": "ipmcset -t trap -d port -v <destination> <portvalue>",
+    "description": "trap -d port命令用于设置iBMC的SNMP trap上报端口号。",
+    "example": "ipmcset -t trap -d port -v 1 1024"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.3",
+    "name": "trap -d community",
+    "title": "设置SNMP trap 团体名称",
+    "command": "ipmcset -t trap -d community",
+    "description": "trap -d community命令用于设置iBMC的SNMP trap团体名称。",
+    "example": "ipmcset -t trap -d community"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.4",
+    "name": "trap -d address",
+    "title": "设置SNMP trap 目的IP 地址",
+    "command": "ipmcset -t trap -d address -v <destination> <ipaddr>",
+    "description": "trap -d address命令用于设置SNMP trap上报信息的目的IP地址。",
+    "example": "ipmcset -t trap -d address -v 1 10.10.10.10"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.5",
+    "name": "trap -d trapiteminfo",
+    "title": "查询Trap 上报目的地址信息",
+    "command": "ipmcget -t trap -d trapiteminfo",
+    "description": "trap -d trapiteminfo命令用于查询SNMP trap上报信息的目的IP地址、上报端口、使 能状态。",
+    "example": "ipmcget -t trap -d trapiteminfo"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.6",
+    "name": "trap -d version",
+    "title": "查询和设置SNMP trap 版本信息",
+    "command": "ipmcget -t trap -d version",
+    "description": "trap -d version命令用于查询和设置SNMP trap版本信息。",
+    "example": "ipmcset -t trap -d version -v V2C"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.7",
+    "name": "trap -d severity",
+    "title": "查询和设置SNMP trap 告警发送级别",
+    "command": "ipmcget -t trap -d severity",
+    "description": "trap -d severity命令用于查询和设置SNMP trap的告警发送级别。",
+    "example": "ipmcset -t trap -d severity -v minor"
+  },
+  {
+    "chapter": "7.4",
+    "section": "7.4.8",
+    "name": "trap -d user",
+    "title": "查询和设置SNMP trap V3 用户",
+    "command": "ipmcget -t trap -d user",
+    "description": "trap -d user命令用于查询和设置SNMP trap V3用户。",
+    "example": "ipmcset -t trap -d user -v root"
+  }
+]

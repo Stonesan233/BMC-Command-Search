@@ -1,0 +1,308 @@
+[
+  {
+    "section": "3.5.9",
+    "title": "Web 二次认证",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "在Web页面操作中，二次认证包括：修改VNC密码、创建新用户、删除用户、修改指定用户信息、SSH公钥导入、SSH公钥删除、修改自定义角色权限、修改指定域控制器、修改SNMPV3加密密码的信息、新增/修改/删除LDAP和Kerberos用户组信息、导入LDAP证书或证书吊销列表、导入Kerberos密钥表、配置导入。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.6.1",
+    "title": "查询用户服务信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService'",
+    "description": "查询服务器当前用户服务信息，包括密码长度、允许错误密码次数、锁定时长等。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.6.2",
+    "title": "修改用户服务信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService' -H 'Content-Type: application/json' -d '{  \"TransferProtocol\": \"HTTPS\",  \"Path\": \"/tmp/web/aaa.tar.gz\" }'",
+    "description": "修改服务器当前用户服务信息，包括允许错误密码次数、锁定时长等。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.6.3",
+    "title": "查询用户集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/Accounts",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/Accounts'",
+    "description": "查询服务器当前用户集合资源信息。",
+    "request_body": "{\n  \"TransferProtocol\": \"HTTPS\",\n  \"Path\": \"/tmp/web/aaa.tar.gz\"\n}"
+  },
+  {
+    "section": "3.6.4",
+    "title": "查询指定用户资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/Accounts/member_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/member_id'",
+    "description": "查询指定用户资源信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.5",
+    "title": "创建新用户",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "创建新用户。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.6",
+    "title": "删除用户",
+    "method": "DELETE",
+    "url": "/redfish/v1/AccountService/Accounts/account_id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id'",
+    "description": "删除指定用户。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.7",
+    "title": "修改指定用户信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/Accounts/account_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "修改指定用户的用户名、密码、权限、锁定状态、使能状态、登录接口等信息。",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.8",
+    "title": "双因素认证的根证书导入",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Oem/Huawei/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Oem/Huawei/Actions/' -H 'Content-Type: application/json' -d '{  \"Oem\": {   \"Huawei\": {    \"EncryptionEnabled\": false,    \"FloppyDriveEnabled\": true   }  } }'",
+    "description": "双因素认证的根证书导入。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS服务",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.9",
+    "title": "双因素认证的根证书删除",
+    "method": "",
+    "url": "",
+    "command": "# 双因素认证的根证书删除",
+    "description": "双因素认证的根证书删除。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS服务",
+    "request_body": "{\n  \"Oem\": {\n    \"Huawei\": {\n      \"EncryptionEnabled\": false,\n      \"FloppyDriveEnabled\": true\n    }\n  }\n}"
+  },
+  {
+    "section": "3.6.10",
+    "title": "双因素认证的用户的客户端证书导入命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts/account_id/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id/Oem/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Connect\",  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\" }'",
+    "description": "双因素认证的用户的客户端证书导入命令功能",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.6.11",
+    "title": "双因素认证的用户的客户端证书删除命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts/account_id/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id/Oem/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Connect\",  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\" }'",
+    "description": "双因素认证的用户的客户端证书删除命令功能",
+    "request_body": "{\n  \"VmmControlType\": \"Connect\",\n  \"Image\": \"nfs://device_ip/usr/SLE-12-Server-DVD-x86_64-GM-DVD1.ISO\"\n}"
+  },
+  {
+    "section": "3.6.12",
+    "title": "双因素认证的客户端证书吊销列表导入命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Oem/Huawei/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Oem/Huawei/Actions/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Disconnect\" }'",
+    "description": "双因素认证的客户端证书吊销列表导入命令功能",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.6.13",
+    "title": "双因素认证的客户端证书吊销列表删除命令功能",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Oem/Huawei/Actions/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Oem/Huawei/Actions/' -H 'Content-Type: application/json' -d '{  \"VmmControlType\": \"Disconnect\" }'",
+    "description": "双因素认证的客户端证书吊销列表删除命令功能",
+    "request_body": "{\n  \"VmmControlType\": \"Disconnect\"\n}"
+  },
+  {
+    "section": "3.6.14",
+    "title": "SSH 公钥导入",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts/account_id/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id/Oem/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "SSH公钥导入。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.6.15",
+    "title": "SSH 公钥删除",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Accounts/account_id/Oem/",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Accounts/account_id/Oem/' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "SSH公钥删除。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.6.16",
+    "title": "查询角色集合资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/Roles",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/Roles'",
+    "description": "查询服务器当前角色集合资源信息。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.6.17",
+    "title": "查询指定角色信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/Roles/role_id",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/Roles/role_id'",
+    "description": "查询服务器指定角色信息。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.6.18",
+    "title": "修改自定义角色权限",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/Roles/role_id",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/Roles/role_id' -H 'Content-Type: application/json' -d '{  \"USBStickControlType\": \"Connect\" }'",
+    "description": "修改指定角色的权限。",
+    "request_body": "{\n  \"USBStickControlType\": \"Connect\"\n}"
+  },
+  {
+    "section": "3.6.19",
+    "title": "创建自定义角色",
+    "method": "POST",
+    "url": "/redfish/v1/AccountService/Roles",
+    "command": "curl -k -u admin:password -X POST 'https://<bmc_ip>/redfish/v1/AccountService/Roles' -H 'Content-Type: application/json' -d '{}'",
+    "description": "创建自定义角色。",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.20",
+    "title": "删除自定义角色",
+    "method": "DELETE",
+    "url": "/redfish/v1/AccountService/Roles/role_id",
+    "command": "curl -k -u admin:password -X DELETE 'https://<bmc_ip>/redfish/v1/AccountService/Roles/role_id'",
+    "description": "删除指定自定义角色。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.21",
+    "title": "查询Ldap 服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/LdapService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/LdapService'",
+    "description": "查询Ldap资源。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.22",
+    "title": "修改Ldap 功能开启使能",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/LdapService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/LdapService' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "Ldap功能是否开启。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.23",
+    "title": "查询Ldap 域控制器集合信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/LdapService/LdapControllers",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/LdapService/LdapControllers'",
+    "description": "查询Ldap 域控制器集合信息命令功能",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.24",
+    "title": "查询具体域控制器的信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/LdapService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/LdapService/'",
+    "description": "查询Ldap资源。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.25",
+    "title": "修改具体域控制器的信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/LdapService/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/LdapService/' -H 'Content-Type: application/json' -d '{  \"Type\": \"URI\",  \"Content\": \"/tmp/ntp.keys\" }'",
+    "description": "修改具体域控制器资源属性。",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.26",
+    "title": "具体域控制器Ldap 证书的导入",
+    "method": "",
+    "url": "",
+    "command": "# 具体域控制器Ldap 证书的导入",
+    "description": "导入Ldap证书。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTTPS服务器、双",
+    "request_body": "{\n  \"Type\": \"URI\",\n  \"Content\": \"/tmp/ntp.keys\"\n}"
+  },
+  {
+    "section": "3.6.27",
+    "title": "具体域控制器Ldap 服务器证书吊销列表导入",
+    "method": "",
+    "url": "",
+    "command": "# 具体域控制器Ldap 服务器证书吊销列表导入",
+    "description": "导入Ldap服务器证书吊销列表。  此资源已经废弃，仅供兼容性用途使用。建议使用redfish/v1/CertificateService接口进行CA证书/吊销列表管理  自iBMC300 5.2.0.1版本后CA证书升级为资源池，所有BMC业务共用资源池中的CA证书，此接口导入证书会影响到其他包含根证书的接口。共用CA证书业务包括：Syslog、SMTP、LDAP、SSL证书自动更新、远程HTT",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.28",
+    "title": "查询权限映射资源信息",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/PrivilegeMap",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/PrivilegeMap'",
+    "description": "查询权限映射资源信息。",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.29",
+    "title": "查询Kerberos 服务资源",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/KerberosService",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/KerberosService'",
+    "description": "查询Kerberos资源。",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.30",
+    "title": "修改Kerberos 功能开启使能命令功能",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/KerberosService",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/KerberosService' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改Kerberos 功能开启使能命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.31",
+    "title": "查询Kerberos 域控制器集合信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/KerberosService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/KerberosService/'",
+    "description": "查询Kerberos 域控制器集合信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.32",
+    "title": "查询具体Kerberos 域控制器的信息命令功能",
+    "method": "GET",
+    "url": "/redfish/v1/AccountService/KerberosService/",
+    "command": "curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/AccountService/KerberosService/'",
+    "description": "查询具体Kerberos 域控制器的信息命令功能",
+    "request_body": ""
+  },
+  {
+    "section": "3.6.33",
+    "title": "修改具体Kerberos 域控制器的信息",
+    "method": "PATCH",
+    "url": "/redfish/v1/AccountService/KerberosService/",
+    "command": "curl -k -u admin:password -X PATCH 'https://<bmc_ip>/redfish/v1/AccountService/KerberosService/' -H 'Content-Type: application/json' -d '{}'",
+    "description": "修改具体Kerberos域控制器资源属性。",
+    "request_body": ""
+  }
+]

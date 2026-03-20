@@ -1,0 +1,9 @@
+BMC命令 REDFISH
+命令名称：
+命令：curl -k -u admin:password -X GET 'https://<bmc_ip>/redfish/v1/TaskService/Tasks/task_id/Monitor'
+功能标题：查询导出表
+功能描述：查询服务器指定Monitor的信息。
+使用示例：
+领域关键词：
+操作关键词：query get list show 查看 获取 查询 列出
+查询表达式：查询查询导出表 获取查询导出表 get  show 

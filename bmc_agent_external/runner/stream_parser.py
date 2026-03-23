@@ -1,8 +1,9 @@
 """
-BMC Agent Stream Parser — DeltaAccumulator + InteractiveSession state machine.
+BMC Agent Stream Parser — DeltaAccumulator (brace-counting) + InteractiveSession state machine.
 
 Parses Claude CLI's stream-json stdout into structured BMC action objects.
-Handles arbitrary UTF-8 delta fragments correctly (no naive line splitting).
+Uses brace-depth counting to handle arbitrary UTF-8 delta fragments that may
+split mid-JSON-object, mid-key, or even mid-codepoint.
 """
 
 from __future__ import annotations
@@ -13,7 +14,7 @@ import logging
 import os
 import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Generator, Optional
 
@@ -25,6 +26,7 @@ STRUCTURED_TYPES = frozenset({
     "health_check_request",
     "repair_action",
     "completion_summary",
+    "error",
 })
 
 # Optional: load JSON Schema for validation
@@ -42,35 +44,32 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
-# DeltaAccumulator
+# DeltaAccumulator (brace-counting)
 # ---------------------------------------------------------------------------
 
 class DeltaAccumulator:
     """
     Accumulates ``text_delta`` fragments from Claude's ``stream-json`` output
-    and yields complete, validated structured-action dicts.
+    and extracts complete JSON objects using brace-depth counting.
 
-    Why this exists
-    ---------------
-    Claude's ``stream-json`` format emits events like::
+    Why brace counting instead of newline splitting?
+    -------------------------------------------------
+    Claude's ``text_delta`` fragments split at **arbitrary** byte boundaries.
+    A single JSON object may arrive across many deltas::
 
-        {"type":"content_block_delta","index":0,
-         "delta":{"type":"text_delta","text":"<fragment>"}}
+        delta 1: '{"type":"comman'
+        delta 2: 'd_plan","id":"cm'
+        delta 3: 'd_001",...}\\n{"ty'
+        delta 4: 'pe":"health_check...'
 
-    The ``<fragment>`` is an **arbitrary** UTF-8 slice — it may be a single
-    character, half a JSON key, or three complete JSON lines glued together.
-    Splitting on ``\\n`` naively would yield broken JSON.
-
-    This class buffers text and only attempts JSON parsing on fully
-    newline-terminated lines.  A trailing non-terminated fragment is kept in
-    the buffer for the next ``feed()`` call.
+    Naive ``splitlines()`` on each delta yields broken JSON.  Brace counting
+    tracks ``{`` / ``}`` depth (respecting quoted strings and escapes) to find
+    exact object boundaries regardless of fragment alignment.
     """
 
     def __init__(self) -> None:
         self._buffer: str = ""
-        self._scan_pos: int = 0  # up to where we've consumed complete lines
-
-    # -- public API ----------------------------------------------------------
+        self._scan_pos: int = 0
 
     def feed(self, text_fragment: str) -> None:
         """Append a ``text_delta`` fragment to the internal buffer."""
@@ -78,43 +77,47 @@ class DeltaAccumulator:
 
     def extract_actions(self) -> list[dict]:
         """
-        Scan the buffer for new complete lines that parse as structured actions.
-
-        A "complete line" = text terminated by ``\\n``.  Unterminated trailing
-        text is left in the buffer because the next delta may complete it.
+        Scan the buffer for complete JSON objects using brace-depth counting.
+        Returns validated action dicts.  Incomplete trailing objects remain
+        buffered for the next call.
         """
-        last_nl = self._buffer.rfind("\n", self._scan_pos)
-        if last_nl < self._scan_pos:
-            return []  # no new complete lines
-
-        region = self._buffer[self._scan_pos : last_nl + 1]
-        self._scan_pos = last_nl + 1
-
-        return self._parse_region(region)
-
-    def flush(self) -> list[dict]:
-        """Force-parse any remaining unterminated text (call at stream end)."""
-        if self._scan_pos < len(self._buffer):
-            self._buffer += "\n"
-            return self.extract_actions()
-        return []
-
-    # -- internals -----------------------------------------------------------
-
-    @staticmethod
-    def _parse_region(region: str) -> list[dict]:
         actions: list[dict] = []
-        for line in region.splitlines():
-            line = line.strip()
-            if not line or line[0] != "{":
+        buf = self._buffer
+        i = self._scan_pos
+
+        while i < len(buf):
+            # Skip whitespace between objects
+            if buf[i] in (" ", "\t", "\n", "\r"):
+                i += 1
                 continue
+
+            # Look for start of JSON object
+            if buf[i] != "{":
+                nl = buf.find("\n", i)
+                if nl == -1:
+                    break  # incomplete non-JSON line — wait for more
+                i = nl + 1
+                continue
+
+            # Found '{' — use brace counting to find the matching '}'
+            obj_end = self._find_object_end(buf, i)
+            if obj_end is None:
+                break  # incomplete object — wait for more data
+
+            candidate = buf[i:obj_end]
+            i = obj_end
+
             try:
-                obj = json.loads(line)
+                obj = json.loads(candidate)
             except json.JSONDecodeError:
+                # Malformed — skip to next line
+                nl = buf.find("\n", i)
+                i = (nl + 1) if nl != -1 else i
                 continue
 
             if not isinstance(obj, dict):
                 continue
+
             obj_type = obj.get("type")
             if obj_type not in STRUCTURED_TYPES:
                 continue
@@ -131,7 +134,62 @@ class DeltaAccumulator:
                     continue
 
             actions.append(obj)
+
+        self._scan_pos = i
+
+        # Trim consumed buffer to prevent unbounded growth
+        if self._scan_pos > 4096:
+            self._buffer = self._buffer[self._scan_pos:]
+            self._scan_pos = 0
+
         return actions
+
+    def flush(self) -> list[dict]:
+        """Final extraction — append newline to force-terminate trailing data."""
+        self._buffer += "\n"
+        return self.extract_actions()
+
+    @staticmethod
+    def _find_object_end(buf: str, start: int) -> Optional[int]:
+        """
+        Starting at buf[start] == '{', find index AFTER the matching '}'.
+        Correctly handles:
+          - Nested objects: {"a": {"b": 1}}
+          - Strings with braces: {"msg": "use {x}"}
+          - Escaped quotes: {"path": "C:\\\\Users\\\\"}
+        Returns None if the object is incomplete.
+        """
+        depth = 0
+        in_string = False
+        escape = False
+        i = start
+
+        while i < len(buf):
+            ch = buf[i]
+
+            if escape:
+                escape = False
+                i += 1
+                continue
+
+            if ch == "\\" and in_string:
+                escape = True
+                i += 1
+                continue
+
+            if ch == '"':
+                in_string = not in_string
+            elif not in_string:
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        return i + 1
+
+            i += 1
+
+        return None  # incomplete
 
 
 # ---------------------------------------------------------------------------
@@ -142,23 +200,10 @@ def parse_stream_lines(
     line_iterator,
 ) -> Generator[dict, None, None]:
     """
-    Consume raw lines from Claude CLI's ``--output-format stream-json`` stdout
+    Consume raw lines from Claude CLI ``--output-format stream-json`` stdout
     and yield validated structured action dicts.
 
-    Parameters
-    ----------
-    line_iterator
-        Iterable of raw ``str`` lines (e.g. ``process.stdout``).
-
-    Yields
-    ------
-    dict
-        Each dict is a validated action with a ``type`` field in
-        ``STRUCTURED_TYPES``.
-
-    Example
-    -------
-    ::
+    Usage::
 
         process = subprocess.Popen(
             ["claude", "-p", prompt, "--output-format", "stream-json"],
@@ -179,7 +224,7 @@ def parse_stream_lines(
         except json.JSONDecodeError:
             continue
 
-        # Extract text_delta fragments from content_block_delta events.
+        # Extract text_delta fragments
         if (
             envelope.get("type") == "content_block_delta"
             and isinstance(envelope.get("delta"), dict)
@@ -189,7 +234,6 @@ def parse_stream_lines(
 
         yield from acc.extract_actions()
 
-    # Final flush for any unterminated trailing text.
     yield from acc.flush()
 
 
@@ -211,10 +255,6 @@ class InteractiveSession:
     """
     State-machine driver for interactive (prompt/response) command sequences.
 
-    Designed to run on top of a paramiko shell channel but decoupled enough
-    to work with any object that supports ``.send(bytes)``, ``.recv(int)``,
-    and ``.recv_ready() -> bool``.
-
     State transitions::
 
         SEND_INITIAL ──► WAITING_PROMPT ──► SENDING_INPUT ──┐
@@ -223,7 +263,7 @@ class InteractiveSession:
                                     (next step)
                          WAITING_PROMPT (no more steps) ──► COLLECTING_TAIL ──► DONE
 
-    On timeout at any point: ──► TIMEOUT.
+    On timeout: ──► TIMEOUT.
     """
 
     TAIL_DRAIN_SECONDS = 2.0
@@ -247,19 +287,8 @@ class InteractiveSession:
         self._deadline = time.monotonic() + total_timeout
         self.error_message = ""
 
-    # -- public --------------------------------------------------------------
-
     def run(self) -> tuple[bool, str]:
-        """
-        Execute the state machine to completion.
-
-        Returns
-        -------
-        (success, output_or_error)
-            ``success`` is True when all steps completed and state reached DONE.
-            ``output_or_error`` is the accumulated terminal output on success,
-            or the error/timeout message on failure.
-        """
+        """Execute the state machine. Returns (success, output_or_error)."""
         terminal = {_State.DONE, _State.TIMEOUT, _State.ERROR}
         while self.state not in terminal:
             if time.monotonic() > self._deadline:
@@ -273,8 +302,6 @@ class InteractiveSession:
 
         ok = self.state is _State.DONE
         return ok, self.output if ok else (self.error_message or f"State: {self.state.value}")
-
-    # -- state handlers ------------------------------------------------------
 
     def _tick(self) -> None:
         if self.state is _State.SEND_INITIAL:
@@ -314,8 +341,6 @@ class InteractiveSession:
                     time.sleep(0.05)
             self.state = _State.DONE
 
-    # -- I/O helpers ---------------------------------------------------------
-
     def _send(self, data: str) -> None:
         self.channel.send(data.encode("utf-8") if isinstance(data, str) else data)
 
@@ -330,10 +355,10 @@ class InteractiveSession:
 
     @staticmethod
     def _prompt_matches(buf: str, pattern: str) -> bool:
-        if pattern in buf:
+        if pattern.lower() in buf.lower():
             return True
         try:
-            return bool(re.search(pattern, buf))
+            return bool(re.search(pattern, buf, re.IGNORECASE))
         except re.error:
             return False
 

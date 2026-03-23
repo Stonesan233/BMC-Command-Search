@@ -50,14 +50,14 @@
 
     "interactive_step": {
       "type": "object",
-      "required": ["step", "expect_prompt", "send_input"],
+      "required": ["step", "expect_prompt", "send_input", "timeout_sec"],
       "additionalProperties": false,
       "properties": {
         "step":            { "type": "integer", "minimum": 1 },
         "expect_prompt":   { "type": "string", "minLength": 1, "description": "Substring or regex to match in terminal output before sending input." },
         "send_input":      { "type": "string", "description": "Text to send. Use $ENV{VAR} for secrets." },
         "is_secret":       { "type": "boolean", "default": false, "description": "If true, redact this input from all logs." },
-        "timeout_seconds": { "type": "integer", "minimum": 1, "default": 10 }
+        "timeout_sec":     { "type": "integer", "minimum": 1, "description": "Per-step timeout in seconds. Required — no default. Typical: 10 for passwords, 30 for firmware, 5 for yes/no." }
       }
     },
 
@@ -175,7 +175,7 @@
       "additionalProperties": false,
       "properties": {
         "failed_step_id":  { "type": "string", "description": "ID of the step that caused the failure." },
-        "error_type":      { "type": "string", "enum": ["timeout", "exit_code_mismatch", "output_mismatch", "ssh_error", "prompt_timeout", "repair_exhausted", "unknown"] },
+        "error_type":      { "type": "string", "enum": ["timeout", "exit_code_mismatch", "output_mismatch", "ssh_error", "prompt_timeout", "repair_exhausted", "command_not_allowed", "unknown"] },
         "message":         { "type": "string" },
         "stdout_tail":     { "type": "string", "description": "Last 500 chars of stdout at failure point." },
         "stderr_tail":     { "type": "string", "description": "Last 500 chars of stderr at failure point." }
@@ -202,6 +202,11 @@
         "details": {
           "type": "array",
           "items": { "$ref": "#/$defs/step_detail" }
+        },
+        "failed_step_id": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Dot-notation ID of the step that caused failure. Examples: 'cmd_003', 'icmd_001.step2', 'hc_002.user_locked'. Null when status is 'pass'."
         },
         "error_details": {
           "oneOf": [

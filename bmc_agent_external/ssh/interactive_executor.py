@@ -1,16 +1,17 @@
 """
 Interactive SSH command executor with pexpect-style API.
 
-Built on paramiko's ``invoke_shell()`` — provides ``sendline()``,
-``expect()``, ``collect_remaining()`` for driving multi-step prompts
-(password changes, confirmations, menus).
+Pure paramiko — no pexpect dependency. Works on Windows and Linux.
+Provides sendline(), expect(), collect_remaining() for driving multi-step
+interactive prompts (password changes, confirmations, menus).
 
-Includes ``MockChannel`` for unit testing without real hardware.
+Includes SecretRedactor for log safety and MockChannel for unit testing.
 """
 
 from __future__ import annotations
 
 import logging
+import os
 import re
 import time
 from typing import Optional
@@ -28,12 +29,36 @@ class PromptTimeout(Exception):
 
 
 # ---------------------------------------------------------------------------
-# InteractiveCommandRunner
+# Secret Redaction
+# ---------------------------------------------------------------------------
+
+class SecretRedactor:
+    """
+    Tracks secret values and replaces them with '***' in any text.
+    Register secrets via add(), then use redact() before logging.
+    """
+
+    def __init__(self):
+        self._secrets: set[str] = set()
+
+    def add(self, secret: str) -> None:
+        if secret and not secret.startswith("<MISSING:"):
+            self._secrets.add(secret)
+
+    def redact(self, text: str) -> str:
+        for s in self._secrets:
+            text = text.replace(s, "***")
+        return text
+
+
+# ---------------------------------------------------------------------------
+# InteractiveCommandRunner (pure paramiko)
 # ---------------------------------------------------------------------------
 
 class InteractiveCommandRunner:
     """
-    Pexpect-like wrapper over a paramiko shell channel.
+    Pexpect-like interface built on paramiko's invoke_shell().
+    No pexpect dependency — uses only paramiko + stdlib.
 
     Usage::
 
@@ -60,40 +85,36 @@ class InteractiveCommandRunner:
         self.channel.settimeout(0.1)
         self.buffer: str = ""
         self.full_output: str = ""
-        self._expect_scan_pos: int = 0  # tracks where next expect() should start scanning
-        # Drain the login banner so it doesn't pollute prompt matching.
-        self._drain(banner_timeout)
-        self._expect_scan_pos = len(self.buffer)  # skip banner
+        self._expect_scan_pos: int = 0
+        self.redactor = SecretRedactor()
 
-    # -- Core API ------------------------------------------------------------
+        # Drain login banner so it doesn't pollute prompt matching
+        self._drain(banner_timeout)
+        self._expect_scan_pos = len(self.buffer)
+
+    # -- Core API -----------------------------------------------------------
 
     def sendline(self, text: str, redact: bool = False) -> None:
-        """Send a line of text (appends ``\\n`` automatically)."""
-        display = "***" if redact else text
-        logger.debug("SEND: %s", display)
-        self.channel.send((text + "\n").encode("utf-8"))
+        """Send a line (appends \\n). If redact=True, value is registered for log redaction."""
+        if redact:
+            resolved = self._resolve_env(text)
+            self.redactor.add(resolved)
+            logger.debug("SEND: ***")
+        else:
+            logger.debug("SEND: %s", text)
+        actual = self._resolve_env(text)
+        self.channel.send((actual + "\n").encode("utf-8"))
 
     def expect(self, pattern: str, timeout: float = 10.0) -> str:
         """
-        Block until *pattern* appears in newly received output.
+        Block until pattern appears in output (case-insensitive).
 
-        Parameters
-        ----------
-        pattern
-            A literal substring **or** a regular expression.  Substring
-            matching is tried first (cheaper).  Regex is used as fallback.
-        timeout
-            Seconds to wait before raising ``PromptTimeout``.
+        Parameters:
+            pattern:  Literal substring or regex.
+            timeout:  Seconds to wait.
 
-        Returns
-        -------
-        str
-            The full buffer contents (including history) at the point of match.
-
-        Raises
-        ------
-        PromptTimeout
-            If *pattern* is not found within *timeout* seconds.
+        Returns the full buffer at match point.
+        Raises PromptTimeout if not found.
         """
         deadline = time.monotonic() + timeout
         scan_start = self._expect_scan_pos
@@ -106,43 +127,45 @@ class InteractiveCommandRunner:
 
             new_region = self.buffer[scan_start:]
 
-            # Substring match (case-insensitive)
-            if pattern.lower() in new_region.lower():
-                logger.debug("MATCH (substring): %r", pattern)
-                match_idx = new_region.lower().index(pattern.lower())
+            # Case-insensitive substring (fast path)
+            lower_region = new_region.lower()
+            lower_pattern = pattern.lower()
+            if lower_pattern in lower_region:
+                match_idx = lower_region.index(lower_pattern)
                 self._expect_scan_pos = scan_start + match_idx + len(pattern)
+                logger.debug("MATCH (substring): %r", pattern)
                 return self.buffer
 
             # Regex fallback (case-insensitive)
             try:
                 m = re.search(pattern, new_region, re.IGNORECASE)
                 if m:
-                    logger.debug("MATCH (regex): %r", pattern)
                     self._expect_scan_pos = scan_start + m.end()
+                    logger.debug("MATCH (regex): %r", pattern)
                     return self.buffer
             except re.error:
-                pass  # not a valid regex — substring was the only check
+                pass
 
             time.sleep(0.05)
 
+        safe_tail = self.redactor.redact(self.buffer[-300:])
         raise PromptTimeout(
             f"Timeout after {timeout:.1f}s waiting for {pattern!r}.  "
-            f"Buffer tail (last 300 chars): …{self.buffer[-300:]}"
+            f"Buffer tail: …{safe_tail}"
         )
 
     def collect_remaining(self, timeout: float = 3.0) -> str:
-        """Drain output for *timeout* seconds, then return ``full_output``."""
+        """Drain output for timeout seconds, return full_output."""
         self._drain(timeout)
         return self.full_output
 
     def close(self) -> None:
-        """Close the underlying shell channel."""
         try:
             self.channel.close()
         except Exception:
             pass
 
-    # -- Convenience: run a full interactive plan ----------------------------
+    # -- Convenience: run a full interactive plan ---------------------------
 
     def run_steps(
         self,
@@ -151,29 +174,20 @@ class InteractiveCommandRunner:
         final_timeout: float = 3.0,
     ) -> tuple[bool, str]:
         """
-        Execute *initial_command*, then walk through *steps* (expect/send pairs).
+        Execute initial_command, then walk through steps (expect/send pairs).
 
-        Parameters
-        ----------
-        initial_command
-            The command that starts the interactive session.
-        steps
-            List of dicts, each with ``expect_prompt``, ``send_input``,
-            optional ``is_secret`` (bool), optional ``timeout_seconds`` (int).
-        final_timeout
-            How long to drain output after the last step.
-
-        Returns
-        -------
-        (success, output)
-            On ``PromptTimeout``, returns ``(False, error_message)``.
+        Each step dict requires:
+            expect_prompt:  str — substring or regex
+            send_input:     str — text to send (may use $ENV{VAR})
+            timeout_sec:    int — per-step timeout (REQUIRED, no default)
+            is_secret:      bool — optional, redact from logs
         """
         try:
             self.sendline(initial_command)
             for step in steps:
                 self.expect(
                     step["expect_prompt"],
-                    timeout=step.get("timeout_seconds", 10),
+                    timeout=step["timeout_sec"],
                 )
                 self.sendline(
                     step["send_input"],
@@ -184,7 +198,7 @@ class InteractiveCommandRunner:
         except PromptTimeout as exc:
             return False, str(exc)
 
-    # -- Internals -----------------------------------------------------------
+    # -- Internals ----------------------------------------------------------
 
     def _read_chunk(self) -> str:
         try:
@@ -204,6 +218,14 @@ class InteractiveCommandRunner:
             else:
                 time.sleep(0.1)
 
+    @staticmethod
+    def _resolve_env(text: str) -> str:
+        return re.sub(
+            r'\$ENV\{(\w+)\}',
+            lambda m: os.environ.get(m.group(1), f"<MISSING:{m.group(1)}>"),
+            text,
+        )
+
 
 # ---------------------------------------------------------------------------
 # MockChannel — for unit testing without hardware
@@ -211,42 +233,37 @@ class InteractiveCommandRunner:
 
 class MockChannel:
     """
-    Simulates a paramiko shell channel that plays back a scripted sequence
-    of output chunks at specified delays.
+    Simulates a paramiko shell channel with scripted output.
 
     Usage::
 
         script = [
-            (0.3, "Enter current password: "),
-            (0.8, "Enter new password: "),
-            (1.3, "Confirm new password: "),
-            (1.8, "Password changed successfully.\\n"),
+            (0.5, "Enter current password: "),
+            (1.5, "Enter new password: "),
+            (2.5, "Confirm new password: "),
+            (3.5, "Password changed successfully.\\n"),
         ]
         mock_client = MockSSHClient(script)
-        runner = InteractiveCommandRunner(mock_client)
+        runner = InteractiveCommandRunner(mock_client, banner_timeout=0.1)
         ok, output = runner.run_steps(
             "ipmcset -t user -d password -v testuser",
             [
-                {"expect_prompt": "current password", "send_input": "old", "is_secret": True},
-                {"expect_prompt": "new password",     "send_input": "new", "is_secret": True},
-                {"expect_prompt": "confirm",          "send_input": "new", "is_secret": True},
+                {"expect_prompt": "current password", "send_input": "Old", "is_secret": True, "timeout_sec": 5},
+                {"expect_prompt": "new password",     "send_input": "New", "is_secret": True, "timeout_sec": 5},
+                {"expect_prompt": "confirm",          "send_input": "New", "is_secret": True, "timeout_sec": 5},
             ],
         )
-        assert ok
-        assert "successfully" in output
+        assert ok and "successfully" in output
     """
 
-    def __init__(self, script: list[tuple[float, str]]) -> None:
-        self._script: list[tuple[float, str]] = list(script)
-        self._start: float = time.monotonic()
-        self._pending: str = ""
+    def __init__(self, script: list[tuple[float, str]]):
+        self._script = list(script)
+        self._start = time.monotonic()
+        self._pending = ""
         self.sent: list[bytes] = []
         self._closed = False
 
-    # -- paramiko channel interface ------------------------------------------
-
-    def settimeout(self, _t: float) -> None:
-        pass
+    def settimeout(self, _t): pass
 
     def recv_ready(self) -> bool:
         self._advance()
@@ -258,18 +275,16 @@ class MockChannel:
         self._pending = self._pending[bufsize:]
         return data.encode("utf-8")
 
-    def send(self, data: bytes | str) -> int:
+    def send(self, data) -> int:
         if isinstance(data, str):
             data = data.encode("utf-8")
         self.sent.append(data)
         return len(data)
 
-    def close(self) -> None:
+    def close(self):
         self._closed = True
 
-    # -- internal ------------------------------------------------------------
-
-    def _advance(self) -> None:
+    def _advance(self):
         elapsed = time.monotonic() - self._start
         ready = [(t, txt) for t, txt in self._script if t <= elapsed]
         for item in ready:
@@ -278,21 +293,19 @@ class MockChannel:
 
 
 class MockSSHClient:
-    """Wraps a MockChannel so it can be passed to ``InteractiveCommandRunner``."""
-
-    def __init__(self, script: list[tuple[float, str]]) -> None:
+    """Wraps MockChannel to be passed to InteractiveCommandRunner."""
+    def __init__(self, script: list[tuple[float, str]]):
         self._script = script
-
     def invoke_shell(self, **_kw) -> MockChannel:
         return MockChannel(self._script)
 
 
 # ---------------------------------------------------------------------------
-# Self-test
+# Self-Test
 # ---------------------------------------------------------------------------
 
-def _self_test() -> None:
-    """Quick smoke test using MockChannel — no hardware needed."""
+def _self_test():
+    """Smoke test — password change + secret redaction via MockChannel."""
     script = [
         (0.5, "Enter current password: "),
         (1.5, "Enter new password: "),
@@ -304,17 +317,24 @@ def _self_test() -> None:
     ok, output = runner.run_steps(
         "ipmcset -t user -d password -v testuser",
         [
-            {"expect_prompt": "current password", "send_input": "OldPass", "is_secret": True, "timeout_seconds": 5},
-            {"expect_prompt": "new password",     "send_input": "NewPass", "is_secret": True, "timeout_seconds": 5},
-            {"expect_prompt": "confirm",          "send_input": "NewPass", "is_secret": True, "timeout_seconds": 5},
+            {"expect_prompt": "current password", "send_input": "OldPass", "is_secret": True, "timeout_sec": 5},
+            {"expect_prompt": "new password",     "send_input": "NewPass", "is_secret": True, "timeout_sec": 5},
+            {"expect_prompt": "confirm",          "send_input": "NewPass", "is_secret": True, "timeout_sec": 5},
         ],
     )
     runner.close()
     assert ok, f"Expected success, got: {output}"
     assert "successfully" in output, f"Missing 'successfully' in: {output}"
+
+    # Verify secret redaction
+    redacted = runner.redactor.redact("Password is OldPass and NewPass")
+    assert "OldPass" not in redacted, f"Secret not redacted: {redacted}"
+    assert "NewPass" not in redacted, f"Secret not redacted: {redacted}"
+    assert "***" in redacted
+
     print("SELF-TEST PASSED")
     print(f"  Output: {output!r}")
-    print(f"  Sent:   {[s.decode() for s in runner.channel.sent]}")
+    print(f"  Redaction: {redacted!r}")
 
 
 if __name__ == "__main__":

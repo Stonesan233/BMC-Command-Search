@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bmc_action_schemas",
+  "title": "BMC Agent Action Schemas",
+  "description": "JSON Schema definitions for all structured action types emitted by the BMC test agent.",
+
+  "$defs": {
+    "target": {
+      "type": "object",
+      "required": ["host", "port", "protocol"],
+      "additionalProperties": false,
+      "properties": {
+        "host":     { "type": "string", "minLength": 1 },
+        "port":     { "type": "integer", "minimum": 1, "maximum": 65535, "default": 22 },
+        "protocol": { "type": "string", "enum": ["ssh"] }
+      }
+    },
+
+    "phase": {
+      "type": "string",
+      "enum": ["precondition", "execute", "postcondition"]
+    },
+
+    "on_failure": {
+      "type": "string",
+      "enum": ["abort", "continue", "retry", "repair"]
+    },
+
+    "command_plan": {
+      "type": "object",
+      "required": ["type", "id", "phase", "description", "target", "command", "timeout_seconds", "on_failure"],
+      "additionalProperties": false,
+      "properties": {
+        "type":                     { "const": "command_plan" },
+        "id":                       { "type": "string", "pattern": "^cmd_\\d{3,}$" },
+        "phase":                    { "$ref": "#/$defs/phase" },
+        "description":              { "type": "string", "minLength": 5 },
+        "target":                   { "$ref": "#/$defs/target" },
+        "command":                  { "type": "string", "minLength": 1 },
+        "timeout_seconds":          { "type": "integer", "minimum": 1, "maximum": 300 },
+        "expected_exit_code":       { "type": "integer", "default": 0 },
+        "expected_output_contains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "on_failure":               { "$ref": "#/$defs/on_failure" }
+      }
+    },
+
+    "interactive_step": {
+      "type": "object",
+      "required": ["step", "expect_prompt", "send_input"],
+      "additionalProperties": false,
+      "properties": {
+        "step":            { "type": "integer", "minimum": 1 },
+        "expect_prompt":   { "type": "string", "minLength": 1, "description": "Substring or regex to match in terminal output before sending input." },
+        "send_input":      { "type": "string", "description": "Text to send. Use $ENV{VAR} for secrets." },
+        "is_secret":       { "type": "boolean", "default": false, "description": "If true, redact this input from all logs." },
+        "timeout_seconds": { "type": "integer", "minimum": 1, "default": 10 }
+      }
+    },
+
+    "interactive_command_plan": {
+      "type": "object",
+      "required": ["type", "id", "phase", "description", "target", "initial_command", "timeout_seconds", "steps", "on_failure"],
+      "additionalProperties": false,
+      "properties": {
+        "type":              { "const": "interactive_command_plan" },
+        "id":                { "type": "string", "pattern": "^icmd_\\d{3,}$" },
+        "phase":             { "$ref": "#/$defs/phase" },
+        "description":       { "type": "string", "minLength": 5 },
+        "target":            { "$ref": "#/$defs/target" },
+        "initial_command":   { "type": "string", "minLength": 1 },
+        "timeout_seconds":   { "type": "integer", "minimum": 1, "maximum": 600 },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/interactive_step" }
+        },
+        "expected_final_output_contains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "on_failure":        { "$ref": "#/$defs/on_failure" }
+      }
+    },
+
+    "health_check": {
+      "type": "object",
+      "required": ["name", "command"],
+      "additionalProperties": false,
+      "properties": {
+        "name":                   { "type": "string", "minLength": 1 },
+        "command":                { "type": "string", "minLength": 1 },
+        "expect_output_contains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "expect_exit_code":       { "type": "integer" },
+        "timeout_seconds":        { "type": "integer", "minimum": 1, "default": 10 }
+      }
+    },
+
+    "health_check_request": {
+      "type": "object",
+      "required": ["type", "id", "phase", "description", "target", "checks", "on_any_failure"],
+      "additionalProperties": false,
+      "properties": {
+        "type":           { "const": "health_check_request" },
+        "id":             { "type": "string", "pattern": "^hc_\\d{3,}$" },
+        "phase":          { "type": "string", "enum": ["precondition", "postcondition"] },
+        "description":    { "type": "string", "minLength": 5 },
+        "target":         { "$ref": "#/$defs/target" },
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/health_check" }
+        },
+        "on_any_failure": { "type": "string", "enum": ["abort", "repair"] }
+      }
+    },
+
+    "repair_command": {
+      "type": "object",
+      "required": ["command"],
+      "additionalProperties": false,
+      "properties": {
+        "command":                  { "type": "string", "minLength": 1 },
+        "timeout_seconds":          { "type": "integer", "minimum": 1, "default": 15 },
+        "expected_exit_code":       { "type": "integer" },
+        "expected_output_contains": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    },
+
+    "repair_action": {
+      "type": "object",
+      "required": ["type", "id", "issue", "severity", "target", "repair_commands", "on_repair_failure"],
+      "additionalProperties": false,
+      "properties": {
+        "type":                { "const": "repair_action" },
+        "id":                  { "type": "string", "pattern": "^fix_\\d{3,}$" },
+        "issue":               { "type": "string", "minLength": 5 },
+        "severity":            { "type": "string", "enum": ["warning", "critical", "fatal"] },
+        "target":              { "$ref": "#/$defs/target" },
+        "repair_commands": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/repair_command" }
+        },
+        "verify_after_repair": { "type": "boolean", "default": true },
+        "on_repair_failure":   { "type": "string", "enum": ["abort", "continue"] }
+      }
+    },
+
+    "step_detail": {
+      "type": "object",
+      "required": ["id", "status", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "id":     { "type": "string" },
+        "status": { "type": "string", "enum": ["pass", "fail", "error", "skipped"] },
+        "note":   { "type": "string" }
+      }
+    },
+
+    "error_details": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "failed_step_id":  { "type": "string", "description": "ID of the step that caused the failure." },
+        "error_type":      { "type": "string", "enum": ["timeout", "exit_code_mismatch", "output_mismatch", "ssh_error", "prompt_timeout", "repair_exhausted", "unknown"] },
+        "message":         { "type": "string" },
+        "stdout_tail":     { "type": "string", "description": "Last 500 chars of stdout at failure point." },
+        "stderr_tail":     { "type": "string", "description": "Last 500 chars of stderr at failure point." }
+      },
+      "required": ["failed_step_id", "error_type", "message"]
+    },
+
+    "completion_summary": {
+      "type": "object",
+      "required": ["type", "test_case", "status", "steps_executed", "steps_passed", "steps_failed",
+                    "repairs_attempted", "repairs_succeeded", "summary", "details"],
+      "additionalProperties": false,
+      "properties": {
+        "type":                  { "const": "completion_summary" },
+        "test_case":             { "type": "string" },
+        "status":                { "type": "string", "enum": ["pass", "fail", "error"] },
+        "steps_executed":        { "type": "integer", "minimum": 0 },
+        "steps_passed":          { "type": "integer", "minimum": 0 },
+        "steps_failed":          { "type": "integer", "minimum": 0 },
+        "repairs_attempted":     { "type": "integer", "minimum": 0 },
+        "repairs_succeeded":     { "type": "integer", "minimum": 0 },
+        "duration_hint_seconds": { "type": "integer", "minimum": 0 },
+        "summary":               { "type": "string", "minLength": 1, "description": "Human-readable one-line result." },
+        "details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/step_detail" }
+        },
+        "error_details": {
+          "oneOf": [
+            { "$ref": "#/$defs/error_details" },
+            { "type": "null" }
+          ],
+          "default": null,
+          "description": "Populated when status is 'fail' or 'error'. Null on pass."
+        },
+        "next_context_summary": {
+          "type": ["string", "null"],
+          "default": null,
+          "description": "Free-text state summary injected into the next test case prompt. Include: what changed, credential state, firmware versions, anomalies."
+        }
+      }
+    }
+  },
+
+  "oneOf": [
+    { "$ref": "#/$defs/command_plan" },
+    { "$ref": "#/$defs/interactive_command_plan" },
+    { "$ref": "#/$defs/health_check_request" },
+    { "$ref": "#/$defs/repair_action" },
+    { "$ref": "#/$defs/completion_summary" }
+  ]
+}
